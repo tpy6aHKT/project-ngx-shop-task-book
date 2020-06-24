@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "newProjectRoot": "projects",
+  "newProjectRoot": "components",
   "projects": {
     "components": {
       "projectType": "application",
@@ -10,32 +10,32 @@
           "style": "sass"
         }
       },
-      "root": "projects/components/1-template-syntax-and-binding",
-      "sourceRoot": "projects/components/1-template-syntax-and-binding/src",
+      "root": "components/1-template-syntax-and-binding",
+      "sourceRoot": "components/1-template-syntax-and-binding/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/components",
-            "index": "projects/components/1-template-syntax-and-binding/src/index.html",
-            "main": "projects/components/1-template-syntax-and-binding/src/main.ts",
-            "polyfills": "projects/shared/polyfills.ts",
-            "tsConfig": "projects/components/1-template-syntax-and-binding/tsconfig.app.json",
+            "index": "components/1-template-syntax-and-binding/src/index.html",
+            "main": "components/1-template-syntax-and-binding/src/main.ts",
+            "polyfills": "shared/polyfills.ts",
+            "tsConfig": "components/1-template-syntax-and-binding/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "projects/components/1-template-syntax-and-binding/src/favicon.ico",
-              "projects/components/1-template-syntax-and-binding/src/assets"
+              "components/1-template-syntax-and-binding/src/favicon.ico",
+              "components/1-template-syntax-and-binding/src/assets"
             ],
-            "styles": ["projects/shared/styles.sass"],
+            "styles": ["shared/styles.sass"],
             "scripts": []
           },
           "configurations": {
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "projects/components/1-template-syntax-and-binding/src/environments/environment.ts",
-                  "with": "projects/components/1-template-syntax-and-binding/src/environments/environment.prod.ts"
+                  "replace": "components/1-template-syntax-and-binding/src/environments/environment.ts",
+                  "with": "components/1-template-syntax-and-binding/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -81,15 +81,15 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/components/1-template-syntax-and-binding/src/test.ts",
-            "polyfills": "projects/shared/polyfills.ts",
-            "tsConfig": "projects/components/1-template-syntax-and-binding/tsconfig.spec.json",
-            "karmaConfig": "projects/shared/karma.conf.js",
+            "main": "components/1-template-syntax-and-binding/src/test.ts",
+            "polyfills": "shared/polyfills.ts",
+            "tsConfig": "components/1-template-syntax-and-binding/tsconfig.spec.json",
+            "karmaConfig": "shared/karma.conf.js",
             "assets": [
-              "projects/components/1-template-syntax-and-binding/src/favicon.ico",
-              "projects/components/1-template-syntax-and-binding/src/assets"
+              "components/1-template-syntax-and-binding/src/favicon.ico",
+              "components/1-template-syntax-and-binding/src/assets"
             ],
-            "styles": ["projects/shared/styles.sass"],
+            "styles": ["shared/styles.sass"],
             "scripts": []
           }
         },
@@ -97,9 +97,9 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/components/1-template-syntax-and-binding/tsconfig.app.json",
-              "projects/components/1-template-syntax-and-binding/tsconfig.spec.json",
-              "projects/components/1-template-syntax-and-binding/e2e/tsconfig.json"
+              "components/1-template-syntax-and-binding/tsconfig.app.json",
+              "components/1-template-syntax-and-binding/tsconfig.spec.json",
+              "components/1-template-syntax-and-binding/e2e/tsconfig.json"
             ],
             "exclude": ["**/node_modules/**"]
           }
@@ -107,7 +107,7 @@
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "projects/components/1-template-syntax-and-binding/e2e/protractor.conf.js",
+            "protractorConfig": "components/1-template-syntax-and-binding/e2e/protractor.conf.js",
             "devServerTarget": "components:serve"
           },
           "configurations": {
