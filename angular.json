@@ -18,7 +18,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/components",
-            "index": "components/1-template-syntax-and-binding/src/index.html",
+            "index": "shared/index.html",
             "main": "components/1-template-syntax-and-binding/src/main.ts",
             "polyfills": "shared/polyfills.ts",
             "tsConfig": "components/1-template-syntax-and-binding/tsconfig.app.json",

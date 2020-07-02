@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppComponent } from '../../solution/app/app.component';
-import { ShopCardComponent } from '../../solution/app/shop-card/shop-card.component';
 import { ImgUrlPipe } from './pipes/img-url.pipe';
+import { AppComponent } from './app.component';
+import { ShopCardComponent } from './shop-card/shop-card.component';
 
 @NgModule({
   declarations: [AppComponent, ShopCardComponent, ImgUrlPipe],
