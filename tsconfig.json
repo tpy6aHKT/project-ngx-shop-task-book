@@ -1,23 +1,53 @@
+/*
+  This is a "Solution Style" tsconfig.json file, and is used by editors and TypeScript’s language server to improve development experience.
+  It is not intended to be used to perform a compilation.
+
+  To learn more about this file see: https://angular.io/config/solution-tsconfig.
+*/
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
-    "sourceMap": true,
-    "declaration": false,
-    "downlevelIteration": true,
-    "experimentalDecorators": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "importHelpers": true,
-    "target": "es2015",
-    "lib": [
-      "es2018",
-      "dom"
-    ]
-  },
-  "angularCompilerOptions": {
-    "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
-  }
+  "files": [],
+  "references": [
+    {
+      "path": "./components/1-template-syntax-and-binding/src/tsconfig.app.json"
+    },
+    {
+      "path": "./components/1-template-syntax-and-binding/src/tsconfig.spec.json"
+    },
+    {
+      "path": "./directive/1-common-directive/src/tsconfig.app.json"
+    },
+    {
+      "path": "./directive/1-common-directive/src/tsconfig.spec.json"
+    },
+    {
+      "path": "./pipe/1-common-pipe/src/tsconfig.app.json"
+    },
+    {
+      "path": "./pipe/1-common-pipe/src/tsconfig.spec.json"
+    },
+    {
+      "path": "./services/1-http-and-interceptors/src/tsconfig.app.json"
+    },
+    {
+      "path": "./services/1-http-and-interceptors/src/tsconfig.spec.json"
+    },
+    {
+      "path": "./forms/1-controls-and-custom-controls/src/tsconfig.app.json"
+    },
+    {
+      "path": "./1-controls-and-custom-controls/src/forms/tsconfig.spec.json"
+    },
+    {
+      "path": "./routing/1-routes-and-navigation/src/tsconfig.app.json"
+    },
+    {
+      "path": "./routing/1-routes-and-navigation/src/tsconfig.spec.json"
+    },
+    {
+      "path": "./redux/1-redux-basics/src/tsconfig.app.json"
+    },
+    {
+      "path": "./redux/1-redux-basics/src/tsconfig.spec.json"
+    },
+  ]
 }
