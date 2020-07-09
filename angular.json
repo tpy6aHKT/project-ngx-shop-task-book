@@ -27,8 +27,7 @@
               "1-components/1-template-syntax-and-binding/src/favicon.ico",
               "1-components/1-template-syntax-and-binding/src/assets"
             ],
-            "styles": ["shared/styles.sass"],
-            "scripts": []
+            "styles": ["shared/styles.sass"]
           },
           "configurations": {
             "production": {
@@ -72,12 +71,6 @@
             }
           }
         },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "components:build"
-          }
-        },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
@@ -89,8 +82,7 @@
               "1-components/1-template-syntax-and-binding/src/favicon.ico",
               "1-components/1-template-syntax-and-binding/src/assets"
             ],
-            "styles": ["shared/styles.sass"],
-            "scripts": []
+            "styles": ["shared/styles.sass"]
           }
         },
         "lint": {
@@ -98,22 +90,9 @@
           "options": {
             "tsConfig": [
               "1-components/1-template-syntax-and-binding/src/tsconfig.app.json",
-              "1-components/1-template-syntax-and-binding/src/tsconfig.spec.json",
-              "1-components/1-template-syntax-and-binding/e2e/tsconfig.json"
+              "1-components/1-template-syntax-and-binding/src/tsconfig.spec.json"
             ],
             "exclude": ["**/node_modules/**"]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "1-components/1-template-syntax-and-binding/e2e/protractor.conf.js",
-            "devServerTarget": "components:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "components:serve:production"
-            }
           }
         }
       }
@@ -142,8 +121,7 @@
               "3-directive/1-common-directive/src/favicon.ico",
               "3-directive/1-common-directive/src/assets"
             ],
-            "styles": ["shared/styles.sass"],
-            "scripts": []
+            "styles": ["shared/styles.sass"]
           },
           "configurations": {
             "production": {
@@ -187,12 +165,6 @@
             }
           }
         },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "directive:build"
-          }
-        },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
@@ -204,8 +176,7 @@
               "3-directive/1-common-directive/src/favicon.ico",
               "3-directive/1-common-directive/src/assets"
             ],
-            "styles": ["shared/styles.sass"],
-            "scripts": []
+            "styles": ["shared/styles.sass"]
           }
         },
         "lint": {
@@ -213,24 +184,9 @@
           "options": {
             "tsConfig": [
               "3-directive/1-common-directive/src/tsconfig.app.json",
-              "3-directive/1-common-directive/src/tsconfig.spec.json",
-              "3-directive/1-common-directive/e2e/tsconfig.json"
+              "3-directive/1-common-directive/src/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "3-directive/1-common-directive/e2e/protractor.conf.js",
-            "devServerTarget": "directive:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "directive:serve:production"
-            }
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -259,8 +215,7 @@
               "2-pipe/1-common-pipe/src/favicon.ico",
               "2-pipe/1-common-pipe/src/assets"
             ],
-            "styles": ["shared/styles.sass"],
-            "scripts": []
+            "styles": ["shared/styles.sass"]
           },
           "configurations": {
             "production": {
@@ -304,12 +259,6 @@
             }
           }
         },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "pipe:build"
-          }
-        },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
@@ -321,8 +270,7 @@
               "2-pipe/1-common-pipe/src/favicon.ico",
               "2-pipe/1-common-pipe/src/assets"
             ],
-            "styles": ["shared/styles.sass"],
-            "scripts": []
+            "styles": ["shared/styles.sass"]
           }
         },
         "lint": {
@@ -330,24 +278,9 @@
           "options": {
             "tsConfig": [
               "2-pipe/1-common-pipe/src/tsconfig.app.json",
-              "2-pipe/1-common-pipe/src/tsconfig.spec.json",
-              "2-pipe/1-common-pipe/e2e/tsconfig.json"
+              "2-pipe/1-common-pipe/src/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "2-pipe/e2e/protractor.conf.js",
-            "devServerTarget": "pipe:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "pipe:serve:production"
-            }
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -376,8 +309,7 @@
               "4-services/1-http-and-interceptors/src/favicon.ico",
               "4-services/1-http-and-interceptors/src/assets"
             ],
-            "styles": ["shared/styles.sass"],
-            "scripts": []
+            "styles": ["shared/styles.sass"]
           },
           "configurations": {
             "production": {
@@ -421,12 +353,6 @@
             }
           }
         },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "services:build"
-          }
-        },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
@@ -438,8 +364,7 @@
               "4-services/1-http-and-interceptors/src/favicon.ico",
               "4-services/1-http-and-interceptors/src/assets"
             ],
-            "styles": ["shared/styles.sass"],
-            "scripts": []
+            "styles": ["shared/styles.sass"]
           }
         },
         "lint": {
@@ -447,24 +372,9 @@
           "options": {
             "tsConfig": [
               "4-services/1-http-and-interceptors/src/tsconfig.app.json",
-              "4-services/1-http-and-interceptors/src/tsconfig.spec.json",
-              "4-services/1-http-and-interceptors/e2e/tsconfig.json"
+              "4-services/1-http-and-interceptors/src/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "4-services/e2e/protractor.conf.js",
-            "devServerTarget": "services:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "services:serve:production"
-            }
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -493,8 +403,7 @@
               "5-forms/1-controls-and-custom-controls/src/favicon.ico",
               "5-forms/1-controls-and-custom-controls/src/assets"
             ],
-            "styles": ["shared/styles.sass"],
-            "scripts": []
+            "styles": ["shared/styles.sass"]
           },
           "configurations": {
             "production": {
@@ -538,12 +447,6 @@
             }
           }
         },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "forms:build"
-          }
-        },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
@@ -555,8 +458,7 @@
               "5-forms/1-controls-and-custom-controls/src/favicon.ico",
               "5-forms/1-controls-and-custom-controls/src/assets"
             ],
-            "styles": ["shared/styles.sass"],
-            "scripts": []
+            "styles": ["shared/styles.sass"]
           }
         },
         "lint": {
@@ -564,24 +466,9 @@
           "options": {
             "tsConfig": [
               "5-forms/1-controls-and-custom-controls/src/tsconfig.app.json",
-              "5-forms/1-controls-and-custom-controls/src/tsconfig.spec.json",
-              "5-forms/1-controls-and-custom-controls/e2e/tsconfig.json"
+              "5-forms/1-controls-and-custom-controls/src/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "5-forms/e2e/protractor.conf.js",
-            "devServerTarget": "forms:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "forms:serve:production"
-            }
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -610,8 +497,7 @@
               "6-routing/1-routes-and-navigation/src/favicon.ico",
               "6-routing/1-routes-and-navigation/src/assets"
             ],
-            "styles": ["shared/styles.sass"],
-            "scripts": []
+            "styles": ["shared/styles.sass"]
           },
           "configurations": {
             "production": {
@@ -655,12 +541,6 @@
             }
           }
         },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "routing:build"
-          }
-        },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
@@ -672,33 +552,17 @@
               "6-routing/1-routes-and-navigation/src/favicon.ico",
               "6-routing/1-routes-and-navigation/src/assets"
             ],
-            "styles": ["shared/styles.sass"],
-            "scripts": []
+            "styles": ["shared/styles.sass"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "6-routing/tsconfig.app.json",
-              "6-routing/tsconfig.spec.json",
-              "6-routing/e2e/tsconfig.json"
+              "6-routing/1-routes-and-navigation/src/tsconfig.app.json",
+              "6-routing/1-routes-and-navigation/src/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "6-routing/e2e/protractor.conf.js",
-            "devServerTarget": "routing:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "routing:serve:production"
-            }
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -727,8 +591,7 @@
               "7-redux/1-redux-basics/src/favicon.ico",
               "7-redux/1-redux-basics/src/assets"
             ],
-            "styles": ["shared/styles.sass"],
-            "scripts": []
+            "styles": ["shared/styles.sass"]
           },
           "configurations": {
             "production": {
@@ -772,12 +635,6 @@
             }
           }
         },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "redux:build"
-          }
-        },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
@@ -789,8 +646,7 @@
               "7-redux/1-redux-basics/src/favicon.ico",
               "7-redux/1-redux-basics/src/assets"
             ],
-            "styles": ["shared/styles.sass"],
-            "scripts": []
+            "styles": ["shared/styles.sass"]
           }
         },
         "lint": {
@@ -798,24 +654,9 @@
           "options": {
             "tsConfig": [
               "7-redux/1-redux-basics/src/tsconfig.app.json",
-              "7-redux/1-redux-basics/src/tsconfig.spec.json",
-              "redux/e2e/tsconfig.json"
+              "7-redux/1-redux-basics/src/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "redux/e2e/protractor.conf.js",
-            "devServerTarget": "redux:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "redux:serve:production"
-            }
+            "exclude": ["**/node_modules/**"]
           }
         }
       }

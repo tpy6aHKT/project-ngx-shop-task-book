@@ -8,46 +8,46 @@
   "files": [],
   "references": [
     {
-      "path": "./components/1-template-syntax-and-binding/src/tsconfig.app.json"
+      "path": "./1-components/1-template-syntax-and-binding/src/tsconfig.app.json"
     },
     {
-      "path": "./components/1-template-syntax-and-binding/src/tsconfig.spec.json"
+      "path": "./1-components/1-template-syntax-and-binding/src/tsconfig.spec.json"
     },
     {
-      "path": "./directive/1-common-directive/src/tsconfig.app.json"
+      "path": "./3-directive/1-common-directive/src/tsconfig.app.json"
     },
     {
-      "path": "./directive/1-common-directive/src/tsconfig.spec.json"
+      "path": "./3-directive/1-common-directive/src/tsconfig.spec.json"
     },
     {
-      "path": "./pipe/1-common-pipe/src/tsconfig.app.json"
+      "path": "./2-pipe/1-common-pipe/src/tsconfig.app.json"
     },
     {
-      "path": "./pipe/1-common-pipe/src/tsconfig.spec.json"
+      "path": "./2-pipe/1-common-pipe/src/tsconfig.spec.json"
     },
     {
-      "path": "./services/1-http-and-interceptors/src/tsconfig.app.json"
+      "path": "./4-services/1-http-and-interceptors/src/tsconfig.app.json"
     },
     {
-      "path": "./services/1-http-and-interceptors/src/tsconfig.spec.json"
+      "path": "./4-services/1-http-and-interceptors/src/tsconfig.spec.json"
     },
     {
-      "path": "./forms/1-controls-and-custom-controls/src/tsconfig.app.json"
+      "path": "./5-forms/1-controls-and-custom-controls/src/tsconfig.app.json"
     },
     {
-      "path": "./1-controls-and-custom-controls/src/forms/tsconfig.spec.json"
+      "path": "./5-forms/1-controls-and-custom-controls/src/tsconfig.spec.json"
     },
     {
-      "path": "./routing/1-routes-and-navigation/src/tsconfig.app.json"
+      "path": "./6-routing/1-routes-and-navigation/src/tsconfig.app.json"
     },
     {
-      "path": "./routing/1-routes-and-navigation/src/tsconfig.spec.json"
+      "path": "./6-routing/1-routes-and-navigation/src/tsconfig.spec.json"
     },
     {
-      "path": "./redux/1-redux-basics/src/tsconfig.app.json"
+      "path": "./7-redux/1-redux-basics/src/tsconfig.app.json"
     },
     {
-      "path": "./redux/1-redux-basics/src/tsconfig.spec.json"
-    },
+      "path": "./7-redux/1-redux-basics/src/tsconfig.spec.json"
+    }
   ]
 }
