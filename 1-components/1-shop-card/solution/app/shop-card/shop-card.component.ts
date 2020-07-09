@@ -1,7 +1,6 @@
-import { IProduct } from './../../../../../shared/interfaces/product.interface';
-import { expProducts } from './../../../../../shared/mocks/products';
+import { IProduct } from '../../../../../shared/interfaces/product.interface';
+import { expProducts } from '../../../../../shared/mocks/products';
 import { Component } from '@angular/core';
-
 
 @Component({
   selector: 'app-shop-card',
