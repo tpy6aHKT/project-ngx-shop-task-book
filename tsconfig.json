@@ -8,16 +8,10 @@
   "files": [],
   "references": [
     {
-      "path": "./1-components/1-template-syntax-and-binding/src/tsconfig.app.json"
+      "path": "./1-components/1-shop-card/src/tsconfig.app.json"
     },
     {
-      "path": "./1-components/1-template-syntax-and-binding/src/tsconfig.spec.json"
-    },
-    {
-      "path": "./3-directive/1-common-directive/src/tsconfig.app.json"
-    },
-    {
-      "path": "./3-directive/1-common-directive/src/tsconfig.spec.json"
+      "path": "./1-components/1-shop-card/src/tsconfig.spec.json"
     },
     {
       "path": "./2-pipe/1-common-pipe/src/tsconfig.app.json"
@@ -48,6 +42,24 @@
     },
     {
       "path": "./7-redux/1-redux-basics/src/tsconfig.spec.json"
+    },
+    {
+      "path": "./footer/tsconfig.app.json"
+    },
+    {
+      "path": "./footer/tsconfig.spec.json"
+    },
+    {
+      "path": "./footer/e2e/tsconfig.json"
+    },
+    {
+      "path": "./footer/tsconfig.app.json"
+    },
+    {
+      "path": "./footer/tsconfig.spec.json"
+    },
+    {
+      "path": "./footer/e2e/tsconfig.json"
     }
   ]
 }
