@@ -74,16 +74,40 @@
       "path": "./4-services/1-http-and-interceptors/src/tsconfig.spec.json"
     },
     {
-      "path": "./4-services/interceptor-service/src/tsconfig.app.json"
+      "path": "./4-services/2-interceptor-service/src/tsconfig.app.json"
     },
     {
-      "path": "./4-services/interceptor-service/src/tsconfig.spec.json"
+      "path": "./4-services/2-interceptor-service/src/tsconfig.spec.json"
+    },
+    {
+      "path": "./4-services/3-product-service/src/tsconfig.app.json"
+    },
+    {
+      "path": "./4-services/3-product-service/src/tsconfig.spec.json"
+    },
+    {
+      "path": "./4-services/4-local-storage-service/src/tsconfig.app.json"
+    },
+    {
+      "path": "./4-services/4-local-storage-service/src/tsconfig.spec.json"
     },
     {
       "path": "./5-forms/1-controls-and-custom-controls/src/tsconfig.app.json"
     },
     {
       "path": "./5-forms/1-controls-and-custom-controls/src/tsconfig.spec.json"
+    },
+    {
+      "path": "./5-forms/2-order-form/src/tsconfig.app.json"
+    },
+    {
+      "path": "./5-forms/2-order-form/src/tsconfig.spec.json"
+    },
+    {
+      "path": "./5-forms/3-add-feedback/src/tsconfig.app.json"
+    },
+    {
+      "path": "./5-forms/3-add-feedback/src/tsconfig.spec.json"
     },
     {
       "path": "./6-routing/1-routes-and-navigation/src/tsconfig.app.json"
