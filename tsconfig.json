@@ -8,16 +8,28 @@
   "files": [],
   "references": [
     {
-      "path": "./1-components/1-template-syntax-and-binding/src/tsconfig.app.json"
+      "path": "./1-components/1-shop-card/src/tsconfig.app.json"
     },
     {
-      "path": "./1-components/1-template-syntax-and-binding/src/tsconfig.spec.json"
+      "path": "./1-components/1-shop-card/src/tsconfig.spec.json"
     },
     {
-      "path": "./3-directive/1-common-directive/src/tsconfig.app.json"
+      "path": "./1-components/2-footer/src/tsconfig.app.json"
     },
     {
-      "path": "./3-directive/1-common-directive/src/tsconfig.spec.json"
+      "path": "./1-components/2-footer/src/tsconfig.spec.json"
+    },
+    {
+      "path": "./1-components/3-product-card/src/tsconfig.app.json"
+    },
+    {
+      "path": "./1-components/3-product-card/src/tsconfig.spec.json"
+    },
+    {
+      "path": "./1-components/4-suggested-product/src/tsconfig.app.json"
+    },
+    {
+      "path": "./1-components/4-suggested-product/src/tsconfig.spec.json"
     },
     {
       "path": "./2-pipe/1-common-pipe/src/tsconfig.app.json"
@@ -26,16 +38,94 @@
       "path": "./2-pipe/1-common-pipe/src/tsconfig.spec.json"
     },
     {
+      "path": "./2-pipe/2-image-url-pipe/src/tsconfig.app.json"
+    },
+    {
+      "path": "./2-pipe/2-image-url-pipe/src/tsconfig.spec.json"
+    },
+    {
+      "path": "./2-pipe/3-rate-pipe/src/tsconfig.app.json"
+    },
+    {
+      "path": "./2-pipe/3-rate-pipe/src/tsconfig.spec.json"
+    },
+    {
+      "path": "./2-pipe/4-review-pipe/src/tsconfig.app.json"
+    },
+    {
+      "path": "./2-pipe/4-review-pipe/src/tsconfig.spec.json"
+    },
+    {
+      "path": "./3-directive/2-home-component/src/tsconfig.app.json"
+    },
+    {
+      "path": "./3-directive/2-home-component/src/tsconfig.spec.json"
+    },
+    {
+      "path": "./3-directive/3-cart-component/src/tsconfig.app.json"
+    },
+    {
+      "path": "./3-directive/3-cart-component/src/tsconfig.spec.json"
+    },
+    {
+      "path": "./3-directive/4-side-menu/src/tsconfig.app.json"
+    },
+    {
+      "path": "./3-directive/4-side-menu/src/tsconfig.spec.json"
+    },
+    {
       "path": "./4-services/1-http-and-interceptors/src/tsconfig.app.json"
     },
     {
       "path": "./4-services/1-http-and-interceptors/src/tsconfig.spec.json"
     },
     {
+      "path": "./4-services/2-interceptor-service/src/tsconfig.app.json"
+    },
+    {
+      "path": "./4-services/2-interceptor-service/src/tsconfig.spec.json"
+    },
+    {
+      "path": "./4-services/3-product-service/src/tsconfig.app.json"
+    },
+    {
+      "path": "./4-services/3-product-service/src/tsconfig.spec.json"
+    },
+    {
+      "path": "./4-services/4-local-storage-service/src/tsconfig.app.json"
+    },
+    {
+      "path": "./4-services/4-local-storage-service/src/tsconfig.spec.json"
+    },
+    {
       "path": "./5-forms/1-controls-and-custom-controls/src/tsconfig.app.json"
     },
     {
       "path": "./5-forms/1-controls-and-custom-controls/src/tsconfig.spec.json"
+    },
+    {
+      "path": "./5-forms/2-order-form/src/tsconfig.app.json"
+    },
+    {
+      "path": "./5-forms/2-order-form/src/tsconfig.spec.json"
+    },
+    {
+      "path": "./5-forms/3-add-feedback/src/tsconfig.app.json"
+    },
+    {
+      "path": "./5-forms/3-add-feedback/src/tsconfig.spec.json"
+    },
+    {
+      "path": "./5-forms/4-brands-component/src/tsconfig.app.json"
+    },
+    {
+      "path": "./5-forms/4-brands-component/src/tsconfig.spec.json"
+    },
+    {
+      "path": "./5-forms/5-price-slider/src/tsconfig.app.json"
+    },
+    {
+      "path": "./5-forms/5-price-slider/src/tsconfig.spec.json"
     },
     {
       "path": "./6-routing/1-routes-and-navigation/src/tsconfig.app.json"

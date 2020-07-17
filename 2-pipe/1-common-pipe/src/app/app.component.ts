@@ -6,4 +6,5 @@ import { Component } from '@angular/core';
 })
 // @ts-ignore
 export class AppComponent {
+  public title = 'pipes';
 }
