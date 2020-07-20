@@ -72,11 +72,15 @@
 
   <div class="content-wrap">
     <div class="content-block">
-      <ngx-shop-product-card></ngx-shop-product-card>
+      <ngx-shop-content-product
+        [product]="productData"
+        (toCart)="toCart($event)"
+        (goToProduct)="goToProduct($event)"
+      ></ngx-shop-content-product>
     </div>
     <div class="terminal">
       <pre>
-        <!-- <p *ngIf ='terminalMessage'>{{ terminalMessage}}</p> -->
+        <p *ngIf ='terminalMessage'>{{ terminalMessage}}</p>
       </pre>
     </div>
   </div>

@@ -36,7 +36,58 @@ p
     min-width: 285px
     border-radius: 6px
     margin-bottom: 10px
+.footer
+  top: 100vh
+  flex-shrink: 0
+  border-top: 1px solid #eceeef
+  background-color: #fff
+  padding: 1.275rem 0
+  font-size: 0.875rem
 
+.footer-inner
+  display: flex
+  flex-direction: column
+
+.footer-menu
+  margin-bottom: 1rem
+
+.footer-menu a
+  display: flex
+  margin-bottom: 0.5rem
+form button[type="submit"]:not(.btn-send)
+    width: auto
+
+.form-footer
+    font-size: 0.875rem
+
+.form-group
+    margin-bottom: 1.5rem
+
+.form-group:last-child
+    margin-bottom: 0
+
+.form-group label
+    color: #999
+
+.footer
+    background-color: #f2f2f2
+
+.footer-inner
+    flex-direction: row
+    justify-content: space-between
+
+.footer-menu
+    margin-bottom: 0
+
+.footer-menu a
+    display: inline-flex
+    margin-bottom: 0
+
+form button[type="submit"]:not(.btn-send)
+  padding-left: 3rem
+  padding-right: 3rem
+  font-weight: 500
+  width: 100%  
 .terminal
     margin-bottom: 10px
     position: relative
@@ -204,7 +255,55 @@ a:hover
     width: 16px
     margin-right: 4px
 
+.description-col .product-desc
+    padding: 0.875rem 1.25rem 
+.description-col .product-img 
+    padding: 1.5rem 2.5rem
+    display: flex
+    align-items: center
+    justify-content: center
+    background: #eceeef
+
+.description-col .product-img
+    padding: 1.5rem 2.5rem
+    display: flex
+    align-items: center
+    justify-content: center
+    max-width: 45%
+    overflow: hidden    
+.default-col
+  padding: 1.5rem
+  border-left: 1px solid #c4c4c4
+
 @media screen and (max-width: 767px)
+    .description-col
+        flex: 1 0 100%
+        display: flex
+        flex-direction: row
+
+    .product-list-box.-basket .description-col
+        border-bottom: 1px solid #c4c4c4
+
+    .description-col .product-img
+        padding: 1rem
+        display: flex
+        align-items: center
+        justify-content: center
+        background: #eceeef
+
+    .product-desc,
+        .default-col
+            padding: 0.875rem 1.25rem
+
+
+    
+    .description-col + *
+        border-left: none
+
+    .price-col
+        display: none
+
+
 .terminal
     width: 100%
 
@@ -226,6 +325,7 @@ svg#rocket-smoke
     right: 120px
     transform: rotate(-5deg)
 
+
 @media screen and (max-width: 575px)
 svg#rocket-smoke
     display: none
@@ -243,7 +343,7 @@ svg#rocket-smoke
     flex: 1 0 auto
     flex-direction: row
     margin-bottom: 0.75rem
-    height: 200px
+    // height: 200px
 
 .product-list-box.-basket .description-col
     border-bottom: 1px solid #c4c4c4
@@ -258,7 +358,7 @@ svg#rocket-smoke
     flex: 1 0 65%
     display: flex
     flex-direction: row
-    height: 200px
+    // height: 200px
     width: 200px
     cursor: pointer
 
@@ -318,7 +418,6 @@ img
     justify-content: center
     max-width: 45%
     overflow: hidden
-
 .description-col .product-desc, .description-col .product-img
     &:focus
         outline: none
