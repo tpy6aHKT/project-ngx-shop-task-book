@@ -4,7 +4,7 @@ import { EventEmitter } from '@angular/core';
 import { CategoryProductComponent } from './product-card.component';
 import { productData } from '../../mocks/mock-product';
 
-describe('[Moдуль 2]  Компонент товара', () => {
+describe('[Moдуль 1]  Компонент товара', () => {
   let fixture: ComponentFixture<CategoryProductComponent>;
   let component: CategoryProductComponent;
   let toCartSpy: jasmine.Spy;
@@ -77,7 +77,6 @@ describe('[Moдуль 2]  Компонент товара', () => {
     const titleEL = fixture.debugElement.query(By.css('.rate-amount'));
     expect(titleEL).toBeTruthy();
     const { feedbacksCount } = (component as any)?.product;
-    console.log((component as any)?.product);
     const [{ nativeNode: titleNode }] = titleEL.childNodes;
     expect(Number(titleNode.textContent.slice(0, length - 8).trim())).toEqual(
       feedbacksCount

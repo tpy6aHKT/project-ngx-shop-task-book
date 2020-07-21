@@ -50,7 +50,7 @@
       </g>
     </svg>
 
-    <span>1. Интерполяция и связывание</span>
+    <span>{{ title }}</span>
 
     <svg
       id="rocket-smoke"
@@ -72,10 +72,16 @@
 
   <div class="content-wrap">
     <div class="content-block">
-      <app-shop-card></app-shop-card>
+      <ngx-shop-content-product
+        [product]="productData"
+        (toCart)="toCart($event)"
+        (goToProduct)="goToProduct($event)"
+      ></ngx-shop-content-product>
     </div>
     <div class="terminal">
-      <pre>{{ terminalMessage }}</pre>
+      <pre>
+        <p >{{ terminalMessage}}</p>
+      </pre>
     </div>
   </div>
 </div>

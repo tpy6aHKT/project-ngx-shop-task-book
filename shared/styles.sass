@@ -19,9 +19,14 @@ p
 
 .spacer
     flex: 1
-
+.fa-star
+  color: #ccc
+.fa-star:before
+  font-size: 20px
+.selected
+  color: orange
 .content-wrap
-    padding-top: 40px
+    padding-top: 70px
     width: 100%
     display: flex
     flex-direction: row
@@ -54,6 +59,25 @@ p
 .footer-menu a
   display: flex
   margin-bottom: 0.5rem
+
+.product-counter
+  display: none
+  position: absolute
+  font-size: 10px
+  line-height: 16px
+  color: initial
+  text-align: center
+  top: 0
+  right: -10px
+  width: 16px
+  height: 16px
+  border-radius: 50%
+  background-color: #fcb1ab
+
+.basket.basket_not-empty .product-counter
+  display: inline-block
+
+  
 form button[type="submit"]:not(.btn-send)
     width: auto
 
@@ -188,6 +212,18 @@ svg.material-icons:not(:last-child)
 .card.card.highlight-card span
     margin-left: 60px
 
+
+// .card-img-wrap
+//   background-color: #eceeef
+//   display: flex
+//   flex-direction: column
+//   justify-content: center
+//   align-items: center
+//   padding: 0.7rem
+//   height: 180px
+
+
+
 svg#rocket
     width: 80px
     position: absolute
@@ -303,6 +339,41 @@ a:hover
     .price-col
         display: none
 
+    ngx-shop-product-card 
+        .card-component
+            position: relative
+            display: flex
+            flex-direction: row
+            min-width: 0
+            background-clip: border-box
+            border: 1px solid rgba(0,0,0,.125)
+            border-radius: .25re
+            background: #ffffff
+            .card-body
+                padding: 0.5rem 1.25rem
+
+            .card-title
+                font-size: 14px
+                line-height: 20px
+                margin-bottom: 0.5rem
+
+            .price-text
+                margin-top: 0.5rem
+
+            .card-img-top
+                mix-blend-mode: multiply
+                margin: auto
+                display: block
+                width: 100%
+
+            .card-img-wrap 
+                background-color: #eceeef
+                height: auto
+                width: 122px
+                max-width: 122px
+                overflow: hidden
+                flex: 1 0 122px
+                padding: 1.5rem 0.5rem
 
 .terminal
     width: 100%
@@ -313,10 +384,6 @@ a:hover
 .content-wrap
     justify-content: center
 
-.card-container > *:not(.circle-link),
-.card:not(.highlight-card)
-    height: 16px
-    margin: 8px 0
 
 .card.highlight-card span
     margin-left: 72px
@@ -330,8 +397,6 @@ svg#rocket-smoke
 svg#rocket-smoke
     display: none
     visibility: hidden
-
-// shop-card
 
 .basket
     position: relative
@@ -387,7 +452,6 @@ svg#rocket-smoke
     flex-wrap: wrap
     flex-direction: row
     align-items: flex-end
-    margin-top: 1rem
 
 .rate-amount
     font-size: 14px
@@ -463,3 +527,51 @@ body
     flex-direction: column
     color: #373a3c
     overflow-x: hidden
+
+
+
+
+
+
+@media screen and (min-width: 768px)
+    ngx-shop-product-card 
+        display: flex
+        justify-content: center
+        .card-component
+            position: relative
+            display: flex
+            flex-direction: column
+            min-width: 280px
+            height: auto
+            padding: 0
+            word-wrap: break-word
+            background-color: #fff
+            background-clip: border-box
+            border: 1px solid rgba(0,0,0,.125)
+            border-radius: .25rem
+            .card-img-wrap 
+                background-color: #eceeef
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+                padding: .7rem
+                height: 180px
+                width: 100%
+                .card-img-top 
+                    width: auto
+                    max-width: 100%
+                    mix-blend-mode: multiply
+                    max-height: 150px
+
+
+
+            .card-body 
+                justify-content: space-between
+                display: flex
+                flex-direction: column
+                .card-title 
+                    font-size: 18px
+                    line-height: 19px
+                    font-weight: 500
+                    margin-bottom: 1.25rem

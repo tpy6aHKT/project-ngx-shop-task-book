@@ -1,9 +1,8 @@
 import { CategoryProductComponent } from './product-card/product-card.component';
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { By } from '@angular/platform-browser';
 
-describe('[Moдуль 2] App компонент', () => {
+describe('[Moдуль 1] App компонент', () => {
   let fixture: ComponentFixture<AppComponent>;
   let component: AppComponent;
   beforeEach(async(() => {

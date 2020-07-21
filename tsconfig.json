@@ -20,16 +20,22 @@
       "path": "./1-components/2-footer/src/tsconfig.spec.json"
     },
     {
-      "path": "./1-components/3-product-card/src/tsconfig.app.json"
+      "path": "./1-components/3-category-product-card/src/tsconfig.app.json"
     },
     {
-      "path": "./1-components/3-product-card/src/tsconfig.spec.json"
+      "path": "./1-components/3-category-product-card/src/tsconfig.spec.json"
     },
     {
       "path": "./1-components/4-suggested-product/src/tsconfig.app.json"
     },
     {
       "path": "./1-components/4-suggested-product/src/tsconfig.spec.json"
+    },
+    {
+      "path": "./1-components/5-header/src/tsconfig.app.json"
+    },
+    {
+      "path": "./1-components/5-header/src/tsconfig.spec.json"
     },
     {
       "path": "./2-pipe/1-common-pipe/src/tsconfig.app.json"

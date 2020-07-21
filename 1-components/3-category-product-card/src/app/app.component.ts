@@ -5,4 +5,6 @@ import { productData } from '../mocks/mock-product';
   selector: 'app-root',
   templateUrl: './app.component.html',
 })
-export class AppComponent {}
+export class AppComponent {
+  public title;
+}

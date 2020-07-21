@@ -615,29 +615,29 @@
         }
       }
     },
-    "1-components_3-product-card": {
+    "1-components_3-category-product-card": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "sass"
         }
       },
-      "root": "product-card",
-      "sourceRoot": "1-components/3-product-card/src",
+      "root": "category-category-product-card",
+      "sourceRoot": "1-components/3-category-product-card/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/1-components_3-product-card",
+            "outputPath": "dist/1-components_3-category-product-card",
             "index": "shared/index.html",
-            "main": "1-components/3-product-card/src/main.ts",
+            "main": "1-components/3-category-product-card/src/main.ts",
             "polyfills": "shared/polyfills.ts",
-            "tsConfig": "1-components/3-product-card/src/tsconfig.app.json",
+            "tsConfig": "1-components/3-category-product-card/src/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "1-components/3-product-card/src/favicon.ico",
-              "1-components/3-product-card/src/assets"
+              "1-components/3-category-product-card/src/favicon.ico",
+              "1-components/3-category-product-card/src/assets"
             ],
             "styles": ["shared/styles.sass"]
           }
@@ -645,19 +645,19 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "1-components_3-product-card:build"
+            "browserTarget": "1-components_3-category-product-card:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "1-components/3-product-card/src/test.ts",
+            "main": "1-components/3-category-product-card/src/test.ts",
             "polyfills": "shared/polyfills.ts",
-            "tsConfig": "1-components/3-product-card/src/tsconfig.spec.json",
+            "tsConfig": "1-components/3-category-product-card/src/tsconfig.spec.json",
             "karmaConfig": "shared/karma.conf.js",
             "assets": [
-              "1-components/3-product-card/src/favicon.ico",
-              "1-components/3-product-card/src/assets"
+              "1-components/3-category-product-card/src/favicon.ico",
+              "1-components/3-category-product-card/src/assets"
             ],
             "styles": ["shared/styles.sass"]
           }
@@ -666,8 +666,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "1-components/3-product-card/src/tsconfig.app.json",
-              "1-components/3-product-card/src/tsconfig.spec.json"
+              "1-components/3-category-product-card/src/tsconfig.app.json",
+              "1-components/3-category-product-card/src/tsconfig.spec.json"
             ],
             "exclude": ["**/node_modules/**"]
           }
@@ -1495,6 +1495,65 @@
             "tsConfig": [
               "5-forms/5-price-slider/src/tsconfig.app.json",
               "5-forms/5-price-slider/src/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "1-components_5-header": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "sass"
+        }
+      },
+      "root": "5-header",
+      "sourceRoot": "1-components/5-header/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/5-header",
+            "index": "shared/index.html",
+            "main": "1-components/5-header/src/main.ts",
+            "polyfills": "shared/polyfills.ts",
+            "tsConfig": "1-components/5-header/src/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "1-components/5-header/src/favicon.ico",
+              "1-components/5-header/src/assets"
+            ],
+            "styles": ["shared/styles.sass"]
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "1-components_5-header:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "1-components/5-header/src/test.ts",
+            "polyfills": "shared/polyfills.ts",
+            "tsConfig": "1-components/5-header/src/tsconfig.spec.json",
+            "karmaConfig": "shared/karma.conf.js",
+            "assets": [
+              "1-components/5-header/src/favicon.ico",
+              "1-components/5-header/src/assets"
+            ],
+            "styles": ["shared/styles.sass"]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "1-components/5-header/src/tsconfig.app.json",
+              "1-components/5-header/src/tsconfig.spec.json"
             ],
             "exclude": ["**/node_modules/**"]
           }
