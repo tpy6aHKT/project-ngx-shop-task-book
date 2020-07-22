@@ -6,13 +6,12 @@
       (click)="removeProductFromCart()"
     ></i>
     <div class="product-img">
-      <img [src]="product.images[0].url" [alt]="product.name" />
+      <img [src]="product.images | imgUrl" [alt]="product.name" />
     </div>
     <div class="product-desc">
       <h4 class="col-title mb-2">
         {{ product.name }}
       </h4>
-
       <p class="price-text mb-0 mt-2 d-inline-block d-md-none">
         <strong>{{ product.price }}€</strong>
       </p>

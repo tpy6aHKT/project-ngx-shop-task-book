@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
 })
 // @ts-ignore
 export class AppComponent {
+  public title = '1. Пайпы';
   public terminalMessage: string;
   public increment() {
     this.terminalMessage = 'Увеличение количества товара';

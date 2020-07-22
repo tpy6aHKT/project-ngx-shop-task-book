@@ -19,15 +19,13 @@
       </p>
 
       <p class="price-text mb-0 mt-2 d-inline-block d-md-none">
-        <strong>{{ product?.price | currency: "EUR" }}</strong>
+        <strong>{{ product?.price }}€ </strong>
       </p>
     </div>
   </div>
 
   <div class="default-col inner-col price-col">
-    <h4 class="col-title price-text mb-2">
-      {{ product?.price | currency: "EUR" }}
-    </h4>
+    <h4 class="col-title price-text mb-2">{{ product?.price }}€</h4>
     <div class="button-wrap">
       <button
         (click)="addToBasket()"

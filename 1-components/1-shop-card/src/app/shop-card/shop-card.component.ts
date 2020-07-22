@@ -7,8 +7,4 @@ import { Component, Output, EventEmitter } from '@angular/core';
   templateUrl: './shop-card.component.html',
 })
 // @ts-ignore
-export class ShopCardComponent {
-  constructor() {}
-
-  public product: IProduct = expProducts[0];
-}
+export class ShopCardComponent {}

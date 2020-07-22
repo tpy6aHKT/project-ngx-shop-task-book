@@ -50,7 +50,7 @@
       </g>
     </svg>
 
-    <span>2. Пайпы</span>
+    <span>2. Пайпы </span>
 
     <svg
       id="rocket-smoke"
@@ -72,10 +72,14 @@
 
   <div class="content-wrap">
     <div class="content-block">
-
+      <app-shop-card
+        (decrement)="decrement()"
+        (remove)="remove()"
+        (increment)="increment()"
+      ></app-shop-card>
     </div>
     <div class="terminal">
-      <pre></pre>
+      <pre>{{ terminalMessage }}</pre>
     </div>
   </div>
 </div>
