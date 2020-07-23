@@ -5,7 +5,7 @@ import { ShopCardComponent } from './shop-card.component';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
-describe('[Moдуль 1]  Компонент товара в корзине', () => {
+describe('[Moдуль 2]  Url пайп', () => {
   let fixture: ComponentFixture<ShopCardComponent>;
   let component: ShopCardComponent;
   beforeEach(() => {
@@ -15,6 +15,7 @@ describe('[Moдуль 1]  Компонент товара в корзине', ()
     fixture = TestBed.createComponent(ShopCardComponent);
     component = fixture.componentInstance;
     (component as any).product = productData;
+    (component as any).product.count = 4;
     fixture.detectChanges();
   });
 
@@ -52,29 +53,11 @@ describe('[Moдуль 1]  Компонент товара в корзине', ()
     expect(imgNode.attributes.alt.textContent).toEqual(name);
   });
   it('тег с селектором .price-text должен правильно интерполировать price', () => {
-    const { price } = (component as any)?.product;
-    console.log(price);
+    const { price, count } = (component as any)?.product;
     const priceEl = fixture.debugElement.query(By.css('.price'));
-    expect(price).toBeTruthy();
+    expect(priceEl).toBeTruthy();
     const [{ nativeNode: priceNode }] = priceEl.childNodes;
-    // const priceFromNode = priceNode.textContent.trim();
-    console.log(priceNode);
-    // expect(`${priceFromNode.slice(0, 3)}${priceFromNode.slice(4)}`).toEqual(
-    //   `€${price.toString()}.00`
-    // );
+    const priceFromNode = Number(priceNode.textContent.trim().slice(0, 3));
+    expect(price * count).toEqual(priceFromNode);
   });
-  // it('тег с селектором .price  и .counter__value должен правильно интерполировать total', () => {
-  //   const { price } = (component as any)?.products[0];
-  //   const priceEl = fixture.debugElement.query(By.css('.price'));
-  //   const counterEl = fixture.debugElement.query(By.css('.counter__value'));
-  //   expect(price).toBeTruthy();
-  //   const [{ nativeNode: priceNode }] = priceEl.childNodes;
-  //   const [{ nativeNode: counterNode }] = counterEl.childNodes;
-
-  //   const priceFromNode = priceNode.textContent.trim();
-  //   expect(
-  //     Number(`${priceFromNode.slice(0, 3)}${priceFromNode.slice(4)}`.slice(1)) /
-  //       counterNode.textContent.trim()
-  //   ).toEqual(Number(`${price.toString()}.00`));
-  // });
 });

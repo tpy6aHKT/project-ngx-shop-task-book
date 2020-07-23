@@ -3,7 +3,7 @@
     <img
       loading="auto"
       class="card-img-top"
-      [src]="product.images"
+      [src]="product.images[0].url"
       [alt]="product.name"
     />
   </div>
@@ -13,9 +13,6 @@
     </h5>
     <div>
       <div class="rate">
-        <ngx-shop-star-rating
-          [feedbackRate]="product.rating"
-        ></ngx-shop-star-rating>
         <p class="rate-amount ml-2">{{ product.feedbacksCount }}</p>
       </div>
       <p class="card-text price-text">

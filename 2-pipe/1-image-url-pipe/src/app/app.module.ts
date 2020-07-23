@@ -1,6 +1,6 @@
+import { ImgUrlPipe } from './pipe/img-url.pipe';
 import { ShopCardComponent } from './shop-card/shop-card.component';
 
-import { ImgUrlPipe } from './pipe/img-url.pipe';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 

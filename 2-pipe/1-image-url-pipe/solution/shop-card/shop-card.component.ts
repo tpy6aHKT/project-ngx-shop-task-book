@@ -1,6 +1,6 @@
 import { IProduct } from '../../../../../shared/interfaces/product.interface';
 import { expProducts } from '../../../../../shared/mocks/products';
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-shop-card',
@@ -15,9 +15,8 @@ export class ShopCardComponent {
   public remove: EventEmitter<void> = new EventEmitter<void>();
   @Output()
   public increment: EventEmitter<void> = new EventEmitter<void>();
-
-  public product: IProduct = expProducts[0];
-
+  @Input()
+  public product: IProduct;
   public decrementProductInCart(product: IProduct): void {
     product.count--;
     this.decrement.emit();

@@ -1,7 +1,3 @@
-import { ReviewPipe } from './../../shared/pipes/ review.pipe';
-import { RatePipe } from './../../shared/pipes/rate.pipe';
-import { ImgUrlPipe } from './../../shared/pipes/img-url.pipe';
-import { StarRatingComponent } from './../../shared/components/star-rating/star-rating.component';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ProductCardComponent } from './product-card.component';
 import { productData } from '../../mocks/mock-product';
@@ -13,13 +9,7 @@ describe('[Moдуль 1]  Компонент рекомендуемого тов
   let goToProductSpy: jasmine.Spy;
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        ProductCardComponent,
-        StarRatingComponent,
-        ImgUrlPipe,
-        RatePipe,
-        ReviewPipe,
-      ],
+      declarations: [ProductCardComponent],
     });
     fixture = TestBed.createComponent(ProductCardComponent);
     component = fixture.componentInstance;

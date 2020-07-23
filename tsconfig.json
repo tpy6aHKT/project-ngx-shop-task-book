@@ -56,22 +56,22 @@
       "path": "./2-pipe/3-review-pipe/src/tsconfig.spec.json"
     },
     {
-      "path": "./3-directive/2-home-component/src/tsconfig.app.json"
+      "path": "./3-directive/1-home-component/src/tsconfig.app.json"
     },
     {
-      "path": "./3-directive/2-home-component/src/tsconfig.spec.json"
+      "path": "./3-directive/1-home-component/src/tsconfig.spec.json"
     },
     {
-      "path": "./3-directive/3-cart-component/src/tsconfig.app.json"
+      "path": "./3-directive/2-cart-component/src/tsconfig.app.json"
     },
     {
-      "path": "./3-directive/3-cart-component/src/tsconfig.spec.json"
+      "path": "./3-directive/2-cart-component/src/tsconfig.spec.json"
     },
     {
-      "path": "./3-directive/4-side-menu/src/tsconfig.app.json"
+      "path": "./3-directive/3-category-list-component/src/tsconfig.app.json"
     },
     {
-      "path": "./3-directive/4-side-menu/src/tsconfig.spec.json"
+      "path": "./3-directive/3-category-list-component/src/tsconfig.spec.json"
     },
     {
       "path": "./4-services/1-http-and-interceptors/src/tsconfig.app.json"

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { expProducts } from 'shared/mocks/products';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
 })
 // @ts-ignore
 export class AppComponent {
+  public product = expProducts[0];
+  public title = '1. Пайпы';
   public terminalMessage: string;
   public increment() {
     this.terminalMessage = 'Увеличение количества товара';
