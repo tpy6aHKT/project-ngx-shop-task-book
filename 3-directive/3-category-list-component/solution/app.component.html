@@ -73,6 +73,8 @@
   <div class="content-wrap">
     <div class="content-block">
       <ngx-shop-category-dropdown
+        [categories]="categories"
+        (selectedSubCategory)="currentCategory($event)"
       ></ngx-shop-category-dropdown>
     </div>
     <div class="terminal">

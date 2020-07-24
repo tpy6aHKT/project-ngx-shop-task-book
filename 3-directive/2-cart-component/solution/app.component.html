@@ -72,13 +72,12 @@
 
   <div class="content-wrap">
     <div class="content-block">
-      <ngx-shop-category-dropdown
-      ></ngx-shop-category-dropdown>
+      <ngx-shop-cart [cartProducts]="cartProducts"></ngx-shop-cart>
     </div>
     <div class="terminal">
       <pre>
-        <p *ngIf ='terminalMessage'>Вы выбрали подкатегорию:
-           {{ terminalMessage | json }}</p>
+        <p *ngIf ='terminalMessage'>Переход на компонент товара:
+           {{ terminalMessage | json}}</p>
       </pre>
     </div>
   </div>

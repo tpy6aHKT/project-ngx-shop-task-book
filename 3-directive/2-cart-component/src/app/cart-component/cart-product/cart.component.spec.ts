@@ -1,19 +1,21 @@
-// import { ShopCardComponent } from './shop-card.component';
-// import { productData } from './../../../../3-product-card/src/mocks/mock-product';
-
+import { ReviewPipe } from '../../../shared/review.pipe';
+import { RatePipe } from '../../../shared/rate.pipe';
+import { ImgUrlPipe } from '../../../shared/img-url.pipe';
+import { CartProductComponent } from './cart-product.component';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { expProducts } from 'shared/mocks/products';
 
 describe('[Moдуль 1]  Компонент товара в корзине', () => {
-  let fixture: ComponentFixture<ShopCardComponent>;
-  let component: ShopCardComponent;
+  let fixture: ComponentFixture<CartProductComponent>;
+  let component: CartProductComponent;
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ShopCardComponent],
+      declarations: [CartProductComponent, ImgUrlPipe, RatePipe, ReviewPipe],
     });
-    fixture = TestBed.createComponent(ShopCardComponent);
+    fixture = TestBed.createComponent(CartProductComponent);
     component = fixture.componentInstance;
-    (component as any).product = productData;
+    (component as any).product = expProducts[0];
     fixture.detectChanges();
   });
 
@@ -26,8 +28,8 @@ describe('[Moдуль 1]  Компонент товара в корзине', ()
   it('компонент должен иметь метод incrementProductInCart', () => {
     expect((component as any).incrementProductInCart).toBeTruthy();
   });
-  it('компонент должен иметь свойство products', () => {
-    expect((component as any).products).toBeTruthy();
+  it('компонент должен иметь свойство product', () => {
+    expect((component as any).product).toBeTruthy();
   });
 
   it('тег с селектором .product-desc должен правильно интерполировать title', () => {
@@ -35,7 +37,7 @@ describe('[Moдуль 1]  Компонент товара в корзине', ()
     expect(prodNameEL).toBeTruthy();
     const [{ nativeNode: prodNameNode }] = prodNameEL.childNodes;
     expect(prodNameNode.textContent.trim()).toEqual(
-      (component as any)?.products[0].name
+      (component as any)?.product.name
     );
   });
 
@@ -45,33 +47,34 @@ describe('[Moдуль 1]  Компонент товара в корзине', ()
     const {
       images: [{ url }],
       name,
-    } = (component as any)?.products[0];
+    } = (component as any)?.product;
     const [{ nativeNode: imgNode }] = imgWrapEl.childNodes;
     expect(imgNode.attributes.src.textContent).toEqual(url);
     expect(imgNode.attributes.alt.textContent).toEqual(name);
   });
   it('тег с селектором .price-text должен правильно интерполировать price', () => {
-    const { price } = (component as any)?.products[0];
+    const { price } = (component as any)?.product;
     const priceEl = fixture.debugElement.query(By.css('.price-text'));
     expect(price).toBeTruthy();
     const [{ nativeNode: priceNode }] = priceEl.childNodes;
     const priceFromNode = priceNode.textContent.trim();
-    expect(`${priceFromNode.slice(0, 3)}${priceFromNode.slice(4)}`).toEqual(
-      `€${price.toString()}.00`
+    expect(`${priceFromNode.slice(1, 2)}${priceFromNode.slice(3, 6)}`).toEqual(
+      price.toString()
     );
   });
-  it('тег с селектором .price  и .counter__value должен правильно интерполировать total', () => {
-    const { price } = (component as any)?.products[0];
-    const priceEl = fixture.debugElement.query(By.css('.price'));
+  it('тег с селектором .price-text  и .counter__value должен правильно интерполировать total', () => {
+    const { price, count } = (component as any)?.product;
+    const priceEl = fixture.debugElement.query(By.css('.price-text'));
     const counterEl = fixture.debugElement.query(By.css('.counter__value'));
     expect(price).toBeTruthy();
     const [{ nativeNode: priceNode }] = priceEl.childNodes;
     const [{ nativeNode: counterNode }] = counterEl.childNodes;
 
     const priceFromNode = priceNode.textContent.trim();
-    expect(
-      Number(`${priceFromNode.slice(0, 3)}${priceFromNode.slice(4)}`.slice(1)) /
-        counterNode.textContent.trim()
-    ).toEqual(Number(`${price.toString()}.00`));
+    const counterFromNode = counterNode.textContent.trim();
+    expect(`${priceFromNode.slice(1, 2)}${priceFromNode.slice(3, 6)}`).toEqual(
+      price.toString()
+    );
+    expect(Number(counterFromNode)).toEqual(count);
   });
 });

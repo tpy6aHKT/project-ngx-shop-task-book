@@ -212,6 +212,23 @@ svg.material-icons:not(:last-child)
 .card.card.highlight-card span
     margin-left: 60px
 
+.list-group-item h5
+  padding: 0 1rem 0 0
+  position: relative
+  font-weight: 400
+  font-size: 16px
+  line-height: 24px
+
+.list-group-item h5[aria-expanded="true"],
+.list-group-item:hover h5
+  color: #f7685b
+
+.list-group-item h5 > img
+  position: absolute
+  right: 0
+  top: 50%
+  transform: translate(0, -50%)
+  display: inline-block
 
 svg#rocket
     width: 80px
@@ -225,7 +242,8 @@ svg#rocket-smoke
     top: 10px
     right: 180px
     z-index: -10
-
+.list-group-item ul 
+    margin-top: 10px 
 a,
 a:visited,
 a:hover

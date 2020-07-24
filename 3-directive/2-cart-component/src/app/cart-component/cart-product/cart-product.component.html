@@ -1,39 +1,22 @@
 <div class="product-list-box -basket">
   <div class="inner-col description-col">
-    <div class="product-img pointer" (click)="redirectTo()">
-      <img
-        loading="auto"
-        [src]="product.images | imgUrl"
-        alt="product.name"
-        *ngIf="product.images"
-      />
+    <div class="product-img pointer">
+      <img loading="auto" *ngIf="product.images" />
     </div>
     <div class="product-desc">
-      <h4 class="col-title mb-2 pointer" (click)="redirectTo()">
-        {{ product.name }}
-      </h4>
+      <h4 class="col-title mb-2 pointer"></h4>
       <div class="rate">
-        <span class="rate-amount ml-2 d-inline-block d-md-none">{{
-          product.feedbacksCount | review
-        }}</span>
+        <span class="rate-amount ml-2 d-inline-block d-md-none"></span>
       </div>
-      <p class="rate-amount d-none d-md-block mt-1">
-        {{ product.feedbacksCount | review }}
-      </p>
+      <p class="rate-amount d-none d-md-block mt-1"></p>
       <p class="price-text mb-0 mt-2 d-inline-block d-md-none">
-        <strong>{{ product.price | currency: "EUR" }}</strong>
+        <strong></strong>
       </p>
     </div>
   </div>
   <div class="default-col inner-col flex-col justify-content-center">
     <div class="counter">
-      <button
-        *ngIf="!disabled"
-        type="button"
-        class="pointer"
-        tooltip="Уменьшить количество товара"
-        (click)="decrementProductInCart(product)"
-      >
+      <button *ngIf="!disabled" type="button" class="pointer">
         <img
           loading="auto"
           src="/assets/icons/icon-minus-circle-outlined.svg"
@@ -41,14 +24,8 @@
         />
       </button>
 
-      <span class="counter__value">{{ product.count }}</span>
-      <button
-        *ngIf="!disabled"
-        type="button"
-        class="pointer"
-        tooltip="Увеличить количество товара"
-        (click)="incrementProductInCart(product)"
-      >
+      <span class="counter__value"></span>
+      <button *ngIf="!disabled" type="button" class="pointer">
         <img
           loading="auto"
           src="/assets/icons/icon-plus-circle-outlined.svg"
@@ -58,8 +35,6 @@
     </div>
   </div>
   <div class="default-col inner-col flex-col justify-content-center">
-    <h4 class="mb-0">
-      {{ product?.price * product?.count | currency: "EUR" }}
-    </h4>
+    <h4 class="mb-0"></h4>
   </div>
 </div>

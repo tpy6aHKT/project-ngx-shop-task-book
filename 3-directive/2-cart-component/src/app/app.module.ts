@@ -5,7 +5,6 @@ import { ImgUrlPipe } from '../shared/img-url.pipe';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CartComponent } from './cart-component/cart.component';
-
 import { AppComponent } from './app.component';
 
 @NgModule({
