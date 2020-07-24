@@ -20,10 +20,10 @@
       "path": "./1-components/2-footer/src/tsconfig.spec.json"
     },
     {
-      "path": "./1-components/3-product-card/src/tsconfig.app.json"
+      "path": "./1-components/3-category-product-card/src/tsconfig.app.json"
     },
     {
-      "path": "./1-components/3-product-card/src/tsconfig.spec.json"
+      "path": "./1-components/3-category-product-card/src/tsconfig.spec.json"
     },
     {
       "path": "./1-components/4-suggested-product/src/tsconfig.app.json"
@@ -32,46 +32,46 @@
       "path": "./1-components/4-suggested-product/src/tsconfig.spec.json"
     },
     {
-      "path": "./2-pipe/1-common-pipe/src/tsconfig.app.json"
+      "path": "./1-components/5-header/src/tsconfig.app.json"
     },
     {
-      "path": "./2-pipe/1-common-pipe/src/tsconfig.spec.json"
+      "path": "./1-components/5-header/src/tsconfig.spec.json"
     },
     {
-      "path": "./2-pipe/2-image-url-pipe/src/tsconfig.app.json"
+      "path": "./2-pipe/1-image-url-pipe/src/tsconfig.app.json"
     },
     {
-      "path": "./2-pipe/2-image-url-pipe/src/tsconfig.spec.json"
+      "path": "./2-pipe/1-image-url-pipe/src/tsconfig.spec.json"
     },
     {
-      "path": "./2-pipe/3-rate-pipe/src/tsconfig.app.json"
+      "path": "./2-pipe/2-rate-pipe/src/tsconfig.app.json"
     },
     {
-      "path": "./2-pipe/3-rate-pipe/src/tsconfig.spec.json"
+      "path": "./2-pipe/2-rate-pipe/src/tsconfig.spec.json"
     },
     {
-      "path": "./2-pipe/4-review-pipe/src/tsconfig.app.json"
+      "path": "./2-pipe/3-review-pipe/src/tsconfig.app.json"
     },
     {
-      "path": "./2-pipe/4-review-pipe/src/tsconfig.spec.json"
+      "path": "./2-pipe/3-review-pipe/src/tsconfig.spec.json"
     },
     {
-      "path": "./3-directive/2-home-component/src/tsconfig.app.json"
+      "path": "./3-directive/1-home-component/src/tsconfig.app.json"
     },
     {
-      "path": "./3-directive/2-home-component/src/tsconfig.spec.json"
+      "path": "./3-directive/1-home-component/src/tsconfig.spec.json"
     },
     {
-      "path": "./3-directive/3-cart-component/src/tsconfig.app.json"
+      "path": "./3-directive/2-cart-component/src/tsconfig.app.json"
     },
     {
-      "path": "./3-directive/3-cart-component/src/tsconfig.spec.json"
+      "path": "./3-directive/2-cart-component/src/tsconfig.spec.json"
     },
     {
-      "path": "./3-directive/4-side-menu/src/tsconfig.app.json"
+      "path": "./3-directive/3-category-list-component/src/tsconfig.app.json"
     },
     {
-      "path": "./3-directive/4-side-menu/src/tsconfig.spec.json"
+      "path": "./3-directive/3-category-list-component/src/tsconfig.spec.json"
     },
     {
       "path": "./4-services/1-http-and-interceptors/src/tsconfig.app.json"

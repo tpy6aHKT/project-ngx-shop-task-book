@@ -1,6 +1,6 @@
 import { IProduct } from '../../../../../shared/interfaces/product.interface';
 import { expProducts } from '../../../../../shared/mocks/products';
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-shop-card',
@@ -9,18 +9,26 @@ import { Component } from '@angular/core';
 // @ts-ignore
 export class ShopCardComponent {
   constructor() {}
+  @Output()
+  public decrement: EventEmitter<void> = new EventEmitter<void>();
+  @Output()
+  public remove: EventEmitter<void> = new EventEmitter<void>();
+  @Output()
+  public increment: EventEmitter<void> = new EventEmitter<void>();
 
-  public products: IProduct[] = expProducts;
+  public product: IProduct = expProducts[0];
 
   public decrementProductInCart(product: IProduct): void {
     product.count--;
+    this.decrement.emit();
   }
 
-  public removeProductFromCart(products: IProduct[], index: number): void {
-    products.splice(index, 1);
+  public removeProductFromCart(): void {
+    this.remove.emit();
   }
 
   public incrementProductInCart(product: IProduct): void {
     product.count++;
+    this.increment.emit();
   }
 }
