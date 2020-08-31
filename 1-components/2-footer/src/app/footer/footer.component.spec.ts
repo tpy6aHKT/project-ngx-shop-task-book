@@ -11,18 +11,20 @@ describe('[Moдуль 1] Футтер компонент', () => {
     });
     fixture = TestBed.createComponent(FooterComponent);
     component = fixture.componentInstance;
-    (component as any).author = 'Author';
     fixture.detectChanges();
   });
-  it('тег с селектором .footer-menu должен правильно интерполировать значение', () => {
-    const author = (component as any)?.author;
-    const currentYear = (component as any)?.currentYear;
-
-    const el = fixture.debugElement.query(By.css('.footer-title'));
-    expect(el).toBeTruthy();
-    const [{ nativeNode: priceNode }] = el.childNodes;
-    const current = Number(priceNode.textContent.split(',')[0].split(' ')[2]);
-    expect(current).toEqual(currentYear);
-    expect(priceNode.textContent.split(',')[1].slice(1).trim()).toEqual(author);
+  it('Компонент должне иметь свойство author cо значенимем Angular Course', () => {
+    expect((component as any)?.author).toEqual('Angular Course');
+  });
+  it('Компонент должне иметь свойство currentYear cо значенимем текущего года', () => {
+    expect((component as any)?.currentYear).toEqual(new Date().getFullYear());
+  });
+  it('тег с селектором .footer-title должне инерполировать свойства author и currentYear', () => {
+    const {currentYear, author} = component as any;
+    const titleEl = fixture.debugElement.query(By.css('.footer-title'));
+    const titleValue = titleEl.nativeElement.textContent.trim();
+    expect(titleValue).toEqual(
+      `© ${currentYear}, ${author}`
+    );
   });
 });

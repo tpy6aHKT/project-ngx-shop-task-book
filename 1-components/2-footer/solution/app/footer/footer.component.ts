@@ -1,4 +1,3 @@
-import { environment } from 'src/environments/environment';
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
@@ -6,7 +5,8 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   templateUrl: './footer.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
+// @ts-ignore
 export class FooterComponent {
-  public author = 'Author';
+  public author = 'Angular Course';
   public currentYear: number = new Date().getFullYear();
 }
