@@ -14,6 +14,9 @@ module.exports = function (config) {
     ],
     client: {
       clearContext: false, // leave Jasmine Spec Runner output visible in browser
+      jasmine: {
+        random: false
+      }
     },
     coverageIstanbulReporter: {
       dir: require("path").join(__dirname, "../coverage/footer"),
@@ -25,10 +28,8 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    // browsers: ["ChromeHeadless"],
-    browsers: ["Chrome"],
-    // singleRun: true,
-    singleRun: false,
+    browsers: ["ChromeHeadless"],
+    singleRun: true,
     restartOnFileChange: true,
   });
 };

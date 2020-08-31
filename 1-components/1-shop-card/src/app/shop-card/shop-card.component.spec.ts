@@ -1,10 +1,10 @@
 import { ShopCardComponent } from './shop-card.component';
-import { productData } from './../../../../3-product-card/src/mocks/mock-product';
-
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { EventEmitter } from '@angular/core';
+import { cartProduct } from '../../../../../shared/mocks/1-components/cart-product';
 
-describe('[Moдуль 1]  Компонент товара в корзине', () => {
+describe('[Moдуль 1 -  Компонент товара в корзин]', () => {
   let fixture: ComponentFixture<ShopCardComponent>;
   let component: ShopCardComponent;
   beforeEach(() => {
@@ -13,7 +13,6 @@ describe('[Moдуль 1]  Компонент товара в корзине', ()
     });
     fixture = TestBed.createComponent(ShopCardComponent);
     component = fixture.componentInstance;
-    (component as any).product = productData;
     fixture.detectChanges();
   });
 
@@ -26,52 +25,111 @@ describe('[Moдуль 1]  Компонент товара в корзине', ()
   it('компонент должен иметь метод incrementProductInCart', () => {
     expect((component as any).incrementProductInCart).toBeTruthy();
   });
-  it('компонент должен иметь свойство products', () => {
-    expect((component as any).products).toBeTruthy();
+  it('компонент должен иметь свойство product c значением {}', () => {
+    expect((component as any).product).toBeDefined();
   });
 
-  it('тег с селектором .product-desc должен правильно интерполировать title', () => {
-    const prodNameEL = fixture.debugElement.query(By.css('.product-desc'));
-    expect(prodNameEL).toBeTruthy();
-    const [{ nativeNode: prodNameNode }] = prodNameEL.childNodes;
-    expect(prodNameNode.textContent.trim()).toEqual(
-      (component as any)?.products[0].name
-    );
+  it('компонент должен иметь cобственное событие increment ', () => {
+    expect((component as any).increment).toBeTruthy();
+    expect((component as any).increment).toBeInstanceOf(EventEmitter);
+  });
+  it('компонент должен иметь cобственное событие decrement ', () => {
+    expect((component as any).decrement).toBeTruthy();
+    expect((component as any).decrement).toBeInstanceOf(EventEmitter);
+  });
+  it('компонент должен иметь  cобственное событие remove', () => {
+    expect((component as any).remove).toBeTruthy();
+    expect((component as any).remove).toBeInstanceOf(EventEmitter);
   });
 
-  it('тег img должен иметь правильное связывание свойств src и alt', () => {
-    const imgWrapEl = fixture.debugElement.query(By.css('.product-img'));
-    expect(imgWrapEl).toBeTruthy();
+  it('компонент должен иметь cобственное событие increment ', () => {
+    expect((component as any).increment).toBeTruthy();
+    expect((component as any).increment).toBeInstanceOf(EventEmitter);
+  });
+
+
+  it('при нажатии на кнопку с селектором .increment должен вызываться метод  incrementProductInCart и срабатывать собстевнное событие increment', () => {
+    spyOn(component as any, 'incrementProductInCart').and.callThrough();
+    spyOn((component as any)?.increment, 'emit').and.callThrough();
+    const incrementButton = fixture.debugElement.query(By.css('button.increment'));
+    incrementButton.triggerEventHandler('click', null);
+    expect((component as any)?.incrementProductInCart).toHaveBeenCalledTimes(1);
+    expect((component as any)?.increment.emit).toHaveBeenCalledTimes(1);
+  });
+
+  it('при нажатии на кнопку с селектором .decrement должен вызываться метод  decrementProductInCart и срабатывать собстевнное событие decrement', () => {
+    spyOn(component as any, 'decrementProductInCart').and.callThrough();
+    spyOn((component as any)?.decrement, 'emit').and.callThrough();
+    const incrementButton = fixture.debugElement.query(By.css('button.decrement'));
+    incrementButton.triggerEventHandler('click', null);
+    expect((component as any)?.decrementProductInCart).toHaveBeenCalledTimes(1);
+    expect((component as any)?.decrement.emit).toHaveBeenCalledTimes(1);
+  });
+
+  it('при нажатии на иконку с селектором .remove должен вызываться метод removeProductFromCart и срабатывать собстевнное событие remove',
+    () => {
+      spyOn(component as any, 'removeProductFromCart').and.callThrough();
+      spyOn((component as any)?.remove, 'emit').and.callThrough();
+      const incrementButton = fixture.debugElement.query(By.css('i.remove'));
+      incrementButton.triggerEventHandler('click', null);
+      expect((component as any)?.removeProductFromCart).toHaveBeenCalledTimes(1);
+      expect((component as any)?.remove.emit).toHaveBeenCalledTimes(1);
+    });
+
+  it('тег c селекторор [.product-img img] должен иметь правильное связывание свойств src и alt', () => {
+    (component as any).product = cartProduct;
+    fixture.detectChanges();
+    const imgEl = fixture.debugElement.query(By.css('.product-img img'));
+    expect(imgEl).toBeTruthy();
     const {
-      images: [{ url }],
+      image,
       name,
-    } = (component as any)?.products[0];
-    const [{ nativeNode: imgNode }] = imgWrapEl.childNodes;
-    expect(imgNode.attributes.src.textContent).toEqual(url);
-    expect(imgNode.attributes.alt.textContent).toEqual(name);
+    } = (component as any)?.product;
+    expect(imgEl.attributes.src).toEqual(image);
+    expect(imgEl.attributes.alt).toEqual(name);
   });
-  it('тег с селектором .price-text должен правильно интерполировать price', () => {
-    const { price } = (component as any)?.products[0];
-    const priceEl = fixture.debugElement.query(By.css('.price-text'));
-    expect(price).toBeTruthy();
-    const [{ nativeNode: priceNode }] = priceEl.childNodes;
-    const priceFromNode = priceNode.textContent.trim();
-    expect(`${priceFromNode.slice(0, 3)}${priceFromNode.slice(4)}`).toEqual(
-      `€${price.toString()}.00`
+
+  it('тег с селектором .product-desc h4.col-title должен правильно интерполировать свойство name продукта', () => {
+    (component as any).product = cartProduct;
+    fixture.detectChanges();
+    const prodNameEL = fixture.debugElement.query(By.css('.product-desc h4.col-title'));
+    expect(prodNameEL).toBeTruthy();
+    expect(prodNameEL.nativeElement.textContent.trim()).toEqual(
+      (component as any)?.product.name
     );
   });
-  it('тег с селектором .price  и .counter__value должен правильно интерполировать total', () => {
-    const { price } = (component as any)?.products[0];
-    const priceEl = fixture.debugElement.query(By.css('.price'));
-    const counterEl = fixture.debugElement.query(By.css('.counter__value'));
-    expect(price).toBeTruthy();
-    const [{ nativeNode: priceNode }] = priceEl.childNodes;
-    const [{ nativeNode: counterNode }] = counterEl.childNodes;
 
-    const priceFromNode = priceNode.textContent.trim();
-    expect(
-      Number(`${priceFromNode.slice(0, 3)}${priceFromNode.slice(4)}`.slice(1)) /
-        counterNode.textContent.trim()
-    ).toEqual(Number(`${price.toString()}.00`));
+  it('тег с селектором .product-desc .price-text strong должен правильно интерполировать  свойство price продукта', () => {
+    (component as any).product = cartProduct;
+    fixture.detectChanges();
+    const {price} = (component as any)?.product;
+    const priceEl = fixture.debugElement.query(By.css('.product-desc .price-text strong'));
+    expect(price).toBeTruthy();
+    const priceValue = priceEl.nativeElement.textContent.trim();
+    expect(priceValue).toEqual(
+      `€${price.toString()}`
+    );
   });
+  it('тег с селектором .counter__value должен правильно интерполировать свойство count продукта', () => {
+    (component as any).product = cartProduct;
+    fixture.detectChanges();
+    const {count} = (component as any)?.product;
+    const counterEl = fixture.debugElement.query(By.css('.counter__value'));
+    expect(count).toBeTruthy();
+    const countValue = counterEl.nativeElement.textContent.trim();
+    expect(countValue.toString()).toEqual(count.toString());
+  });
+
+  it('тег с селектором .price должен правильно интерполировать результат перемножения cвойств price и count products', () => {
+    (component as any).product = cartProduct;
+    fixture.detectChanges();
+    const {price, count} = (component as any)?.product;
+    const totalEl = fixture.debugElement.query(By.css('.price'));
+    expect(price).toBeTruthy();
+    expect(count).toBeTruthy();
+    const totalValue = totalEl.nativeElement.textContent.trim();
+    expect(totalValue.toString()).toEqual(`€${(price * count)}`);
+  });
+
+
 });

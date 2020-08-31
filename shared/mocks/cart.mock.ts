@@ -1,4 +1,4 @@
-export const cartMock = [
+export const cartProducts = [
   {
     _id: 'ustanovocnyj-komplekt-swat-pac-f4',
     feedbacksCount: 4,
@@ -49,6 +49,7 @@ export const cartMock = [
     ],
     name: 'Установочный комплект Swat PAC-F4',
     price: 34,
+    count: 1,
     rating: 4.25,
     status: 1,
   },
@@ -74,6 +75,7 @@ export const cartMock = [
     price: 24,
     rating: 3.6666666666666665,
     status: 1,
+    count: 2,
   },
   {
     _id: 'obektiv-sigma-16mm-f14-dc-dn-contemporary',
@@ -133,6 +135,7 @@ export const cartMock = [
     price: 443,
     rating: 4,
     status: 1,
+    count: 2,
   },
   {
     _id: 'gps-navigator-dexp-auriga-ds430-navitel',
@@ -192,6 +195,7 @@ export const cartMock = [
     price: 34,
     rating: 5,
     status: 1,
+    count: 2,
   },
   {
     _id: 'igra-resident-evil-7-biohazard-ps4',
@@ -239,5 +243,6 @@ export const cartMock = [
     price: 21,
     rating: 5,
     status: 1,
+    count: 2,
   },
 ];
