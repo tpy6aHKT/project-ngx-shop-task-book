@@ -5,7 +5,7 @@ import {
   Output,
   EventEmitter,
 } from '@angular/core';
-import { IProduct } from '../../../../../shared/mocks/1-components/product';
+import { IProduct } from '../../../../shared/mocks/1-components/product';
 
 @Component({
   selector: 'ngx-shop-content-product',

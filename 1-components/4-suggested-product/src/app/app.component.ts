@@ -1,5 +1,5 @@
-import { productData } from '../mocks/mock-product';
 import { Component } from '@angular/core';
+import { oneProduct } from '../../../../shared/mocks/1-components/product';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   public terminalMessage: string;
   public title = 'Suggested product component';
-  public product = productData;
-  public redirectTo() {
+  public product = oneProduct;
+
+  public goToProduct() {
     this.terminalMessage = 'Переход на компонент продукта';
   }
 }

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ICartProduct } from '../../../../../shared/mocks/1-components/cart-product';
+import { ICartProduct } from '../../../../shared/mocks/1-components/cart-product';
 
 @Component({
   selector: 'app-shop-card',
