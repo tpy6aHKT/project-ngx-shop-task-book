@@ -5,5 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  title = '1. Интерполяция и связывание.footer';
+  title = '1. Интерполяция и связывание. footer';
 }

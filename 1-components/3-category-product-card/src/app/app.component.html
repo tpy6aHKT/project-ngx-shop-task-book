@@ -72,7 +72,11 @@
 
   <div class="content-wrap">
     <div class="content-block">
-      <ngx-shop-content-product></ngx-shop-content-product>
+      <ngx-shop-content-product
+        [product]="product"
+        (addToCart)="addToCart()"
+        (goToProduct)="goToProduct()"
+      ></ngx-shop-content-product>
     </div>
     <div class="terminal">
       <pre>

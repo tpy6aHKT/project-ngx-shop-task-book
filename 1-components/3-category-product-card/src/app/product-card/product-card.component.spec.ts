@@ -2,91 +2,114 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { EventEmitter } from '@angular/core';
 import { CategoryProductComponent } from './product-card.component';
-import { productData } from '../../mocks/mock-product';
+import { oneProduct } from '../../../../../shared/mocks/1-components/product';
 
-describe('[Moдуль 1]  Компонент товара', () => {
+describe('[Moдуль 1 - Компонент товара]', () => {
   let fixture: ComponentFixture<CategoryProductComponent>;
   let component: CategoryProductComponent;
-  let toCartSpy: jasmine.Spy;
-  let goToProductSpy: jasmine.Spy;
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [CategoryProductComponent],
     });
     fixture = TestBed.createComponent(CategoryProductComponent);
     component = fixture.componentInstance;
-    (component as any).product = productData;
-    fixture.detectChanges();
-    spyOn(component as any, 'addToBasket').and.callThrough();
-    toCartSpy = spyOn((component as any).toCart, 'emit').and.callThrough();
-    spyOn(component as any, 'redirectTo').and.callThrough();
-    goToProductSpy = spyOn(
-      (component as any).goToProduct,
-      'emit'
-    ).and.callThrough();
   });
 
-  it('компонент должен иметь метод addToBasket и Output свойства toCart', () => {
-    expect((component as any).toCart).toBeTruthy();
+
+  it('компонент должен иметь метод addToBasket ', () => {
     expect((component as any).addToBasket).toBeTruthy();
   });
-  it('компонент должен иметь метод redirectTo и Output свойства goToProduct', () => {
-    expect((component as any).goToProduct).toBeTruthy();
+
+  it('компонент должен иметь метод redirectTo ', () => {
     expect((component as any).redirectTo).toBeTruthy();
   });
 
-  it('компонент должен иметь свойство toCart и декоратор Output этого свойства', () => {
-    expect(component.hasOwnProperty('toCart')).toBeTruthy();
-    expect((component as any)?.toCart).toBeInstanceOf(EventEmitter);
-  });
-  it('компонент должен иметь свойство product и декоратор Input этого свойства', () => {
-    expect(component.hasOwnProperty('product')).toBeTruthy();
-  });
-  it('клик на кнопку "Добавить в корзину" должен вызывать метод addToBasket()', () => {
-    const icon = fixture.debugElement.query(By.css('.btn'));
-    icon.triggerEventHandler('click', null);
-    expect((component as any).addToBasket).toHaveBeenCalledBefore(toCartSpy);
-    expect((component as any).toCart.emit).toHaveBeenCalled();
+  it('компонент должен иметь свойство product c значением {}', () => {
+    expect((component as any).product).toBeDefined();
   });
 
-  it('тег с селектором .product-name должен правильно интерполировать имя товара', () => {
-    const titleEL = fixture.debugElement.query(By.css('.product-name'));
-    expect(titleEL).toBeTruthy();
-    const { name } = (component as any)?.product;
-    const [{ nativeNode: titleNode }] = titleEL.childNodes;
-    expect(titleNode.textContent.trim()).toEqual(name);
+  it('компонент должен иметь cобственное событие addToCart ', () => {
+    expect((component as any).addToCart).toBeTruthy();
+    expect((component as any).addToCart).toBeInstanceOf(EventEmitter);
   });
-  it('тег img должен иметь правильное связывание свойств src через пайп и alt', () => {
-    const imgEL = fixture.debugElement.query(By.css('.img'));
-    expect(imgEL).toBeTruthy();
-    const { name } = (component as any)?.product;
-    const src = (component as any)?.product.images[0].url;
-    expect(imgEL.attributes.src).toEqual(src);
-    expect(imgEL.attributes.alt).toEqual(name);
+  it('компонент должен иметь cобственное событие goToProduct ', () => {
+    expect((component as any).goToProduct).toBeTruthy();
+    expect((component as any).goToProduct).toBeInstanceOf(EventEmitter);
   });
 
-  it('тег с селектором .product-name должен правильно интерполировать имя товара', () => {
-    const titleEL = fixture.debugElement.query(By.css('.product-name'));
-    expect(titleEL).toBeTruthy();
-    const { name } = (component as any)?.product;
-    const [{ nativeNode: titleNode }] = titleEL.childNodes;
-    expect(titleNode.textContent.trim()).toEqual(name);
+  it('при нажатии на кнопку с селектором .add-to-cart должен вызываться метод  addToBasket и срабатывать собстевнное событие addToCart',
+    () => {
+      spyOn(component as any, 'addToBasket').and.callThrough();
+      spyOn((component as any)?.addToCart, 'emit').and.callThrough();
+      const incrementButton = fixture.debugElement.query(By.css('button.add-to-cart'));
+      incrementButton.triggerEventHandler('click', null);
+      expect((component as any)?.addToBasket).toHaveBeenCalledTimes(1);
+      expect((component as any)?.addToCart.emit).toHaveBeenCalledTimes(1);
+    });
+
+
+  it('при нажатии на блок с селектором .go-to-product должен вызываться метод  redirectTo и срабатывать собстевнное событие goToProduct',
+    () => {
+      spyOn(component as any, 'redirectTo').and.callThrough();
+      spyOn((component as any)?.goToProduct, 'emit').and.callThrough();
+      const incrementButton = fixture.debugElement.query(By.css('div.go-to-product'));
+      incrementButton.triggerEventHandler('click', null);
+      expect((component as any)?.redirectTo).toHaveBeenCalledTimes(1);
+      expect((component as any)?.goToProduct.emit).toHaveBeenCalledTimes(1);
+    });
+
+  it('тег c селекторор [.product-img img] должен иметь правильное связывание свойств src и alt', () => {
+    (component as any).product = oneProduct;
+    fixture.detectChanges();
+    const imgEl = fixture.debugElement.query(By.css('.product-img img'));
+    expect(imgEl).toBeTruthy();
+    const {
+      image,
+      name,
+    } = (component as any)?.product;
+    console.log((component as any)?.product);
+    expect(imgEl.attributes.src).toEqual(image);
+    expect(imgEl.attributes.alt).toEqual(name);
   });
 
-  it('тег с селектором .rate-amount должен правильно интерполировать рейтинг товара', () => {
-    const titleEL = fixture.debugElement.query(By.css('.rate-amount'));
-    expect(titleEL).toBeTruthy();
-    const { feedbacksCount } = (component as any)?.product;
-    const [{ nativeNode: titleNode }] = titleEL.childNodes;
-    expect(Number(titleNode.textContent.slice(0, length - 8).trim())).toEqual(
-      feedbacksCount
+  it('тег с селектором .product-desc .product-name  должен правильно интерполировать свойство name продукта', () => {
+    (component as any).product = oneProduct;
+    fixture.detectChanges();
+    const prodNameEL = fixture.debugElement.query(By.css('.product-desc .product-name'));
+    expect(prodNameEL).toBeTruthy();
+    expect(prodNameEL.nativeElement.textContent.trim()).toEqual(
+      (component as any)?.product.name
     );
   });
-  it('тег с селектором .price-text должен правильно интерполировать цену товара', () => {
-    const titleEL = fixture.debugElement.query(By.css('.price-text'));
-    expect(titleEL).toBeTruthy();
-    const { price } = (component as any)?.product;
-    const [{ nativeNode: titleNode }] = titleEL.childNodes;
-    expect(Number(titleNode.textContent.slice(1).trim())).toEqual(price);
+
+  it('тег с селектором .product-desc .rate-amount  должен правильно интерполировать свойство feedbacksCount продукта', () => {
+    (component as any).product = oneProduct;
+    fixture.detectChanges();
+    const prodNameEL = fixture.debugElement.query(By.css('.product-desc .rate-amount'));
+    expect(prodNameEL).toBeTruthy();
+    expect(prodNameEL.nativeElement.textContent.trim()).toEqual(
+      `${(component as any)?.product.feedbacksCount} отзыва`
+    );
   });
+
+  it('тег с селектором .product-desc .price-text  должен правильно интерполировать свойство price продукта', () => {
+    (component as any).product = oneProduct;
+    fixture.detectChanges();
+    const prodNameEL = fixture.debugElement.query(By.css('.product-desc .price-text'));
+    expect(prodNameEL).toBeTruthy();
+    expect(prodNameEL.nativeElement.textContent.trim()).toEqual(
+      `${(component as any)?.product.price}€`
+    );
+  });
+
+  it('тег с селектором .actions .price-text  должен правильно интерполировать свойство price продукта', () => {
+    (component as any).product = oneProduct;
+    fixture.detectChanges();
+    const prodNameEL = fixture.debugElement.query(By.css('.actions .price-text'));
+    expect(prodNameEL).toBeTruthy();
+    expect(prodNameEL.nativeElement.textContent.trim()).toEqual(
+      `${(component as any)?.product.price}€`
+    );
+  });
+
 });

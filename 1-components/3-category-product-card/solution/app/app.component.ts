@@ -1,18 +1,19 @@
 import { Component } from '@angular/core';
-import { productData } from '../mocks/mock-product';
+import { oneProduct } from '../../../../shared/mocks/1-components/product';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
 })
+// @ts-ignore
 export class AppComponent {
-  public productData = productData;
+  public product = oneProduct;
   public terminalMessage: string;
   public title = '1. Интерполяция и связывание';
-  public toCart(event: string) {
-    this.terminalMessage = event;
+  public addToCart() {
+    this.terminalMessage = 'товар добавлен в карзину';
   }
-  public goToProduct(event: string) {
-    this.terminalMessage = event;
+  public goToProduct() {
+    this.terminalMessage = 'переход на страницу продукта';
   }
 }

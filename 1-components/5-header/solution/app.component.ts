@@ -1,15 +1,15 @@
-import { productData } from '../mocks/mock-product';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
 })
+// @ts-ignore
 export class AppComponent {
   public terminalMessage: string;
-  public title = 'Suggested product component';
-  public product = productData;
-  public redirectTo() {
-    this.terminalMessage = 'Переход на компонент продукта';
+  public title = '1. Интерполяция и связывание. footer';
+
+  public goToBasket() {
+    this.terminalMessage = 'Переход на страницу карзины';
   }
 }

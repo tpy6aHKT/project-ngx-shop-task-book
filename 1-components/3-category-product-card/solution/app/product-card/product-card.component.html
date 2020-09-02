@@ -1,8 +1,8 @@
 <div class="product-list-box">
-  <div (click)="redirectTo()" class="inner-col description-col">
+  <div (click)="redirectTo()" class="inner-col description-col go-to-product">
     <div class="product-img pointer">
       <img
-        [src]="(product?.images)[0].url"
+        [src]="product?.image"
         loading="auto"
         class="img"
         width="80"
@@ -24,16 +24,17 @@
     </div>
   </div>
 
-  <div class="default-col inner-col price-col">
+  <div class="default-col inner-col price-col actions">
     <h4 class="col-title price-text mb-2">{{ product?.price }}€</h4>
     <div class="button-wrap">
       <button
         (click)="addToBasket()"
         type="button"
-        class="btn btn-outline-primary"
+        class="btn btn-outline-primary add-to-cart"
       >
         Добавить в корзину
       </button>
     </div>
   </div>
 </div>
+
