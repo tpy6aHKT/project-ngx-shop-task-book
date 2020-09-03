@@ -6,7 +6,7 @@
 
   Для успешного выполнения  вам необходимо ознакомиться с документацией(README в папке модуля).
 
-  ![Demo](1-components/1-shop-card/src/assets/images/demo.png)
+  ![Demo](src/assets/images/demo.png)
 
   Не меняйте структуру html и стили компонетов
 
