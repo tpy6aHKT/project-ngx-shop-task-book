@@ -19,9 +19,6 @@ describe('[Moдуль 1 -  Компонент товара в корзин]', ()
   it('компонент должен иметь метод decrementProductInCart ', () => {
     expect((component as any).decrementProductInCart).toBeTruthy();
   });
-  it('компонент должен иметь метод removeProductFromCart', () => {
-    expect((component as any).removeProductFromCart).toBeTruthy();
-  });
   it('компонент должен иметь метод incrementProductInCart', () => {
     expect((component as any).incrementProductInCart).toBeTruthy();
   });
@@ -36,10 +33,6 @@ describe('[Moдуль 1 -  Компонент товара в корзин]', ()
   it('компонент должен иметь cобственное событие decrement ', () => {
     expect((component as any).decrement).toBeTruthy();
     expect((component as any).decrement).toBeInstanceOf(EventEmitter);
-  });
-  it('компонент должен иметь  cобственное событие remove', () => {
-    expect((component as any).remove).toBeTruthy();
-    expect((component as any).remove).toBeInstanceOf(EventEmitter);
   });
 
   it('компонент должен иметь cобственное событие increment ', () => {
@@ -66,16 +59,6 @@ describe('[Moдуль 1 -  Компонент товара в корзин]', ()
     expect((component as any)?.decrement.emit).toHaveBeenCalledTimes(1);
   });
 
-  it('при нажатии на иконку с селектором .remove должен вызываться метод removeProductFromCart и срабатывать собстевнное событие remove',
-    () => {
-      spyOn(component as any, 'removeProductFromCart').and.callThrough();
-      spyOn((component as any)?.remove, 'emit').and.callThrough();
-      const incrementButton = fixture.debugElement.query(By.css('i.remove'));
-      incrementButton.triggerEventHandler('click', null);
-      expect((component as any)?.removeProductFromCart).toHaveBeenCalledTimes(1);
-      expect((component as any)?.remove.emit).toHaveBeenCalledTimes(1);
-    });
-
   it('тег c селекторор [.product-img img] должен иметь правильное связывание свойств src и alt', () => {
     (component as any).product = cartProduct;
     fixture.detectChanges();
@@ -96,6 +79,26 @@ describe('[Moдуль 1 -  Компонент товара в корзин]', ()
     expect(prodNameEL).toBeTruthy();
     expect(prodNameEL.nativeElement.textContent.trim()).toEqual(
       (component as any)?.product.name
+    );
+  });
+
+  it('тег с селектором .product-desc p.rate-amount  должен правильно интерполировать свойство name продукта', () => {
+    (component as any).product = cartProduct;
+    fixture.detectChanges();
+    const prodNameEL = fixture.debugElement.query(By.css('.product-desc p.rate-amount'));
+    expect(prodNameEL).toBeTruthy();
+    expect(prodNameEL.nativeElement.textContent.trim()).toEqual(
+      `${(component as any)?.product.feedbacksCount} отзывов`
+    );
+  });
+
+  it('тег с селектором .product-desc span.rate-amount  должен правильно интерполировать свойство name продукта', () => {
+    (component as any).product = cartProduct;
+    fixture.detectChanges();
+    const prodNameEL = fixture.debugElement.query(By.css('.product-desc span.rate-amount'));
+    expect(prodNameEL).toBeTruthy();
+    expect(prodNameEL.nativeElement.textContent.trim()).toEqual(
+      `${(component as any)?.product.feedbacksCount} отзывов`
     );
   });
 

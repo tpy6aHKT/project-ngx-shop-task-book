@@ -17,9 +17,6 @@ export class ShopCardComponent {
   @Output()
   // @ts-ignore
   public decrement = new EventEmitter();
-  @Output()
-  // @ts-ignore
-  public remove = new EventEmitter();
 
   public incrementProductInCart(): void {
     this.increment.emit();
@@ -27,10 +24,6 @@ export class ShopCardComponent {
 
   public decrementProductInCart(): void {
     this.decrement.emit();
-  }
-
-  public removeProductFromCart(): void {
-    this.remove.emit();
   }
 
 }

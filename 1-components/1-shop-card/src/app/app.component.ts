@@ -14,10 +14,6 @@ export class AppComponent {
     this.product.count++;
   }
 
-  public remove() {
-    this.terminalMessage = 'Убрать товара из корзины';
-  }
-
   public decrement() {
     this.terminalMessage = 'Уменьшение количества товара';
     if (this.product.count === 1) {
