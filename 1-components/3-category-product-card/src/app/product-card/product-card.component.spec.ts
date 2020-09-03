@@ -67,7 +67,6 @@ describe('[Moдуль 1 - Компонент товара]', () => {
       image,
       name,
     } = (component as any)?.product;
-    console.log((component as any)?.product);
     expect(imgEl.attributes.src).toEqual(image);
     expect(imgEl.attributes.alt).toEqual(name);
   });

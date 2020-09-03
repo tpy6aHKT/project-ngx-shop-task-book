@@ -2,14 +2,15 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ProductCardComponent } from './product-card.component';
 import { By } from '@angular/platform-browser';
 import { EventEmitter } from '@angular/core';
-import { oneProduct } from '../../../../../shared/mocks/1-components/product';
+import { oneProduct } from '../../../../../shared/mocks/2-pipes/product';
+import { ImgUrlPipe } from '../pipes/img-url.pipe';
 
-describe('[Moдуль 1]  Компонент рекомендуемого товара', () => {
+describe('[Moдуль 2]  Компонент продукта', () => {
   let fixture: ComponentFixture<ProductCardComponent>;
   let component: ProductCardComponent;
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ProductCardComponent],
+      declarations: [ProductCardComponent, ImgUrlPipe],
     });
     fixture = TestBed.createComponent(ProductCardComponent);
     component = fixture.componentInstance;
@@ -45,10 +46,10 @@ describe('[Moдуль 1]  Компонент рекомендуемого тов
     const imgEl = fixture.debugElement.query(By.css('.card-img-wrap img'));
     expect(imgEl).toBeTruthy();
     const {
-      image,
+      images: [{url}],
       name,
     } = (component as any)?.product;
-    expect(imgEl.attributes.src).toEqual(image);
+    expect(imgEl.attributes.src).toEqual(url);
     expect(imgEl.attributes.alt).toEqual(name);
   });
 

@@ -1,23 +1,47 @@
-## Интерполяция, связывание данных и межкомпонентная коммуникация
+## Pipes и их применение
 
-В этом задании предлагаю сделать компонент карточку товара. Вывести данные о товаре в шаблоне. 
-Данные должны приходить из родительского компонента. А так же обработать событие покупки.
-Данные о товаре после нажатия на кнопку купить нужно отобразить в родительском компоненте.
-Для этого вам необходимо ознакомиться с документацией(README в папке модуля).
-Также вы можете ознакомиться со скринкастами по данной теме.
+Товары которые приходят с сервера имеют структуру
+```ts
+export interface IProduct {
+  _id: string;
+  subCategory: string;
+  feedbacksCount: number;
+  count?: number;
+  name: string;
+  description: string;
+  feedbacks?: IFeedback;
+  characteristics?: ICharacteristics[];
+  price: number;
+  status: boolean;
+  images: IProductImage[];
+  rating: number;
+}
 
-![Demo](assets/demo.gif)
+export interface IProductImage {
+  url: string;
+  source: string;
+}
+
+```
+Как видно поле images содержит ряд изображений, которые относятся к товару.
+Напишите pipe который при пременению к полю images будет возвращать путь к первому изображению
 
 Не меняйте структуру html и стили компонетов
 
 Для запуска окружения непрерывной разработки выполните команду
 
 ```bash
-npm run start:module1
+npm run start:2-pipe_1-image-url-pipe
 ```
 
 Для проверки своего решения выполните
 
 ```bash
-npm run test:module1
+npm run test:2-pipe_1-image-url-pipe
+```
+
+Для проверки стилистики кода
+
+```bash
+npm run lint:2-pipe_1-image-url-pipe
 ```
