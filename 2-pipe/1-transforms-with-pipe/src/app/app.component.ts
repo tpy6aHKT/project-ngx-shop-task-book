@@ -6,6 +6,6 @@ import { IProduct, oneProduct } from '../../../../shared/mocks/2-pipes/product';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  public title = 'Rate & Review plural pipe';
+  public title = '2. Pipes';
   public product: IProduct = oneProduct;
 }
