@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { IProductImage } from '../../../../shared/mocks/2-pipes/product';
+import { IProductImage } from '../../../../../../shared/mocks/3-directives/product';
 
 @Pipe({
   name: 'imgUrl',

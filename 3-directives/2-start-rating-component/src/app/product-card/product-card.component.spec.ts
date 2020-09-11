@@ -1,15 +1,25 @@
+import { StarRatingComponent } from './star-rating/star-rating.component';
+import { ReviewPipe } from './pipes/review.pipe';
+import { RatePipe } from './pipes/rate.pipe';
+import { ImgUrlPipe } from './../../../../../2-pipe/1-transforms-with-pipe/solution/pipes/img-url.pipe';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ProductCardComponent } from './product-card.component';
 import { By } from '@angular/platform-browser';
 import { EventEmitter } from '@angular/core';
-import { oneProduct } from '../../../../../shared/mocks/1-components/product';
+import { oneProduct } from '../../../../../shared/mocks/3-directives/product';
 
-describe('[Moдуль 1]  Компонент рекомендуемого товара', () => {
+describe('[Moдуль 3 - Компонент рекомендуемого товара]  ', () => {
   let fixture: ComponentFixture<ProductCardComponent>;
   let component: ProductCardComponent;
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ProductCardComponent],
+      declarations: [
+        ProductCardComponent,
+        StarRatingComponent,
+        ImgUrlPipe,
+        RatePipe,
+        ReviewPipe,
+      ],
     });
     fixture = TestBed.createComponent(ProductCardComponent);
     component = fixture.componentInstance;
@@ -29,15 +39,16 @@ describe('[Moдуль 1]  Компонент рекомендуемого тов
     expect((component as any).product).toBeDefined();
   });
 
-  it('при нажатии на блок с селектором .go-to-product должен вызываться метод  redirectTo и срабатывать собстевнное событие goToProduct',
-    () => {
-      spyOn(component as any, 'redirectTo').and.callThrough();
-      spyOn((component as any)?.goToProduct, 'emit').and.callThrough();
-      const incrementButton = fixture.debugElement.query(By.css('div.go-to-product'));
-      incrementButton.triggerEventHandler('click', null);
-      expect((component as any)?.redirectTo).toHaveBeenCalledTimes(1);
-      expect((component as any)?.goToProduct.emit).toHaveBeenCalledTimes(1);
-    });
+  it('при нажатии на блок с селектором .go-to-product должен вызываться метод  redirectTo и срабатывать собстевнное событие goToProduct', () => {
+    spyOn(component as any, 'redirectTo').and.callThrough();
+    spyOn((component as any)?.goToProduct, 'emit').and.callThrough();
+    const incrementButton = fixture.debugElement.query(
+      By.css('div.go-to-product')
+    );
+    incrementButton.triggerEventHandler('click', null);
+    expect((component as any)?.redirectTo).toHaveBeenCalledTimes(1);
+    expect((component as any)?.goToProduct.emit).toHaveBeenCalledTimes(1);
+  });
 
   it('тег c селекторор [.card-img-wrap img] должен иметь правильное связывание свойств src и alt', () => {
     (component as any).product = oneProduct;
@@ -45,10 +56,10 @@ describe('[Moдуль 1]  Компонент рекомендуемого тов
     const imgEl = fixture.debugElement.query(By.css('.card-img-wrap img'));
     expect(imgEl).toBeTruthy();
     const {
-      image,
+      images: [{ url }],
       name,
     } = (component as any)?.product;
-    expect(imgEl.attributes.src).toEqual(image);
+    expect(imgEl.attributes.src).toEqual(url);
     expect(imgEl.attributes.alt).toEqual(name);
   });
 
@@ -75,11 +86,12 @@ describe('[Moдуль 1]  Компонент рекомендуемого тов
   it('тег с селектором .product-price strong  должен правильно интерполировать свойство price продукта', () => {
     (component as any).product = oneProduct;
     fixture.detectChanges();
-    const prodNameEL = fixture.debugElement.query(By.css('.product-price strong'));
+    const prodNameEL = fixture.debugElement.query(
+      By.css('.product-price strong')
+    );
     expect(prodNameEL).toBeTruthy();
     expect(prodNameEL.nativeElement.textContent.trim()).toEqual(
       `${(component as any)?.product.price}€`
     );
   });
-
 });
