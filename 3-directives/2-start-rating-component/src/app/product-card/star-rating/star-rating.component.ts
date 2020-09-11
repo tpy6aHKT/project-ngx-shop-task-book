@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
 })
 export class StarRatingComponent {
   @Input()
-  public feedbackRate!: number;
+  public feedbackRate = 0;
   public coloredStar = '';
   public stars = [0, 1, 2, 3, 4];
   public highlight(index: number): boolean {
