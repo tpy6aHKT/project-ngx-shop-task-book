@@ -13,7 +13,7 @@
 Для запуска окружения непрерывной разработки выполните команду
 
 ```bash
-npm run start:module1
+npm run start:3-directives_2-start-rating-component
 ```
 
 Для проверки своего решения выполните

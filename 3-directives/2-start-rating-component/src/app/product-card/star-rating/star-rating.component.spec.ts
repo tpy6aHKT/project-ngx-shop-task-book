@@ -20,14 +20,9 @@ describe('[Moдуль 3 -  Компонент рейтинга товара]', (
     expect((component as any).highlight).toBeTruthy();
   });
 
-  it('компонент должен иметь свойство feedbackRate c значением 0', () => {
+  it('компонент должен иметь собстевенное свойство feedbackRate c значением  0', () => {
     expect((component as any).feedbackRate).toBeDefined();
     expect((component as any).feedbackRate).toEqual(0);
-  });
-
-  it('компонент должен иметь свойство coloredStar c значением "star_border" ', () => {
-    expect((component as any).coloredStar).toBeDefined();
-    expect((component as any).coloredStar).toEqual('star_border');
   });
 
   it('компонент должен иметь свойство stars c значением [0, 1, 2, 3, 4]', () => {
@@ -35,14 +30,29 @@ describe('[Moдуль 3 -  Компонент рейтинга товара]', (
     expect((component as any).stars).toEqual([0, 1, 2, 3, 4]);
   });
 
-  it('количество активных звезд должно быть равным рейтингу ', () => {
-    (component as any).product = oneProduct;
+  it('Количество звезд должно соответсвовать свойству stars компонента', () => {
     fixture.detectChanges();
     const stars: DebugElement[] = fixture.debugElement.queryAll(
-      By.css('.fa.fa-star')
+      By.css('span.fa.fa-star')
     );
     expect(stars).toBeTruthy();
-    const rating = (component as any)?.product.rating;
-    expect(stars.length).toEqual(Math.round(rating));
+    expect(stars.length).toEqual(5);
+  });
+
+  it('метод highlight должен вызываться для каждого элемента span.fa.fa-star', () => {
+    spyOn(component as any, 'highlight').and.callThrough();
+    (component as any).feedbackRate = oneProduct.rating;
+    fixture.detectChanges();
+    expect((component as any)?.highlight).toHaveBeenCalledTimes(10);
+  });
+
+  it('количество активных звезд должно быть равным округленному рейтингу  (округление стандартное)', () => {
+    (component as any).feedbackRate = oneProduct.rating;
+    fixture.detectChanges();
+    const stars: DebugElement[] = fixture.debugElement.queryAll(
+      By.css('span.fa.fa-star.selected')
+    );
+    expect(stars).toBeTruthy();
+    expect(stars.length).toEqual(Math.round(oneProduct.rating));
   });
 });

@@ -62,7 +62,7 @@ export const oneProduct: IProduct = {
   ],
   name: 'Пластик для 3D печати ESUN PLA175CL1',
   price: 24,
-  rating: 3.6666666666666665,
+  rating: 3.55,
   status: false,
   count: 2,
 }

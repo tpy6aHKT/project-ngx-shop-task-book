@@ -1,4 +1,3 @@
-import { categoriesMock } from './../../../../shared/mocks/categories.mock';
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,6 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public title = 'Компонент списка категорий';
-  public terminalMessage: any = '';
-  public categories = categoriesMock;
 }

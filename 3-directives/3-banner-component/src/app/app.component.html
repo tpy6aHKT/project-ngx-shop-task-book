@@ -72,13 +72,11 @@
 
   <div class="content-wrap">
     <div class="content-block">
-      <ngx-shop-cart [cartProducts]="cartProducts"></ngx-shop-cart>
-    </div>
-    <div class="terminal">
-      <pre>
-        <p *ngIf ='terminalMessage'>Переход на компонент товара:
-           {{ terminalMessage | json}}</p>
-      </pre>
+      <ngx-shop-header></ngx-shop-header>
+      <div class="outlet-wrap">
+
+      </div>
+      <ngx-shop-footer></ngx-shop-footer>
     </div>
   </div>
 </div>

@@ -7,22 +7,22 @@
   >
     <a
       class="nav-link dropdown-toggle pointer"
-      (mouseenter)="hover(category.name)"
+      (mouseenter)="hover(category?.name)"
       (mouseleave)="mouseLeave()"
     >
       {{ category.name }}
     </a>
     <ul
       class="dropdown-menu"
-      (mouseenter)="hover(category.name)"
+      (mouseenter)="hover(category?.name)"
       (mouseleave)="mouseLeave()"
-      [ngClass]="{ show: category.name === currentName }"
+      [ngClass]="{ show: category?.name === currentName }"
     >
       <li
         class="dropdown-item pointer"
-        *ngFor="let subCategory of category.subCategories"
+        *ngFor="let subCategory of category?.subCategories"
       >
-        <a (click)="redirectTo(subCategory._id)">{{ subCategory.name }}</a>
+        <a (click)="redirectTo(subCategory?._id)">{{ subCategory?.name }}</a>
       </li>
     </ul>
   </li>
