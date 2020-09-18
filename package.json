@@ -49,18 +49,9 @@
     "start:4-services_4-local-storage-service": "npm start -- 4-services_4-local-storage-service",
     "test:4-services_4-local-storage-service": "npm run test -- 4-services_4-local-storage-service",
     "lint:4-services_4-local-storage-service": "npm run lint -- 4-services_4-local-storage-service",
-    "start:5-forms_2-order-form": "npm start -- 5-forms_2-order-form",
-    "test:5-forms_2-order-form": "npm run test -- 5-forms_2-order-form",
-    "lint:5-forms_2-order-form": "npm run lint -- 5-forms_2-order-form",
-    "start:5-forms_2-add-feedback": "npm start -- 5-forms_2-add-feedback",
-    "test:5-forms_2-add-feedback": "npm run test -- 5-forms_2-add-feedback",
-    "lint:5-forms_2-add-feedback": "npm run lint -- 5-forms_2-add-feedback",
-    "start:5-forms_4-brands-component": "npm start -- 5-forms_4-brands-component",
-    "test:5-forms_4-brands-component": "npm run test -- 5-forms_4-brands-component",
-    "lint:5-forms_4-brands-component": "npm run lint -- 5-forms_4-brands-component",
-    "start:5-forms_5-price-slider": "npm start -- 5-forms_5-price-slider",
-    "test:5-forms_5-price-slider": "npm run test -- 5-forms_5-price-slider",
-    "lint:5-forms_5-price-slider": "npm run lint -- 5-forms_5-price-slider"
+    "start:5-forms_1-order-form-component": "npm start -- 5-forms_1-order-form-component",
+    "test:5-forms_1-order-form-component": "npm run test -- 5-forms_1-order-form-component",
+    "lint:5-forms_1-order-form-component": "npm run lint -- 5-forms_1-order-form-component"
   },
   "private": true,
   "dependencies": {
