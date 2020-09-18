@@ -72,9 +72,13 @@
 
   <div class="content-wrap">
     <div class="content-block">
-      <div class="outlet-wrap">
-        <ngx-shop-product-description [product]="product"></ngx-shop-product-description>
-      </div>
+        <ngx-shop-product-description  (feedback)="feedback($event)" [product]="product"></ngx-shop-product-description>
+      
+    </div>
+    <div class="terminal">
+      <pre>
+        <p>{{ terminalMessage  }}</p>
+      </pre>
     </div>
   </div>
 </div>

@@ -72,14 +72,15 @@
 
   <div class="content-wrap">
     <div class="content-block">
-      <ngx-shop-information
-        [product]="product"
-        (addToCart)="addToCart($event)"
-      ></ngx-shop-information>
+      <ngx-shop-product-filter
+        [brands]="brands"
+        (confirm)="confirm($event)"
+      ></ngx-shop-product-filter>
     </div>
     <div class="terminal">
       <pre>
-        <p>{{ terminalMessage  }}</p>
+        <p *ngIf='terminalMessage'>
+          {{ terminalMessage |json}}</p>
       </pre>
     </div>
   </div>

@@ -836,8 +836,8 @@
           "style": "sass"
         }
       },
-      "root": "5-forms/1-order-form-component",
-      "sourceRoot": "5-forms/1-order-form-component/src",
+      "root": "5-forms-WIP/1-order-form-component",
+      "sourceRoot": "5-forms-WIP/1-order-form-component/src",
       "prefix": "app",
       "architect": {
         "build": {
@@ -845,13 +845,13 @@
           "options": {
             "outputPath": "dist/5-forms_1-order-form-component",
             "index": "shared/index.html",
-            "main": "5-forms/1-order-form-component/src/main.ts",
+            "main": "5-forms-WIP/1-order-form-component/src/main.ts",
             "polyfills": "shared/polyfills.ts",
-            "tsConfig": "5-forms/1-order-form-component/src/tsconfig.app.json",
+            "tsConfig": "5-forms-WIP/1-order-form-component/src/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "5-forms/1-order-form-component/src/favicon.ico",
-              "5-forms/1-order-form-component/src/assets"
+              "5-forms-WIP/1-order-form-component/src/favicon.ico",
+              "5-forms-WIP/1-order-form-component/src/assets"
             ],
             "styles": ["shared/styles.sass"]
           }
@@ -865,13 +865,13 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "5-forms/1-order-form-component/src/test.ts",
+            "main": "5-forms-WIP/1-order-form-component/src/test.ts",
             "polyfills": "shared/polyfills.ts",
-            "tsConfig": "5-forms/1-order-form-component/src/tsconfig.spec.json",
+            "tsConfig": "5-forms-WIP/1-order-form-component/src/tsconfig.spec.json",
             "karmaConfig": "shared/karma.conf.js",
             "assets": [
-              "5-forms/1-order-form-component/src/favicon.ico",
-              "5-forms/1-order-form-component/src/assets"
+              "5-forms-WIP/1-order-form-component/src/favicon.ico",
+              "5-forms-WIP/1-order-form-component/src/assets"
             ],
             "styles": ["shared/styles.sass"]
           }
@@ -880,8 +880,67 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "5-forms/1-order-form-component/src/tsconfig.app.json",
-              "5-forms/1-order-form-component/src/tsconfig.spec.json"
+              "5-forms-WIP/1-order-form-component/src/tsconfig.app.json",
+              "5-forms-WIP/1-order-form-component/src/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "5-forms_2-product-filter-component": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "sass"
+        }
+      },
+      "root": "5-forms-WIP/2-product-filter-component",
+      "sourceRoot": "5-forms-WIP/2-product-filter-component/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/5-forms_2-product-filter-component",
+            "index": "shared/index.html",
+            "main": "5-forms-WIP/2-product-filter-component/src/main.ts",
+            "polyfills": "shared/polyfills.ts",
+            "tsConfig": "5-forms-WIP/2-product-filter-component/src/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "5-forms-WIP/2-product-filter-component/src/favicon.ico",
+              "5-forms-WIP/2-product-filter-component/src/assets"
+            ],
+            "styles": ["shared/styles.sass"]
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "5-forms_2-product-filter-component:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "5-forms-WIP/2-product-filter-component/src/test.ts",
+            "polyfills": "shared/polyfills.ts",
+            "tsConfig": "5-forms-WIP/2-product-filter-component/src/tsconfig.spec.json",
+            "karmaConfig": "shared/karma.conf.js",
+            "assets": [
+              "5-forms-WIP/2-product-filter-component/src/favicon.ico",
+              "5-forms-WIP/2-product-filter-component/src/assets"
+            ],
+            "styles": ["shared/styles.sass"]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "5-forms-WIP/2-product-filter-component/src/tsconfig.app.json",
+              "5-forms-WIP/2-product-filter-component/src/tsconfig.spec.json"
             ],
             "exclude": ["**/node_modules/**"]
           }

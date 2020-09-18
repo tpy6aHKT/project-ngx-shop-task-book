@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IFeedback } from '../../../../../../shared/mocks/3-directives/product-information';
 
 @Component({
@@ -9,6 +9,9 @@ import { IFeedback } from '../../../../../../shared/mocks/3-directives/product-i
 export class FeedbacksComponent {
   @Input()
   public feedbacks!: IFeedback[];
-
-  public async addFeedback(): Promise<void> {}
+  @Output()
+  public addFeedback: EventEmitter<string> = new EventEmitter<string>();
+  public addNewFeedback(): void {
+    this.addFeedback.emit('отзыв добавлен');
+  }
 }

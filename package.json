@@ -51,7 +51,10 @@
     "lint:4-services_4-local-storage-service": "npm run lint -- 4-services_4-local-storage-service",
     "start:5-forms_1-order-form-component": "npm start -- 5-forms_1-order-form-component",
     "test:5-forms_1-order-form-component": "npm run test -- 5-forms_1-order-form-component",
-    "lint:5-forms_1-order-form-component": "npm run lint -- 5-forms_1-order-form-component"
+    "lint:5-forms_1-order-form-component": "npm run lint -- 5-forms_1-order-form-component",
+    "start:5-forms_2-product-filter-component": "npm start -- 5-forms_2-product-filter-component",
+    "test:5-forms_2-product-filter-component": "npm run test -- 5-forms_2-product-filter-component",
+    "lint:5-forms_2-product-filter-component": "npm run lint -- 5-forms_2-product-filter-component"
   },
   "private": true,
   "dependencies": {
@@ -63,6 +66,7 @@
     "@angular/platform-browser": "~10.1.1",
     "@angular/platform-browser-dynamic": "~10.1.1",
     "@angular/router": "~10.1.1",
+    "ng5-slider": "^1.2.4",
     "rxjs": "~6.6.3",
     "tslib": "^2.0.1",
     "zone.js": "^0.11.1"
