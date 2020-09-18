@@ -475,29 +475,29 @@
         }
       }
     },
-    "3-directives_3-banner-component": {
+    "3-directives_3-information-component": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "sass"
         }
       },
-      "root": "3-directives/3-banner-component",
-      "sourceRoot": "3-directives/3-banner-component/src",
+      "root": "3-directives/3-information-component",
+      "sourceRoot": "3-directives/3-information-component/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/3-directives_3-banner-component",
+            "outputPath": "dist/3-directives_3-information-component",
             "index": "shared/index.html",
-            "main": "3-directives/3-banner-component/src/main.ts",
+            "main": "3-directives/3-information-component/src/main.ts",
             "polyfills": "shared/polyfills.ts",
-            "tsConfig": "3-directives/3-banner-component/src/tsconfig.app.json",
+            "tsConfig": "3-directives/3-information-component/src/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "3-directives/3-banner-component/src/favicon.ico",
-              "3-directives/3-banner-component/src/assets"
+              "3-directives/3-information-component/src/favicon.ico",
+              "3-directives/3-information-component/src/assets"
             ],
             "styles": ["shared/styles.sass"]
           }
@@ -505,19 +505,19 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "3-directives_3-banner-component:build"
+            "browserTarget": "3-directives_3-information-component:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "3-directives/3-banner-component/src/test.ts",
+            "main": "3-directives/3-information-component/src/test.ts",
             "polyfills": "shared/polyfills.ts",
-            "tsConfig": "3-directives/3-banner-component/src/tsconfig.spec.json",
+            "tsConfig": "3-directives/3-information-component/src/tsconfig.spec.json",
             "karmaConfig": "shared/karma.conf.js",
             "assets": [
-              "3-directives/3-banner-component/src/favicon.ico",
-              "3-directives/3-banner-component/src/assets"
+              "3-directives/3-information-component/src/favicon.ico",
+              "3-directives/3-information-component/src/assets"
             ],
             "styles": ["shared/styles.sass"]
           }
@@ -526,8 +526,68 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "3-directives/3-banner-component/src/tsconfig.app.json",
-              "3-directives/3-banner-component/src/tsconfig.spec.json"
+              "3-directives/3-information-component/src/tsconfig.app.json",
+              "3-directives/3-information-component/src/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+
+    "3-directives_4-description-component": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "sass"
+        }
+      },
+      "root": "3-directives/4-description-component",
+      "sourceRoot": "3-directives/4-description-component/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/3-directives_4-description-component",
+            "index": "shared/index.html",
+            "main": "3-directives/4-description-component/src/main.ts",
+            "polyfills": "shared/polyfills.ts",
+            "tsConfig": "3-directives/4-description-component/src/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "3-directives/4-description-component/src/favicon.ico",
+              "3-directives/4-description-component/src/assets"
+            ],
+            "styles": ["shared/styles.sass"]
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "3-directives_4-description-component:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "3-directives/4-description-component/src/test.ts",
+            "polyfills": "shared/polyfills.ts",
+            "tsConfig": "3-directives/4-description-component/src/tsconfig.spec.json",
+            "karmaConfig": "shared/karma.conf.js",
+            "assets": [
+              "3-directives/4-description-component/src/favicon.ico",
+              "3-directives/4-description-component/src/assets"
+            ],
+            "styles": ["shared/styles.sass"]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "3-directives/4-description-component/src/tsconfig.app.json",
+              "3-directives/4-description-component/src/tsconfig.spec.json"
             ],
             "exclude": ["**/node_modules/**"]
           }
