@@ -10,7 +10,7 @@ export class AppComponent {
   public title = 'Компонент описания товара и отзывов';
   public product = oneProduct;
   public terminalMessage = null;
-  public feedback(value: string): void {
+  public addFeedback(value: string): void {
     this.terminalMessage = value;
   }
 }

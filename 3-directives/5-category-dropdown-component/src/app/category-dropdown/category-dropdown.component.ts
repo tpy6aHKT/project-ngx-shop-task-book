@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ICategory } from '../../../../../shared/mocks/categories.mock';
 
 @Component({
@@ -7,13 +7,18 @@ import { ICategory } from '../../../../../shared/mocks/categories.mock';
 })
 export class CategoryDropdownComponent {
   @Input()
-  public categories!: ICategory[];
+  public categories: ICategory[] = [];
+
+  @Output()
+  public subCategorySelectEvent: EventEmitter<string> = new EventEmitter();
 
   public currentIndex: number | null = null;
-  public currentCategory?: string;
+  public currentCategory = '';
 
-  public hover(index: number): void {
+  public showSubCategories(index: number): void {
     this.currentIndex = index;
   }
-  public categorySelect(subCategoryId: string): void {}
+  public subCategorySelect(subCategoryName: string): void {
+    this.subCategorySelectEvent.emit(subCategoryName);
+  }
 }
