@@ -1,8 +1,9 @@
 <div class="product-info">
-  <h3 class="h5">{{ product?.name }}</h3>
+  <h3 class="h5 product-name">{{ product?.name }}</h3>
   <ngx-shop-star-rating
     tooltip="Рейтинг товара"
     position="left"
+    class="star-rating"
     [feedbackRate]="product?.rating | rate"
   >
   </ngx-shop-star-rating>
@@ -28,7 +29,9 @@
       </ul>
       <div>
         <div class="all-characters pointer">
-          <a *ngIf="!isShow" (click)="show()">Все характеристики</a>
+          <a *ngIf="!isShow" class="show-characters" (click)="show()"
+            >Все характеристики</a
+          >
         </div>
 
         <div *ngIf="isShow === true">
@@ -46,7 +49,7 @@
             </li>
           </ul>
           <div class="characters pointer">
-            <a (click)="show()">Скрыть</a>
+            <a class="hide-characters" (click)="show()">Скрыть</a>
           </div>
         </div>
       </div>
@@ -58,7 +61,7 @@
       <button
         *ngIf="product != null"
         type="submit"
-        class="btn btn-primary btn-lg px-3"
+        class="submit btn btn-primary btn-lg px-3"
         (click)="addToBasket()"
       >
         Добавить в корзину
