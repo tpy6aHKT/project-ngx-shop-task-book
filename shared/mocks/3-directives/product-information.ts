@@ -56,8 +56,14 @@ export const oneProduct: IProduct = {
       advantages: 'Самый лучший товар в этой категории, всем горячо рекомендую',
       rate: 5,
     },
+    {
+      _id: '5f4f41e24c48fd2a6d443991',
+      product: 'korpus-deepcool-matrexx-55-add-rgb-wh--belyj',
+      advantages: 'Самый лучший товар в этой категории',
+      rate: 3,
+    },
   ],
-  feedbacksCount: 1,
+  feedbacksCount: 2,
   images: [
     {
       url:
@@ -116,7 +122,7 @@ export const oneProduct: IProduct = {
   ],
   name: 'Корпус DEEPCOOL MATREXX 55 ADD-RGB WH  белый',
   price: 71,
-  rating: 5,
+  rating: 4,
   status: 1,
   subCategory: 'komplektuyushhie-dlya-pk',
   characteristics: [

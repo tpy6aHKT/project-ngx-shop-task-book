@@ -8,10 +8,10 @@ import { IFeedback } from '../../../../../../shared/mocks/3-directives/product-i
 })
 export class FeedbacksComponent {
   @Input()
-  public feedbacks!: IFeedback[];
+  public feedbacks: IFeedback[] = [];
   @Output()
-  public addFeedback: EventEmitter<string> = new EventEmitter<string>();
+  public addFeedbackEvent: EventEmitter<string> = new EventEmitter<string>();
   public addNewFeedback(): void {
-    this.addFeedback.emit('отзыв добавлен');
+    this.addFeedbackEvent.emit('отзыв добавлен');
   }
 }

@@ -5,10 +5,10 @@ import { IProduct } from '../../../../../shared/mocks/3-directives/product-infor
   templateUrl: './description.component.html',
 })
 export class DescriptionComponent {
-  @Input() public product!: IProduct;
+  @Input() public product: IProduct = null;
   public isShowDescription = true;
   @Output()
-  public feedback: EventEmitter<string> = new EventEmitter<string>();
+  public addFeedbackEvent: EventEmitter<string> = new EventEmitter<string>();
 
   public close!: () => void;
   public save!: (value: object) => void;
@@ -17,6 +17,6 @@ export class DescriptionComponent {
   }
 
   public addFeedback(value: string): void {
-    this.feedback.emit(value);
+    this.addFeedbackEvent.emit(value);
   }
 }

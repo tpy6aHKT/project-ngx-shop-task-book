@@ -72,9 +72,15 @@
 
   <div class="content-wrap">
     <div class="content-block">
-      <div class="outlet-wrap">
-        <ngx-shop-category-dropdown [categories]="categories"></ngx-shop-category-dropdown>
-      </div>
+      <ngx-shop-category-dropdown
+        [categories]="categories"
+        (subCategorySelectEvent)="selectSubCategory($event)"
+      ></ngx-shop-category-dropdown>
+    </div>
+    <div class="terminal">
+      <pre>
+        <p>{{ terminalMessage  }}</p>
+      </pre>
     </div>
   </div>
 </div>
