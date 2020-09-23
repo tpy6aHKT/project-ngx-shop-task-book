@@ -652,29 +652,29 @@
         }
       }
     },
-    "4-services_2-interceptor-service": {
+    "4-services_1-home-page-component": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "sass"
         }
       },
-      "root": "4-services/2-interceptor-service",
-      "sourceRoot": "4-services/2-interceptor-service/src",
+      "root": "4-services/1-home-page",
+      "sourceRoot": "4-services/1-home-page/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/4-services_2-interceptor-service",
+            "outputPath": "dist/4-services_1-home-page-component",
             "index": "shared/index.html",
-            "main": "4-services/2-interceptor-service/src/main.ts",
+            "main": "4-services/1-home-page/src/main.ts",
             "polyfills": "shared/polyfills.ts",
-            "tsConfig": "4-services/2-interceptor-service/src/tsconfig.app.json",
+            "tsConfig": "4-services/1-home-page/src/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "4-services/2-interceptor-service/src/favicon.ico",
-              "4-services/2-interceptor-service/src/assets"
+              "4-services/1-home-page/src/favicon.ico",
+              "4-services/1-home-page/src/assets"
             ],
             "styles": ["shared/styles.sass"]
           }
@@ -682,19 +682,19 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "4-services_2-interceptor-service:build"
+            "browserTarget": "4-services_1-home-page-component:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "4-services/2-interceptor-service/src/test.ts",
+            "main": "4-services/1-home-page/src/test.ts",
             "polyfills": "shared/polyfills.ts",
-            "tsConfig": "4-services/2-interceptor-service/src/tsconfig.spec.json",
+            "tsConfig": "4-services/1-home-page/src/tsconfig.spec.json",
             "karmaConfig": "shared/karma.conf.js",
             "assets": [
-              "4-services/2-interceptor-service/src/favicon.ico",
-              "4-services/2-interceptor-service/src/assets"
+              "4-services/1-home-page/src/favicon.ico",
+              "4-services/1-home-page/src/assets"
             ],
             "styles": ["shared/styles.sass"]
           }
@@ -703,37 +703,37 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "4-services/2-interceptor-service/src/tsconfig.app.json",
-              "4-services/2-interceptor-service/src/tsconfig.spec.json"
+              "4-services/1-home-page/src/tsconfig.app.json",
+              "4-services/1-home-page/src/tsconfig.spec.json"
             ],
             "exclude": ["**/node_modules/**"]
           }
         }
       }
     },
-    "4-services_3-product-service": {
+    "4-services_2-one-product-page-component": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "sass"
         }
       },
-      "root": "4-services/3-product-service",
-      "sourceRoot": "4-services/3-product-service/src",
+      "root": "4-services/2-one-product-page",
+      "sourceRoot": "4-services/2-one-product-page/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/4-services_3-product-service",
+            "outputPath": "dist/4-services_2-one-product-page-component",
             "index": "shared/index.html",
-            "main": "4-services/3-product-service/src/main.ts",
+            "main": "4-services/2-one-product-page/src/main.ts",
             "polyfills": "shared/polyfills.ts",
-            "tsConfig": "4-services/3-product-service/src/tsconfig.app.json",
+            "tsConfig": "4-services/2-one-product-page/src/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "4-services/3-product-service/src/favicon.ico",
-              "4-services/3-product-service/src/assets"
+              "4-services/2-one-product-page/src/favicon.ico",
+              "4-services/2-one-product-page/src/assets"
             ],
             "styles": ["shared/styles.sass"]
           }
@@ -741,19 +741,19 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "4-services_3-product-service:build"
+            "browserTarget": "4-services_2-one-product-page-component:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "4-services/3-product-service/src/test.ts",
+            "main": "4-services/2-one-product-page/src/test.ts",
             "polyfills": "shared/polyfills.ts",
-            "tsConfig": "4-services/3-product-service/src/tsconfig.spec.json",
+            "tsConfig": "4-services/2-one-product-page/src/tsconfig.spec.json",
             "karmaConfig": "shared/karma.conf.js",
             "assets": [
-              "4-services/3-product-service/src/favicon.ico",
-              "4-services/3-product-service/src/assets"
+              "4-services/2-one-product-page/src/favicon.ico",
+              "4-services/2-one-product-page/src/assets"
             ],
             "styles": ["shared/styles.sass"]
           }
@@ -762,67 +762,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "4-services/3-product-service/src/tsconfig.app.json",
-              "4-services/3-product-service/src/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
-        }
-      }
-    },
-    "4-services_4-local-storage-service": {
-      "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "sass"
-        }
-      },
-      "root": "4-services/4-local-storage-service",
-      "sourceRoot": "4-services/4-local-storage-service/src",
-      "prefix": "app",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/4-services_4-local-storage-service",
-            "index": "shared/index.html",
-            "main": "4-services/4-local-storage-service/src/main.ts",
-            "polyfills": "shared/polyfills.ts",
-            "tsConfig": "4-services/4-local-storage-service/src/tsconfig.app.json",
-            "aot": true,
-            "assets": [
-              "4-services/4-local-storage-service/src/favicon.ico",
-              "4-services/4-local-storage-service/src/assets"
-            ],
-            "styles": ["shared/styles.sass"]
-          }
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "4-services_4-local-storage-service:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "4-services/4-local-storage-service/src/test.ts",
-            "polyfills": "shared/polyfills.ts",
-            "tsConfig": "4-services/4-local-storage-service/src/tsconfig.spec.json",
-            "karmaConfig": "shared/karma.conf.js",
-            "assets": [
-              "4-services/4-local-storage-service/src/favicon.ico",
-              "4-services/4-local-storage-service/src/assets"
-            ],
-            "styles": ["shared/styles.sass"]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "4-services/4-local-storage-service/src/tsconfig.app.json",
-              "4-services/4-local-storage-service/src/tsconfig.spec.json"
+              "4-services/2-one-product-page/src/tsconfig.app.json",
+              "4-services/2-one-product-page/src/tsconfig.spec.json"
             ],
             "exclude": ["**/node_modules/**"]
           }
