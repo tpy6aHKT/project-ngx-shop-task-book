@@ -43,7 +43,7 @@ describe('[Moдуль 3 -  Компонент рейтинга товара]', (
     spyOn(component as any, 'highlight').and.callThrough();
     (component as any).feedbackRate = oneProduct.rating;
     fixture.detectChanges();
-    expect((component as any)?.highlight).toHaveBeenCalledTimes(2);
+    expect((component as any)?.highlight).toHaveBeenCalledTimes(10);
   });
 
   it('количество активных звезд должно быть равным округленному рейтингу  (округление стандартное)', () => {
