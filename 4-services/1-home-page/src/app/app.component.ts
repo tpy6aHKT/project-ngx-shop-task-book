@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { categories } from '../../../../shared/mocks/3-directives/categories';
+import {
+  CategoriesService,
+  ICategory,
+} from './services/categories/category.service';
 import {
   IProduct,
   ProductsService,
@@ -13,12 +16,15 @@ import {
 // @ts-ignore
 export class AppComponent implements OnInit {
   public title = 'Компонент домашней страницы';
-  public categories = categories;
-  public products: IProduct[] = [];
   public products$!: Observable<IProduct[]>;
-  constructor(private productsService: ProductsService) {}
+  public categories$!: Observable<ICategory[]>;
+  constructor(
+    private productsService: ProductsService,
+    private categoriesService: CategoriesService
+  ) {}
 
   ngOnInit() {
     this.products$ = this.productsService.getProducts();
+    this.categories$ = this.categoriesService.getCategories();
   }
 }

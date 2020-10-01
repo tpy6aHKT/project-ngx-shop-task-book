@@ -1,7 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { categories } from '../../../../../shared/mocks/3-directives/categories';
-import { expProducts } from '../../../../../shared/mocks/products';
-
 @Component({
   selector: 'ngx-shop-home-page',
   templateUrl: './home-page.component.html',
@@ -9,8 +6,9 @@ import { expProducts } from '../../../../../shared/mocks/products';
 })
 // @ts-ignore
 export class HomePageComponent {
-  @Input() public categories = categories;
-  @Input() public products = expProducts;
+  @Input() public categories = [];
+  @Input() public products = [];
+
   goToBasket() {}
   redirectTo(val) {}
   goToProduct() {}

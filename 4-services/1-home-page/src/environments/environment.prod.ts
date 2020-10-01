@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  baseUrl: 'http://api.com/v1',
+  author: 'learn.javascript.ru',
+  baseUrl: '/api',
 };

@@ -29,7 +29,7 @@ export interface IProductImage {
 export class ProductsService {
   constructor(private http: HttpClient) {}
 
-  public getProducts(): Observable<IProduct[]> {
-    return this.http.get<IProduct[]>(`api/products/suggestion`);
+  public getProductById(id: string): Observable<IProduct> {
+    return this.http.get<IProduct>(`api/products/${id}`);
   }
 }

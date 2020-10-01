@@ -9,6 +9,7 @@ export class ProductCardComponent {
   @Input()
   // @ts-ignore
   public product!: IProduct = {} as IProduct;
+
   @Output()
   // @ts-ignore
   public goToProduct: EventEmitter<void> = new EventEmitter<void>();
