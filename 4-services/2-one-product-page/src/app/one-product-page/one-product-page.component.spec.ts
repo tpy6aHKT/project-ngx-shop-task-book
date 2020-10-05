@@ -1,5 +1,5 @@
-import { HeaderComponent } from './../../../../1-home-page/src/app/home-page/header/header.component';
-import { FooterComponent } from './../../../../1-home-page/src/app/home-page/footer/footer.component';
+import { FooterComponent } from './../one-product-page/footer/footer.component';
+import { HeaderComponent } from './../one-product-page/header/header.component';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ProductComponent } from './one-product-page.component';
 

@@ -1,21 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { IProduct } from '../../../../shared/mocks/4-services/products';
-import { ProductsService } from './services/products/products.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   public title = 'Компонент страницы продукта';
-
-  public product$!: Observable<IProduct>;
-  constructor(private productsService: ProductsService) {}
-
-  ngOnInit() {
-    this.product$ = this.productsService.getProductById(
-      'korpus-cougar-gemini-m-385tmb00001-seryj'
-    );
-  }
 }

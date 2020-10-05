@@ -1,10 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'ngx-shop-one-product-page',
   templateUrl: './one-product-page.component.html',
 })
-export class ProductComponent {
-  @Input() public product = null;
-  goToBasket() {}
-}
+export class ProductComponent {}

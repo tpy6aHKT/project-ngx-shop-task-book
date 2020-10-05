@@ -1,26 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { ICategory } from '../../../../shared/mocks/4-services/categories';
-import { IProduct } from '../../../../shared/mocks/4-services/products';
-import { CategoriesService } from './services/categories/category.service';
-import { ProductsService } from './services/products/products.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
 })
 // @ts-ignore
-export class AppComponent implements OnInit {
+export class AppComponent {
   public title = 'Компонент домашней страницы';
-  public products$!: Observable<IProduct[]>;
-  public categories$!: Observable<ICategory[]>;
-  constructor(
-    private productsService: ProductsService,
-    private categoriesService: CategoriesService
-  ) {}
-
-  ngOnInit() {
-    this.products$ = this.productsService.getProducts();
-    this.categories$ = this.categoriesService.getCategories();
-  }
 }

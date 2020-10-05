@@ -5,7 +5,7 @@ import { DescriptionComponent } from './description.component';
 import { FeedbacksComponent } from './feedbacks/feedbacks.component';
 import { oneProduct } from '../../../../../../shared/mocks/4-services/product-information';
 
-describe('[Moдуль 3 - Компонент описания товара]', () => {
+describe('[Moдуль 4 - Компонент описания товара]', () => {
   let fixture: ComponentFixture<DescriptionComponent>;
   let component: DescriptionComponent;
   beforeEach(() => {

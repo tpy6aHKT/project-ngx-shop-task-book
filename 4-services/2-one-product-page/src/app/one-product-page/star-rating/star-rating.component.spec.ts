@@ -4,7 +4,7 @@ import { StarRatingComponent } from './star-rating.component';
 import { DebugElement } from '@angular/core';
 import { oneProduct } from '../../../../../../shared/mocks/4-services/product-information';
 
-describe('[Moдуль 3 -  Компонент рейтинга товара]', () => {
+describe('[Moдуль 4 -  Компонент рейтинга товара]', () => {
   let fixture: ComponentFixture<StarRatingComponent>;
   let component: StarRatingComponent;
   beforeEach(() => {
