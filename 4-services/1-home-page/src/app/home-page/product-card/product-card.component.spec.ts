@@ -1,8 +1,8 @@
-import { oneProduct } from './../../../../../../shared/mocks/2-pipes/product';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ProductCardComponent } from './product-card.component';
 import { By } from '@angular/platform-browser';
 import { EventEmitter } from '@angular/core';
+import { products } from '../../../../../../shared/mocks/4-services/products';
 
 describe('[Moдуль 4 - Компонент рекомендуемого товара]', () => {
   let fixture: ComponentFixture<ProductCardComponent>;
@@ -25,8 +25,8 @@ describe('[Moдуль 4 - Компонент рекомендуемого тов
     expect((component as any).goToProduct).toBeInstanceOf(EventEmitter);
   });
 
-  it('компонент должен иметь свойство product c значением {}', () => {
-    expect((component as any).product).toBeDefined();
+  it('компонент должен иметь свойство product', () => {
+    expect((component as any).product).toBeDefined(null);
   });
 
   it('при нажатии на блок с селектором .go-to-product должен вызываться метод  redirectTo и срабатывать собстевнное событие goToProduct', () => {
@@ -41,17 +41,17 @@ describe('[Moдуль 4 - Компонент рекомендуемого тов
   });
 
   it('тег c селекторор [.card-img-wrap img] должен иметь правильное связывание свойств src и alt', () => {
-    (component as any).product = oneProduct;
+    (component as any).product = products[0];
     fixture.detectChanges();
     const imgEl = fixture.debugElement.query(By.css('.card-img-wrap img'));
     expect(imgEl).toBeTruthy();
-    const { image, name } = (component as any)?.product;
-    expect(imgEl.attributes.src).toEqual(image);
+    const { images, name } = (component as any)?.product;
+    expect(imgEl.attributes.src).toEqual(images[0].url);
     expect(imgEl.attributes.alt).toEqual(name);
   });
 
   it('тег с селектором .card-title  должен правильно интерполировать свойство name продукта', () => {
-    (component as any).product = oneProduct;
+    (component as any).product = products[0];
     fixture.detectChanges();
     const prodNameEL = fixture.debugElement.query(By.css('.card-title'));
     expect(prodNameEL).toBeTruthy();
@@ -61,7 +61,7 @@ describe('[Moдуль 4 - Компонент рекомендуемого тов
   });
 
   it('тег с селектором .rate .rate-amount  должен правильно интерполировать свойство feedbacksCount продукта', () => {
-    (component as any).product = oneProduct;
+    (component as any).product = products[0];
     fixture.detectChanges();
     const prodNameEL = fixture.debugElement.query(By.css('.rate .rate-amount'));
     expect(prodNameEL).toBeTruthy();
@@ -71,7 +71,7 @@ describe('[Moдуль 4 - Компонент рекомендуемого тов
   });
 
   it('тег с селектором .product-price strong  должен правильно интерполировать свойство price продукта', () => {
-    (component as any).product = oneProduct;
+    (component as any).product = products[0];
     fixture.detectChanges();
     const prodNameEL = fixture.debugElement.query(
       By.css('.product-price strong')

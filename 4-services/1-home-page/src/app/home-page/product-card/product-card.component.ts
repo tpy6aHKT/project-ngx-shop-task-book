@@ -8,7 +8,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class ProductCardComponent {
   @Input()
   // @ts-ignore
-  public product!: IProduct = {} as IProduct;
+  public product!: IProduct = null;
+
   @Output()
   // @ts-ignore
   public goToProduct: EventEmitter<void> = new EventEmitter<void>();

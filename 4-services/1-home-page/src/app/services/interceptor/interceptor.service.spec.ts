@@ -5,8 +5,10 @@ import {
 import { inject, TestBed } from '@angular/core/testing';
 import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { InterceptorService } from './interceptor.service';
-import { BASE_URL } from './config';
+import { BASE_URL_TOKEN } from './config';
 import { environment } from '../../../environments/environment';
+import { ProductsService } from '../products/products.service';
+import { CategoriesService } from '../categories/category.service';
 
 export const products = [
   {
@@ -36,41 +38,43 @@ export const products = [
 ];
 describe('Interceptor', () => {
   let httpMocked: HttpTestingController;
-  const accessToken =
-    'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5lcGlwZW5rbzEiLCJpYXQiOjE1NzYxNzgxNzN9.-dXOEZhBVHXp3goe7DROuoVTKSNIUjL-0hYDIhdzd00';
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
       providers: [
+        ProductsService,
+        CategoriesService,
+        {
+          provide: BASE_URL_TOKEN,
+          useValue: environment.baseUrl,
+        },
         {
           provide: HTTP_INTERCEPTORS,
           useClass: InterceptorService,
           multi: true,
-        },
-        {
-          provide: BASE_URL,
-          useValue: environment.baseUrl,
         },
       ],
     });
     httpMocked = TestBed.inject(HttpTestingController);
   });
 
-  it('should has auth header', inject(
-    [HttpClient, BASE_URL],
+  it('should has Content-Type header', inject(
+    [HttpClient, BASE_URL_TOKEN],
     (http: HttpClient, baseUrl: string) => {
       http.get('/auth').subscribe();
       const httpReq = httpMocked.expectOne({
         method: 'GET',
         url: `${baseUrl}/auth`,
       });
-      expect(httpReq.request.headers.has('Authorization')).toBeTruthy();
-      expect(httpReq.request.headers.get('Authorization')).toEqual(accessToken);
+      expect(httpReq.request.headers.has('Content-Type')).toBeTruthy();
+      expect(httpReq.request.headers.get('Content-Type')).toEqual(
+        'application/json'
+      );
     }
   ));
 
   it('should transform right', inject(
-    [HttpClient, BASE_URL],
+    [HttpClient, BASE_URL_TOKEN],
     (http: HttpClient, baseUrl: string) => {
       http.get('/products').subscribe((response) => {
         expect(response).toEqual(products);
