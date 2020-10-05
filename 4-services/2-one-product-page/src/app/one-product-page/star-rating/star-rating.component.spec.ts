@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { StarRatingComponent } from './star-rating.component';
-import { oneProduct } from '../../../../../../shared/mocks/3-directives/product';
 import { DebugElement } from '@angular/core';
+import { oneProduct } from '../../../../../../shared/mocks/4-services/product-information';
 
 describe('[Moдуль 3 -  Компонент рейтинга товара]', () => {
   let fixture: ComponentFixture<StarRatingComponent>;

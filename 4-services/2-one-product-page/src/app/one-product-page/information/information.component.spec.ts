@@ -1,13 +1,13 @@
+import { oneProduct } from './../../../../../../shared/mocks/4-services/product-information';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { EventEmitter } from '@angular/core';
 import { InformationComponent } from './information.component';
-import { oneProduct } from '../../../../../shared/mocks/3-directives/product-information';
-import { StarRatingComponent } from './star-rating/star-rating.component';
 import { ReviewPipe } from '../pipes/review.pipe';
 import { RatePipe } from '../pipes/rate.pipe';
+import { StarRatingComponent } from '../star-rating/star-rating.component';
 
-describe('[Moдуль 3 - Компонент информации о товаре]', () => {
+describe('[Moдуль 4 - Компонент информации о товаре]', () => {
   let fixture: ComponentFixture<InformationComponent>;
   let component: InformationComponent;
   beforeEach(() => {
@@ -99,7 +99,7 @@ describe('[Moдуль 3 - Компонент информации о товар�
     const prodNameEL = fixture.debugElement.query(By.css('.rate-amount'));
     expect(prodNameEL).toBeTruthy();
     expect(prodNameEL.nativeElement.textContent.trim()).toEqual(
-      `${(component as any)?.product.feedbacksCount} отзывa`
+      `${(component as any)?.product.feedbacksCount} отзыва`
     );
   });
 

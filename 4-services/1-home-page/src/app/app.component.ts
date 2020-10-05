@@ -1,13 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import {
-  CategoriesService,
-  ICategory,
-} from './services/categories/category.service';
-import {
-  IProduct,
-  ProductsService,
-} from './services/products/products.service';
+import { ICategory } from '../../../../shared/mocks/4-services/categories';
+import { IProduct } from '../../../../shared/mocks/4-services/products';
+import { CategoriesService } from './services/categories/category.service';
+import { ProductsService } from './services/products/products.service';
 
 @Component({
   selector: 'app-root',

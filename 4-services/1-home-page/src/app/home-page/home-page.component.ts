@@ -6,8 +6,8 @@ import { Component, Input } from '@angular/core';
 })
 // @ts-ignore
 export class HomePageComponent {
-  @Input() public categories = [];
-  @Input() public products = [];
+  @Input() public categories = null;
+  @Input() public products = null;
 
   goToBasket() {}
   redirectTo(val) {}

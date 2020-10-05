@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { IProduct } from '../../services/products/products.service';
+import { IProduct } from '../../../../../../shared/mocks/4-services/products';
 @Component({
   selector: 'ngx-shop-description',
   templateUrl: './description.component.html',

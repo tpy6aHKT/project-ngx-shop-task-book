@@ -6,4 +6,5 @@ import { Component, Input } from '@angular/core';
 })
 export class ProductComponent {
   @Input() public product = null;
+  goToBasket() {}
 }

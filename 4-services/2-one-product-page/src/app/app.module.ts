@@ -8,11 +8,13 @@ import { BASE_URL_TOKEN } from './services/interceptor/config';
 import { environment } from './../environments/environment';
 import { ProductComponent } from './one-product-page/one-product-page.component';
 import { InformationComponent } from './one-product-page/information/information.component';
-import { StarRatingComponent } from './one-product-page/information/star-rating/star-rating.component';
 import { DescriptionComponent } from './one-product-page/description/description.component';
 import { ReviewPipe } from './one-product-page/pipes/review.pipe';
 import { RatePipe } from './one-product-page/pipes/rate.pipe';
 import { FeedbacksComponent } from './one-product-page/description/feedbacks/feedbacks.component';
+import { HeaderComponent } from './one-product-page/header/header.component';
+import { FooterComponent } from './one-product-page/footer/footer.component';
+import { StarRatingComponent } from './one-product-page/star-rating/star-rating.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +23,8 @@ import { FeedbacksComponent } from './one-product-page/description/feedbacks/fee
     DescriptionComponent,
     StarRatingComponent,
     FeedbacksComponent,
+    FooterComponent,
+    HeaderComponent,
     RatePipe,
     ReviewPipe,
   ],
