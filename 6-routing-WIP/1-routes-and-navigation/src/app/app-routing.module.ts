@@ -13,6 +13,16 @@ const routes: Routes = [
       state: 'products',
     },
   },
+  {
+    path: 'product',
+    loadChildren: () =>
+      import('./content/one-product-page/one-product-page.module').then(
+        (mod) => mod.ProductPageModule
+      ),
+    data: {
+      state: 'product',
+    },
+  },
   //   {
   //     path: 'category',
   //     loadChildren: () =>
