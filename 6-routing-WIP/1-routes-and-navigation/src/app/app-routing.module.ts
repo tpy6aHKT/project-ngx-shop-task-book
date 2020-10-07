@@ -23,16 +23,16 @@ const routes: Routes = [
       state: 'product',
     },
   },
-  //   {
-  //     path: 'category',
-  //     loadChildren: () =>
-  //       import('./content/category/category.module').then(
-  //         (mod) => mod.CategoryModule
-  //       ),
-  //     data: {
-  //       state: 'category',
-  //     },
-  //   },
+  {
+    path: 'category',
+    loadChildren: () =>
+      import('./content/category-page/category-page.module').then(
+        (mod) => mod.CategoryPageModule
+      ),
+    data: {
+      state: 'category',
+    },
+  },
 
   {
     path: '**',

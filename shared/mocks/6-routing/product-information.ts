@@ -13,7 +13,20 @@ export interface IProduct {
   rating: number;
   brand?: string;
 }
+export interface IProductsState {
+  items: IProduct[];
+  loading: boolean;
+  prices: IMinMaxPrice;
+}
 
+export interface IProductApi {
+  items: IProduct[];
+  prices: IMinMaxPrice;
+}
+export interface IMinMaxPrice {
+  min: number;
+  max: number;
+}
 export interface IFeedback {
   _id: string;
   rate?: number;
