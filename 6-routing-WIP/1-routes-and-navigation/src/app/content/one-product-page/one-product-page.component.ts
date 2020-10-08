@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { IProduct } from '../../../../../../shared/mocks/6-routing/products';
 import { ProductsService } from '../../services/products.service';
@@ -9,11 +10,13 @@ import { ProductsService } from '../../services/products.service';
 })
 export class ProductPageComponent implements OnInit {
   public product$: Observable<IProduct> = null;
-  constructor(private productsService: ProductsService) {}
+  constructor(
+    private productsService: ProductsService,
+    private readonly activatedRoute: ActivatedRoute
+  ) {}
 
-  ngOnInit() {
-    this.product$ = this.productsService.getProductById(
-      'korpus-cougar-gemini-m-385tmb00001-seryj'
-    );
+  public ngOnInit(): void {
+    const { product } = this.activatedRoute.snapshot.params;
+    this.product$ = this.productsService.getProductById(product);
   }
 }

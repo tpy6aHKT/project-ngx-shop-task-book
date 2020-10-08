@@ -7,7 +7,7 @@ import {
 } from '@angular/forms';
 import { PriceInputsComponent } from './price-inputs.component';
 
-describe('[Moдуль 5 - Компонент лимитов цены товара]', () => {
+describe('[Moдуль 6 - Компонент лимитов цены товара]', () => {
   let fixture: ComponentFixture<PriceInputsComponent>;
   let component: PriceInputsComponent;
   const formBuilder: FormBuilder = new FormBuilder();

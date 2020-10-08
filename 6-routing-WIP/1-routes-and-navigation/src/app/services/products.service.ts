@@ -19,15 +19,15 @@ export class ProductsService {
   public getProductsBySubCategory({
     currentCategory,
     priceRange,
-    searchByName,
+    text,
     selectedBrands,
   }: Params): Observable<IProductApi> {
     let query = `?subCat=${currentCategory}`;
     if (priceRange && priceRange.length > 0) {
       query += `&prices=${priceRange}`;
     }
-    if (searchByName) {
-      query += `&text=${searchByName}`;
+    if (text) {
+      query += `&text=${text}`;
     }
     if (selectedBrands) {
       query += `&brands=${selectedBrands}`;

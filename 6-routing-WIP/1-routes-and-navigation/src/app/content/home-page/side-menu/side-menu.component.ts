@@ -1,5 +1,6 @@
 import { ICategory } from '../../../../../../../shared/interfaces/categories.interface';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ngx-shop-side-menu',
@@ -9,9 +10,7 @@ export class SideMenuComponent {
   @Input()
   public categories: ICategory[] = [];
 
-  @Output()
-  public categoryChange: EventEmitter<string> = new EventEmitter();
-
+  constructor(private router: Router) {}
   public currentName: string | null = null;
 
   public hover(name: string): void {
@@ -22,7 +21,7 @@ export class SideMenuComponent {
     this.currentName = null;
   }
 
-  public redirectTo(subCategory: string): void {
-    this.categoryChange.emit(subCategory);
+  public redirectTo(subCategoryId: string): void {
+    this.router.navigate(['/category', subCategoryId]);
   }
 }

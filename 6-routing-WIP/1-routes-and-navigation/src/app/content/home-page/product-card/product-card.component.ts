@@ -1,20 +1,22 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { IProduct } from '../../../../../../../shared/mocks/6-routing/products';
 
 @Component({
   selector: 'ngx-shop-product-card',
   templateUrl: './product-card.component.html',
 })
-// @ts-ignore
 export class ProductCardComponent {
   @Input()
-  // @ts-ignore
-  public product!: IProduct = null;
+  public product: IProduct = null;
 
-  @Output()
-  // @ts-ignore
-  public goToProduct: EventEmitter<void> = new EventEmitter<void>();
+  constructor(private router: Router) {}
 
   public redirectTo(): void {
-    this.goToProduct.emit();
+    this.router.navigate([
+      '/category',
+      this.product.subCategory,
+      this.product._id,
+    ]);
   }
 }

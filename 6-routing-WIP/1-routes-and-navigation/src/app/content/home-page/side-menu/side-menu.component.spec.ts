@@ -1,14 +1,14 @@
-import {
-  categories,
-  ISubCategory,
-  ICategory,
-} from './../../../../../../shared/mocks/4-services/categories';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement, EventEmitter } from '@angular/core';
 import { SideMenuComponent } from './side-menu.component';
+import {
+  ISubCategory,
+  categories,
+  ICategory,
+} from '../../../../../../../shared/mocks/6-routing/categories';
 
-describe('[Moдуль 4 Компонент cписок кактегорий и подкатегорий]', () => {
+describe('[Moдуль 6 - Компонент cписок кактегорий и подкатегорий]', () => {
   let fixture: ComponentFixture<SideMenuComponent>;
   let component: SideMenuComponent;
   beforeEach(() => {

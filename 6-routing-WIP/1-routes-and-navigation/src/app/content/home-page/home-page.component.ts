@@ -5,6 +5,7 @@ import { CategoriesService } from '../../services/category.service';
 import { ProductsService } from '../../services/products.service';
 import { IProduct } from '../../../../../../shared/mocks/6-routing/products';
 import { OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'ngx-shop-home-page',
   templateUrl: './home-page.component.html',
@@ -24,6 +25,4 @@ export class HomePageComponent implements OnInit {
     this.products$ = this.productsService.getProducts();
     this.categories$ = this.categoriesService.getCategories();
   }
-  redirectTo(val) {}
-  goToProduct() {}
 }

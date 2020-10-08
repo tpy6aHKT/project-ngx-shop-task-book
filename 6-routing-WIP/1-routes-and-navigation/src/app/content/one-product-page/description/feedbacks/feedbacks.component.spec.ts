@@ -1,14 +1,14 @@
-import {
-  IFeedback,
-  oneProduct,
-} from './../../../../../../../shared/mocks/4-services/product-information';
+import { StarRatingComponent } from './../../../../shared/components/star-rating/star-rating.component';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement, EventEmitter } from '@angular/core';
 import { FeedbacksComponent } from './feedbacks.component';
-import { StarRatingComponent } from '../../star-rating/star-rating.component';
 
-describe('[Moдуль 4 - Компонент отзывов товара]', () => {
+import {
+  IFeedback,
+  oneProduct,
+} from '../../../../../../../../shared/mocks/6-routing/product-information';
+describe('[Moдуль 6 - Компонент отзывов товара]', () => {
   let fixture: ComponentFixture<FeedbacksComponent>;
   let component: FeedbacksComponent;
   beforeEach(() => {

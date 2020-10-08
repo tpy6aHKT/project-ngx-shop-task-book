@@ -32,7 +32,6 @@ export class BrandsComponent implements ControlValueAccessor {
   public registerOnChange(fn: Function): void {
     this.onChange = fn;
   }
-
   public registerOnTouched(): void {}
 
   public check(brandName: string): void {

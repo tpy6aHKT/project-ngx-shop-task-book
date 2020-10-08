@@ -3,7 +3,7 @@ import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { EventEmitter } from '@angular/core';
 
-describe('[Moдуль 4 - Header компонент]', () => {
+describe('[Moдуль 6 - Header компонент]', () => {
   let fixture: ComponentFixture<HeaderComponent>;
   let component: HeaderComponent;
   beforeEach(() => {

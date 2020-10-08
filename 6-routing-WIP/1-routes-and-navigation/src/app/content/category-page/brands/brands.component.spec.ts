@@ -7,9 +7,9 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { By } from '@angular/platform-browser';
-import { brands } from '../../../../../../shared/mocks/5-forms/brands.mock';
+import { brands } from '../../../../../../../shared/mocks/6-routing/brands.mock';
 import { BrandsComponent } from './brands.component';
-describe('[Moдуль 5 - Компонент бренда товаров]', () => {
+describe('[Moдуль 6 - Компонент бренда товаров]', () => {
   let fixture: ComponentFixture<BrandsComponent>;
   let component: BrandsComponent;
   const formBuilder: FormBuilder = new FormBuilder();

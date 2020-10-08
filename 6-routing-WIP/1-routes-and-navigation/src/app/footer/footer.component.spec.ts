@@ -2,7 +2,7 @@ import { FooterComponent } from './footer.component';
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
-describe('[Moдуль 4 - Футтер компонент]', () => {
+describe('[Moдуль 6 - Футтер компонент]', () => {
   let fixture: ComponentFixture<FooterComponent>;
   let component: FooterComponent;
   beforeEach(() => {

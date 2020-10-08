@@ -5,6 +5,7 @@ import {
   Output,
   EventEmitter,
 } from '@angular/core';
+import { Router } from '@angular/router';
 import { IProduct } from '../../../../../../../shared/mocks/6-routing/products';
 
 @Component({
@@ -18,15 +19,16 @@ export class CategoryProductComponent {
 
   @Output()
   public addToCart: EventEmitter<string> = new EventEmitter<string>();
-
-  @Output()
-  public goToProduct: EventEmitter<string> = new EventEmitter<string>();
+  constructor(private router: Router) {}
 
   public addToBasket(): void {
     this.addToCart.emit('Вы добавили товар в корзину');
   }
-
   public redirectTo(): void {
-    this.goToProduct.emit('Переход на компонент товара');
+    this.router.navigate([
+      '/category',
+      this.product.subCategory,
+      this.product._id,
+    ]);
   }
 }

@@ -3,9 +3,9 @@ import { By } from '@angular/platform-browser';
 import { EventEmitter } from '@angular/core';
 import { DescriptionComponent } from './description.component';
 import { FeedbacksComponent } from './feedbacks/feedbacks.component';
-import { oneProduct } from '../../../../../../shared/mocks/4-services/product-information';
+import { oneProduct } from '../../../../../../../shared/mocks/6-routing/product-information';
 
-describe('[Moдуль 4 - Компонент описания товара]', () => {
+describe('[Moдуль 6 - Компонент описания товара]', () => {
   let fixture: ComponentFixture<DescriptionComponent>;
   let component: DescriptionComponent;
   beforeEach(() => {

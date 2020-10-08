@@ -4,7 +4,7 @@ import { EventEmitter } from '@angular/core';
 import { CategoryProductComponent } from './product-card.component';
 import { oneProduct } from '../../../../../../../shared/mocks/6-routing/product-information';
 
-describe('[Moдуль 1 - Компонент товара]', () => {
+describe('[Moдуль 6 - Компонент товара]', () => {
   let fixture: ComponentFixture<CategoryProductComponent>;
   let component: CategoryProductComponent;
   beforeEach(() => {

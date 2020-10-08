@@ -2,7 +2,7 @@
   <div (click)="redirectTo()" class="inner-col description-col go-to-product">
     <div class="product-img pointer">
       <img
-        [src]="product?.images[0]"
+        [src]="product?.images[0]?.url"
         loading="auto"
         class="img"
         width="80"
@@ -10,7 +10,7 @@
       />
     </div>
 
-    <div class="product-desc">
+    <div class="product-desc" style="width: 250px">
       <h4 class="product-name col-title mb-2 pointer">
         {{ product?.name }}
       </h4>

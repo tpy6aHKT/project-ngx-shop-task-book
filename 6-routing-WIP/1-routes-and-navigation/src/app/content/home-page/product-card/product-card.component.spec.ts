@@ -2,9 +2,9 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ProductCardComponent } from './product-card.component';
 import { By } from '@angular/platform-browser';
 import { EventEmitter } from '@angular/core';
-import { products } from '../../../../../../shared/mocks/4-services/products';
+import { products } from '../../../../../../../shared/mocks/6-routing/products';
 
-describe('[Moдуль 4 - Компонент рекомендуемого товара]', () => {
+describe('[Moдуль 6 - Компонент рекомендуемого товара]', () => {
   let fixture: ComponentFixture<ProductCardComponent>;
   let component: ProductCardComponent;
   beforeEach(() => {

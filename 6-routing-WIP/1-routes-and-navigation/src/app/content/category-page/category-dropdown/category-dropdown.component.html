@@ -14,7 +14,7 @@
   >
     <li
       *ngFor="let subCategory of category.subCategories"
-      (click)="subCategorySelect(subCategory.name)"
+      (click)="subCategorySelect(subCategory._id)"
       class="sub-category"
     >
       <a

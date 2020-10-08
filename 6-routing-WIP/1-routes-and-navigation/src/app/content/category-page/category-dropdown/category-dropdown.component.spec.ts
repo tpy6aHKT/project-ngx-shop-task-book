@@ -2,9 +2,13 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement, EventEmitter } from '@angular/core';
 import { CategoryDropdownComponent } from './category-dropdown.component';
-import { categories, ICategory, ISubCategory } from '../../../../../../../shared/mocks/6-routing/categories';
+import {
+  categories,
+  ICategory,
+  ISubCategory,
+} from '../../../../../../../shared/mocks/6-routing/categories';
 
-describe('[Moдуль 3 Компонент выбора категории товара]', () => {
+describe('[Moдуль 6 Компонент выбора категории товара]', () => {
   let fixture: ComponentFixture<CategoryDropdownComponent>;
   let component: CategoryDropdownComponent;
   beforeEach(() => {
