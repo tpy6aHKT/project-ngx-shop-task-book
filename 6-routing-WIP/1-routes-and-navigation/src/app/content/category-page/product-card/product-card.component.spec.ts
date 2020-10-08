@@ -3,6 +3,7 @@ import { By } from '@angular/platform-browser';
 import { EventEmitter } from '@angular/core';
 import { CategoryProductComponent } from './product-card.component';
 import { oneProduct } from '../../../../../../../shared/mocks/6-routing/product-information';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('[Moдуль 6 - Компонент товара]', () => {
   let fixture: ComponentFixture<CategoryProductComponent>;
@@ -10,6 +11,7 @@ describe('[Moдуль 6 - Компонент товара]', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [CategoryProductComponent],
+      imports: [RouterTestingModule],
     });
     fixture = TestBed.createComponent(CategoryProductComponent);
     component = fixture.componentInstance;
@@ -31,10 +33,6 @@ describe('[Moдуль 6 - Компонент товара]', () => {
     expect((component as any).addToCart).toBeTruthy();
     expect((component as any).addToCart).toBeInstanceOf(EventEmitter);
   });
-  it('компонент должен иметь cобственное событие goToProduct ', () => {
-    expect((component as any).goToProduct).toBeTruthy();
-    expect((component as any).goToProduct).toBeInstanceOf(EventEmitter);
-  });
 
   it('при нажатии на кнопку с селектором .add-to-cart должен вызываться метод  addToBasket и срабатывать собстевнное событие addToCart', () => {
     spyOn(component as any, 'addToBasket').and.callThrough();
@@ -47,15 +45,13 @@ describe('[Moдуль 6 - Компонент товара]', () => {
     expect((component as any)?.addToCart.emit).toHaveBeenCalledTimes(1);
   });
 
-  it('при нажатии на блок с селектором .go-to-product должен вызываться метод  redirectTo и срабатывать собстевнное событие goToProduct', () => {
+  it('при нажатии на блок с селектором .go-to-product должен вызываться метод  redirectTo', () => {
     spyOn(component as any, 'redirectTo').and.callThrough();
-    spyOn((component as any)?.goToProduct, 'emit').and.callThrough();
     const incrementButton = fixture.debugElement.query(
       By.css('div.go-to-product')
     );
     incrementButton.triggerEventHandler('click', null);
     expect((component as any)?.redirectTo).toHaveBeenCalledTimes(1);
-    expect((component as any)?.goToProduct.emit).toHaveBeenCalledTimes(1);
   });
 
   it('тег c селекторор [.product-img img] должен иметь правильное связывание свойств src и alt', () => {
@@ -63,8 +59,8 @@ describe('[Moдуль 6 - Компонент товара]', () => {
     fixture.detectChanges();
     const imgEl = fixture.debugElement.query(By.css('.product-img img'));
     expect(imgEl).toBeTruthy();
-    const { image, name } = (component as any)?.product;
-    expect(imgEl.attributes.src).toEqual(image);
+    const { images, name } = (component as any)?.product;
+    expect(imgEl.attributes.src).toEqual(images[0].url);
     expect(imgEl.attributes.alt).toEqual(name);
   });
 

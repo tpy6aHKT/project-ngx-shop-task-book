@@ -7,13 +7,15 @@ import {
   ICategory,
   ISubCategory,
 } from '../../../../../../../shared/mocks/6-routing/categories';
+import { RouterTestingModule } from '@angular/router/testing';
 
-describe('[Moдуль 6 Компонент выбора категории товара]', () => {
+describe('[Moдуль 6 - Компонент выбора категории товара]', () => {
   let fixture: ComponentFixture<CategoryDropdownComponent>;
   let component: CategoryDropdownComponent;
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [CategoryDropdownComponent],
+      imports: [RouterTestingModule],
     });
     fixture = TestBed.createComponent(CategoryDropdownComponent);
     component = fixture.componentInstance;

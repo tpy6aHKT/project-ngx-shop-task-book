@@ -2,6 +2,7 @@ import { IProductApi } from './../../../../../../shared/mocks/6-routing/product-
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { take } from 'rxjs/operators';
 import { ICategory } from '../../../../../../shared/mocks/6-routing/categories';
 import { CategoriesService } from '../../services/category.service';
 import { ProductsService } from '../../services/products.service';
@@ -36,36 +37,56 @@ export class CategoryPageComponent implements OnInit {
     private router: Router,
     private readonly activatedRoute: ActivatedRoute
   ) {}
+
   public ngOnInit(): void {
     this.categories$ = this.categoriesService.getCategories();
-    const path = this.activatedRoute.snapshot.params;
-    this.getData(path.subCategory);
+    this.selectedSubCategory = this.activatedRoute.snapshot.params.subCategory;
+    this.brands$ = this.brandsService.getBrands({
+      prices: [0, 2000],
+      id: this.selectedSubCategory,
+    });
+    this.getQueryParams();
 
     this.form.valueChanges.subscribe((data) => {
       this.filterByParams(data);
     });
   }
 
+  getQueryParams() {
+    this.activatedRoute.queryParams.pipe(take(1)).subscribe((query) => {
+      this.filterByParams({
+        prices: query.prices ? query.prices : [0, 2000],
+        text: query.text ? query.text : '',
+        brands: query.brands ? query.brands : [],
+      });
+      this.form.patchValue(
+        {
+          prices: query.prices ? query.prices : [0, 2000],
+          text: query.text ? query.text : '',
+          brands: query.brands ? query.brands : [],
+        },
+        { emitEvent: false }
+      );
+    });
+  }
+
   subCategorySelect(subCategory: string): void {
+    this.selectedSubCategory = subCategory;
     this.form.patchValue({
       prices: [0, 2000],
       text: '',
       selectedBrands: [],
     });
-    this.getData(subCategory);
-  }
-
-  getData(subCategory: string): void {
-    this.selectedSubCategory = subCategory;
-    this.router.navigate(['/category', subCategory]);
+    this.router.navigate(['/category', this.selectedSubCategory]);
     this.brands$ = this.brandsService.getBrands({
       prices: [0, 2000],
-      id: subCategory,
+      id: this.selectedSubCategory,
     });
     this.products$ = this.productsService.getProductsBySubCategory({
-      currentCategory: subCategory,
+      currentCategory: this.selectedSubCategory,
     });
   }
+
   filterByParams(data: {
     prices: number[];
     text: string;
@@ -73,13 +94,9 @@ export class CategoryPageComponent implements OnInit {
   }): void {
     this.router.navigate(['/category', this.selectedSubCategory], {
       queryParams: {
-        brands:
-          (this.form.get('brands').value as string[]).join(',') || undefined,
-        text: this.form.get('text').value || undefined,
-        prices:
-          (this.form.get('prices').value &&
-            (this.form.get('prices').value as number[]).join(',')) ||
-          undefined,
+        brands: data?.brands || undefined,
+        text: data?.text || undefined,
+        prices: data?.prices || undefined,
       },
     });
     this.products$ = this.productsService.getProductsBySubCategory({

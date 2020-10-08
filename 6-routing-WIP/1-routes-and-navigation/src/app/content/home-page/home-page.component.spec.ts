@@ -1,7 +1,10 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FooterComponent } from './footer/footer.component';
-import { HeaderComponent } from './header/header.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { CategoriesService } from '../../services/category.service';
+import { ProductsService } from '../../services/products.service';
 import { HomePageComponent } from './home-page.component';
+import { ProductCardComponent } from './product-card/product-card.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 
 describe('[Moдуль 4 - Компонент домашней страницы]', () => {
@@ -11,30 +14,21 @@ describe('[Moдуль 4 - Компонент домашней страницы]'
     TestBed.configureTestingModule({
       declarations: [
         HomePageComponent,
-        FooterComponent,
-        HeaderComponent,
+        ProductCardComponent,
         SideMenuComponent,
       ],
+      imports: [HttpClientModule, RouterTestingModule, HttpClientModule],
+      providers: [ProductsService, CategoriesService],
     });
     fixture = TestBed.createComponent(HomePageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('компонент должен иметь метод goToBasket ', () => {
-    expect((component as any).goToBasket).toBeTruthy();
-  });
-  it('компонент должен иметь метод goToProduct ', () => {
-    expect((component as any).goToProduct).toBeTruthy();
-  });
-  it('компонент должен иметь метод redirectTo ', () => {
-    expect((component as any).redirectTo).toBeTruthy();
-  });
-
-  it('компонент должен иметь свойство products co значением null', () => {
-    expect((component as any).products).toBeDefined(null);
-  });
-  it('компонент должен иметь свойство categories co значением null', () => {
-    expect((component as any).categories).toBeDefined(null);
-  });
+  // it('компонент должен иметь свойство products co значением null', () => {
+  //   expect((component as any).products).toBeDefined(null);
+  // });
+  // it('компонент должен иметь свойство categories co значением null', () => {
+  //   expect((component as any).categories).toBeDefined(null);
+  // });
 });
