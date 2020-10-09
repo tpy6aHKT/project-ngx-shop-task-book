@@ -16,6 +16,10 @@ export class ProductPageComponent implements OnInit {
   ) {}
 
   public ngOnInit(): void {
+    this.getData();
+  }
+
+  getData() {
     const { product } = this.activatedRoute.snapshot.params;
     this.product$ = this.productsService.getProductById(product);
   }

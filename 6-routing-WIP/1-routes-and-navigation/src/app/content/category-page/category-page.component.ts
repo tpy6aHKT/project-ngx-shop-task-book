@@ -14,15 +14,11 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './category-page.component.html',
 })
 export class CategoryPageComponent implements OnInit {
-  public selectedPrices: number[] = [];
   public categories$: Observable<ICategory[]> = null;
   public products$: Observable<IProductApi> = null;
   // tslint:disable-next-line: ban-types
   public brands$: Observable<Object> = null;
-  public brands: string[] = [];
-  public selectedBrands: string[] = [];
   public selectedSubCategory = null;
-
   public form: FormGroup = this.fb.group({
     brands: [[]],
     text: [''],
@@ -77,7 +73,7 @@ export class CategoryPageComponent implements OnInit {
       text: '',
       selectedBrands: [],
     });
-    this.router.navigate(['/category', this.selectedSubCategory]);
+    this.router.navigate(['category/', this.selectedSubCategory]);
     this.brands$ = this.brandsService.getBrands({
       prices: [0, 2000],
       id: this.selectedSubCategory,
@@ -92,7 +88,7 @@ export class CategoryPageComponent implements OnInit {
     text: string;
     brands: string[];
   }): void {
-    this.router.navigate(['/category', this.selectedSubCategory], {
+    this.router.navigate(['category/', this.selectedSubCategory], {
       queryParams: {
         brands: data?.brands || undefined,
         text: data?.text || undefined,

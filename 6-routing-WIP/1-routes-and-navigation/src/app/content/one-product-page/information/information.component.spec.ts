@@ -6,6 +6,7 @@ import { ReviewPipe } from '../../../shared/pipes/review.pipe';
 import { RatePipe } from '../../../shared/pipes/rate.pipe';
 import { StarRatingComponent } from '../../../shared/components/star-rating/star-rating.component';
 import { oneProduct } from '../../../../../../../shared/mocks/6-routing/product-information';
+
 describe('[Moдуль 6 - Компонент информации о товаре]', () => {
   let fixture: ComponentFixture<InformationComponent>;
   let component: InformationComponent;

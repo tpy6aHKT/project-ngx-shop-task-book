@@ -4,7 +4,7 @@ import { By } from '@angular/platform-browser';
 import { StarRatingComponent } from './star-rating.component';
 import { DebugElement } from '@angular/core';
 
-describe('[Moдуль 4 -  Компонент рейтинга товара]', () => {
+describe('[Moдуль 6 -  Компонент рейтинга товара]', () => {
   let fixture: ComponentFixture<StarRatingComponent>;
   let component: StarRatingComponent;
   beforeEach(() => {

@@ -2,7 +2,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ProductPageComponent } from './one-product-page.component';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { ProductsService } from '../../services/products.service';
 import { ProductPageRoutingModule } from './one-product-page-routing.module';
 import { InformationComponent } from './information/information.component';
@@ -11,6 +11,7 @@ import { FeedbacksComponent } from './description/feedbacks/feedbacks.component'
 import { ReviewPipe } from '../../shared/pipes/review.pipe';
 import { StarRatingComponent } from '../../shared/components/star-rating/star-rating.component';
 import { RatePipe } from '../../shared/pipes/rate.pipe';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('[Moдуль 6 - Компонент страницы одного товара]', () => {
   let fixture: ComponentFixture<ProductPageComponent>;
@@ -27,10 +28,8 @@ describe('[Moдуль 6 - Компонент страницы одного то�
         RatePipe,
       ],
       imports: [
-        HttpClientModule,
-        RouterModule,
+        HttpClientTestingModule,
         RouterTestingModule,
-        HttpClientModule,
         ProductPageRoutingModule,
       ],
       providers: [ProductsService],
@@ -40,11 +39,7 @@ describe('[Moдуль 6 - Компонент страницы одного то�
     fixture.detectChanges();
   });
 
-  // it('компонент должен иметь метод goToBasket ', () => {
-  //   expect((component as any).goToBasket).toBeTruthy();
-  // });
-
-  // it('компонент должен иметь свойство product c значением null', () => {
-  //   expect((component as any).product$).toBeDefined(null);
-  // });
+  it('компонент должен иметь метод getData ', () => {
+    expect((component as any).getData).toBeTruthy();
+  });
 });

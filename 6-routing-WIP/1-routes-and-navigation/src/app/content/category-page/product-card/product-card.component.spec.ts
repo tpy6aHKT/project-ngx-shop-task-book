@@ -45,15 +45,6 @@ describe('[Moдуль 6 - Компонент товара]', () => {
     expect((component as any)?.addToCart.emit).toHaveBeenCalledTimes(1);
   });
 
-  it('при нажатии на блок с селектором .go-to-product должен вызываться метод  redirectTo', () => {
-    spyOn(component as any, 'redirectTo').and.callThrough();
-    const incrementButton = fixture.debugElement.query(
-      By.css('div.go-to-product')
-    );
-    incrementButton.triggerEventHandler('click', null);
-    expect((component as any)?.redirectTo).toHaveBeenCalledTimes(1);
-  });
-
   it('тег c селекторор [.product-img img] должен иметь правильное связывание свойств src и alt', () => {
     (component as any).product = oneProduct;
     fixture.detectChanges();

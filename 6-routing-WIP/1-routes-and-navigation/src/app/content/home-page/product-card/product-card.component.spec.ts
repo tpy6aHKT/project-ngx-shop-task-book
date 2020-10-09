@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ProductCardComponent } from './product-card.component';
 import { By } from '@angular/platform-browser';
-import { EventEmitter } from '@angular/core';
 import { products } from '../../../../../../../shared/mocks/6-routing/products';
 import { RouterTestingModule } from '@angular/router/testing';
 

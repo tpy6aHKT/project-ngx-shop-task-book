@@ -30,6 +30,7 @@ describe('[Moдуль 6 - Компонент cписок кактегорий и
     expect((component as any).categories).toBeDefined();
     expect((component as any).categories).toEqual([]);
   });
+
   it('компонент должен иметь свойство currentName c значением null', () => {
     expect((component as any).currentName).toBeDefined();
     expect((component as any).currentName).toEqual(null);
@@ -42,6 +43,7 @@ describe('[Moдуль 6 - Компонент cписок кактегорий и
     fixture.detectChanges();
     expect((component as any).currentName).toEqual(testName);
   });
+
   it('компонент должен иметь метод mouseLeave устанавливает  currentName в null', () => {
     expect((component as any).mouseLeave).toBeDefined();
     (component as any).currentName = 'testName';
@@ -72,19 +74,6 @@ describe('[Moдуль 6 - Компонент cписок кактегорий и
     }, 0);
     expect(listElements.length).toEqual(subCatCount);
   });
-
-  // it('при нажатии на блок с селектором .dropdown-item должен вызываться метод  redirectTo и срабатывать собственное событие goToProduct', () => {
-  //   spyOn(component as any, 'redirectTo').and.callThrough();
-  //   spyOn((component as any)?.categoryChange, 'emit').and.callThrough();
-  //   (component as any).categories = categories;
-  //   fixture.detectChanges();
-  //   const [subCategoryItem] = fixture.debugElement.queryAll(
-  //     By.css('.dropdown-item a')
-  //   );
-  //   subCategoryItem.triggerEventHandler('click', null);
-  //   expect((component as any)?.redirectTo).toHaveBeenCalledTimes(1);
-  //   expect((component as any)?.categoryChange.emit).toHaveBeenCalledTimes(1);
-  // });
 
   it('тег с селектором .dropdown-toggle  должен правильно интерполировать свойство name категории', () => {
     (component as any).categories = categories;
