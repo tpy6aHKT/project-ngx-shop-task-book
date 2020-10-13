@@ -1,20 +1,14 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CategoryPageComponent } from './category-page.component';
-import { CategoriesService } from '../../services/category.service';
-import { ProductsService } from '../../services/products.service';
-import { BrandsService } from '../../services/brands.service';
 import { RouterTestingModule } from '@angular/router/testing';
-import { ReactiveFormsModule, FormsModule, FormBuilder } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { Ng5SliderModule } from 'ng5-slider';
 import { CategoryDropdownComponent } from './category-dropdown/category-dropdown.component';
 import { BrandsComponent } from './brands/brands.component';
 import { PriceInputsComponent } from './price-slider/price-inputs/price-inputs.component';
 import { PriceSliderComponent } from './price-slider/price-slider.component';
-import { InterceptorService } from './../../services/interceptor.service';
-import { BASE_URL_TOKEN } from './../../services/config';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { environment } from '../../../environments/environment';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { SharedModule } from '../../shared/shared.module';
 
 describe('[Moдуль 6 - Компонент страницы категорий]', () => {
   let fixture: ComponentFixture<CategoryPageComponent>;
@@ -33,25 +27,10 @@ describe('[Moдуль 6 - Компонент страницы категорий
       imports: [
         Ng5SliderModule,
         RouterTestingModule,
-        ReactiveFormsModule,
-        FormsModule,
         HttpClientTestingModule,
+        SharedModule,
       ],
-      providers: [
-        { provide: FormBuilder, useValue: formBuilder },
-        CategoriesService,
-        ProductsService,
-        BrandsService,
-        {
-          provide: BASE_URL_TOKEN,
-          useValue: environment.baseUrl,
-        },
-        {
-          provide: HTTP_INTERCEPTORS,
-          useClass: InterceptorService,
-          multi: true,
-        },
-      ],
+      providers: [{ provide: FormBuilder, useValue: formBuilder }],
     });
     fixture = TestBed.createComponent(CategoryPageComponent);
     component = fixture.componentInstance;

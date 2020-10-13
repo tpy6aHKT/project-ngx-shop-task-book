@@ -1,10 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import {
-  FormBuilder,
-  FormsModule,
-  NG_VALUE_ACCESSOR,
-  ReactiveFormsModule,
-} from '@angular/forms';
+import { FormBuilder, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { SharedModule } from '../../../../shared/shared.module';
 import { PriceInputsComponent } from './price-inputs.component';
 
 describe('[Moдуль 6 - Компонент лимитов цены товара]', () => {
@@ -15,7 +11,7 @@ describe('[Moдуль 6 - Компонент лимитов цены товар�
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [PriceInputsComponent],
-      imports: [ReactiveFormsModule, FormsModule],
+      imports: [SharedModule],
       providers: [
         { provide: FormBuilder, useValue: formBuilder },
         {

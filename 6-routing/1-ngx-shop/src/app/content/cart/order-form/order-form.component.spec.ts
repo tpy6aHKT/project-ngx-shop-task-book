@@ -2,6 +2,7 @@ import { EventEmitter } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormBuilder } from '@angular/forms';
 import { By } from '@angular/platform-browser';
+import { SharedModule } from '../../../shared/shared.module';
 import { OrderFormComponent } from './order-form.component';
 
 describe('[Moдуль 6 - Компонент формы заказа]', () => {
@@ -11,6 +12,7 @@ describe('[Moдуль 6 - Компонент формы заказа]', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [OrderFormComponent],
+      imports:[SharedModule],
       providers: [{ provide: FormBuilder, useValue: formBuilder }],
     });
     fixture = TestBed.createComponent(OrderFormComponent);

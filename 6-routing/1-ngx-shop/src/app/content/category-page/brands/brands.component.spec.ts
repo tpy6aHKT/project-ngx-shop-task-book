@@ -1,13 +1,9 @@
 import { DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import {
-  FormBuilder,
-  FormsModule,
-  NG_VALUE_ACCESSOR,
-  ReactiveFormsModule,
-} from '@angular/forms';
+import { FormBuilder, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { By } from '@angular/platform-browser';
 import { brands } from '../../../../../../../shared/mocks/6-routing/brands.mock';
+import { SharedModule } from '../../../shared/shared.module';
 import { BrandsComponent } from './brands.component';
 describe('[Moдуль 6 - Компонент бренда товаров]', () => {
   let fixture: ComponentFixture<BrandsComponent>;
@@ -16,7 +12,7 @@ describe('[Moдуль 6 - Компонент бренда товаров]', () =
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [BrandsComponent],
-      imports: [ReactiveFormsModule, FormsModule],
+      imports: [SharedModule],
       providers: [
         { provide: FormBuilder, useValue: formBuilder },
         {

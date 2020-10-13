@@ -1,12 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import {
-  FormBuilder,
-  FormsModule,
-  NG_VALUE_ACCESSOR,
-  ReactiveFormsModule,
-} from '@angular/forms';
+import { FormBuilder, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { By } from '@angular/platform-browser';
 import { Ng5SliderModule } from 'ng5-slider';
+import { SharedModule } from '../../../shared/shared.module';
 import { PriceInputsComponent } from './price-inputs/price-inputs.component';
 
 import { PriceSliderComponent } from './price-slider.component';
@@ -17,7 +13,7 @@ describe('[Moдуль 6 - Компонент слайдера цены]', () => 
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [PriceSliderComponent, PriceInputsComponent],
-      imports: [Ng5SliderModule, ReactiveFormsModule, FormsModule],
+      imports: [Ng5SliderModule, SharedModule],
       providers: [
         { provide: FormBuilder, useValue: formBuilder },
         {

@@ -7,7 +7,6 @@ import { CartService } from '../services/cart.service';
   templateUrl: './header.component.html',
 })
 export class HeaderComponent {
-  public counter = 5;
   public count$ = this.cartService.getCountOfProducts();
 
   constructor(private router: Router, private cartService: CartService) {}

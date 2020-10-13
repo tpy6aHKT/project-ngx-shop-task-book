@@ -1,4 +1,3 @@
-import { StarRatingComponent } from './../../../../shared/components/star-rating/star-rating.component';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement, EventEmitter } from '@angular/core';
@@ -8,12 +7,14 @@ import {
   IFeedback,
   oneProduct,
 } from '../../../../../../../../shared/mocks/6-routing/product-information';
+import { SharedModule } from '../../../../shared/shared.module';
 describe('[Moдуль 6 - Компонент отзывов товара]', () => {
   let fixture: ComponentFixture<FeedbacksComponent>;
   let component: FeedbacksComponent;
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [FeedbacksComponent, StarRatingComponent],
+      declarations: [FeedbacksComponent],
+      imports: [SharedModule],
     });
     fixture = TestBed.createComponent(FeedbacksComponent);
     component = fixture.componentInstance;

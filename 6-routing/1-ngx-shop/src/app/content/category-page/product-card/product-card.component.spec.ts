@@ -4,6 +4,7 @@ import { EventEmitter } from '@angular/core';
 import { CategoryProductComponent } from './product-card.component';
 import { oneProduct } from '../../../../../../../shared/mocks/6-routing/product-information';
 import { RouterTestingModule } from '@angular/router/testing';
+import { SharedModule } from '../../../shared/shared.module';
 
 describe('[Moдуль 6 - Компонент товара]', () => {
   let fixture: ComponentFixture<CategoryProductComponent>;
@@ -11,14 +12,14 @@ describe('[Moдуль 6 - Компонент товара]', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [CategoryProductComponent],
-      imports: [RouterTestingModule],
+      imports: [RouterTestingModule, SharedModule],
     });
     fixture = TestBed.createComponent(CategoryProductComponent);
     component = fixture.componentInstance;
   });
 
-  it('компонент должен иметь метод addToBasket ', () => {
-    expect((component as any).addToBasket).toBeTruthy();
+  it('компонент должен иметь метод addToCart ', () => {
+    expect((component as any).addToCart).toBeTruthy();
   });
 
   it('компонент должен иметь метод redirectTo ', () => {
@@ -29,20 +30,13 @@ describe('[Moдуль 6 - Компонент товара]', () => {
     expect((component as any).product).toBeDefined();
   });
 
-  it('компонент должен иметь cобственное событие addToCart ', () => {
-    expect((component as any).addToCart).toBeTruthy();
-    expect((component as any).addToCart).toBeInstanceOf(EventEmitter);
-  });
-
-  it('при нажатии на кнопку с селектором .add-to-cart должен вызываться метод  addToBasket и срабатывать собстевнное событие addToCart', () => {
-    spyOn(component as any, 'addToBasket').and.callThrough();
-    spyOn((component as any)?.addToCart, 'emit').and.callThrough();
+  it('при нажатии на кнопку с селектором .add-to-cart должен вызываться метод  addToCart', () => {
+    spyOn(component as any, 'addToCart').and.callThrough();
     const incrementButton = fixture.debugElement.query(
       By.css('button.add-to-cart')
     );
     incrementButton.triggerEventHandler('click', null);
-    expect((component as any)?.addToBasket).toHaveBeenCalledTimes(1);
-    expect((component as any)?.addToCart.emit).toHaveBeenCalledTimes(1);
+    expect((component as any)?.addToCart).toHaveBeenCalledTimes(1);
   });
 
   it('тег c селекторор [.product-img img] должен иметь правильное связывание свойств src и alt', () => {

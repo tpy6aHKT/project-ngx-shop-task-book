@@ -1,31 +1,27 @@
+import { RouterTestingModule } from '@angular/router/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { EventEmitter } from '@angular/core';
 import { InformationComponent } from './information.component';
-import { ReviewPipe } from '../../../shared/pipes/review.pipe';
-import { RatePipe } from '../../../shared/pipes/rate.pipe';
-import { StarRatingComponent } from '../../../shared/components/star-rating/star-rating.component';
 import { oneProduct } from '../../../../../../../shared/mocks/6-routing/product-information';
+import { SharedModule } from '../../../shared/shared.module';
+import { CartService } from '../../../services/cart.service';
 
 describe('[Moдуль 6 - Компонент информации о товаре]', () => {
   let fixture: ComponentFixture<InformationComponent>;
   let component: InformationComponent;
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        InformationComponent,
-        StarRatingComponent,
-        ReviewPipe,
-        RatePipe,
-      ],
+      declarations: [InformationComponent],
+      imports: [SharedModule, RouterTestingModule],
     });
     fixture = TestBed.createComponent(InformationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('компонент должен иметь метод addToBasket ', () => {
-    expect((component as any).addToBasket).toBeTruthy();
+  it('компонент должен иметь метод addToCart ', () => {
+    expect((component as any).addToCart).toBeTruthy();
   });
 
   it('компонент должен иметь метод show ', () => {
@@ -40,24 +36,18 @@ describe('[Moдуль 6 - Компонент информации о товар�
     expect((component as any).isShow).toBeDefined();
     expect((component as any).isShow).toEqual(false);
   });
-  it('компонент должен иметь cобственное событие addToCart ', () => {
-    expect((component as any).addToCart).toBeTruthy();
-    expect((component as any).addToCart).toBeInstanceOf(EventEmitter);
-  });
 
-  it('при нажатии на кнопку с селектором .submit должен вызываться метод  addToBasket и срабатывать собственное событие addToCart', () => {
+  it('при нажатии на кнопку с селектором .submit должен вызываться метод  addToCart ', () => {
     (component as any).product = oneProduct;
-    spyOn(component as any, 'addToBasket').and.callThrough();
-    spyOn((component as any)?.addToCart, 'emit').and.callThrough();
+    spyOn(component as any, 'addToCart').and.callThrough();
     fixture.detectChanges();
     const submitButton = fixture.debugElement.query(By.css('.submit'));
     submitButton.triggerEventHandler('click', null);
-    expect((component as any)?.addToBasket).toHaveBeenCalledTimes(1);
-    expect((component as any)?.addToCart.emit).toHaveBeenCalledTimes(1);
+    expect((component as any)?.addToCart).toHaveBeenCalledTimes(1);
   });
 
   // tslint:disable-next-line: max-line-length
-  it('при нажатии на кнопку с селектором .show-characters должен вызываться метод  show и значение свойства isShow должно быть true', () => {
+  it('при нажатии на кнопку с селектором .show-characters должен вызываться метод show и значение свойства isShow должно быть true', () => {
     expect((component as any).isShow).toBeDefined();
     spyOn(component as any, 'show').and.callThrough();
     fixture.detectChanges();

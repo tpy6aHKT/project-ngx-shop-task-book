@@ -1,13 +1,14 @@
 import { RouterTestingModule } from '@angular/router/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { DebugElement, EventEmitter } from '@angular/core';
+import { DebugElement } from '@angular/core';
 import { SideMenuComponent } from './side-menu.component';
 import {
   ISubCategory,
   categories,
   ICategory,
 } from '../../../../../../../shared/mocks/6-routing/categories';
+import { SharedModule } from '../../../shared/shared.module';
 
 describe('[Moдуль 6 - Компонент cписок кактегорий и подкатегорий]', () => {
   let fixture: ComponentFixture<SideMenuComponent>;
@@ -15,7 +16,7 @@ describe('[Moдуль 6 - Компонент cписок кактегорий и
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [SideMenuComponent],
-      imports: [RouterTestingModule],
+      imports: [RouterTestingModule, SharedModule],
     });
     fixture = TestBed.createComponent(SideMenuComponent);
     component = fixture.componentInstance;

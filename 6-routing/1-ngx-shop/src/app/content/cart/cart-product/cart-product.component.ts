@@ -9,15 +9,13 @@ import { IProduct } from '../../../../../../../shared/mocks/6-routing/products';
 })
 export class CartProductComponent {
   @Input()
-  public product!: IProduct;
+  public product: IProduct = null;
   @Input()
   public disabled?: boolean;
   @Output()
   public decrement: EventEmitter<IProduct> = new EventEmitter<IProduct>();
   @Output()
   public increment: EventEmitter<IProduct> = new EventEmitter<IProduct>();
-  @Output()
-  public remove: EventEmitter<IProduct> = new EventEmitter<IProduct>();
 
   constructor(private router: Router) {}
   public decrementProductInCart(product: IProduct): void {

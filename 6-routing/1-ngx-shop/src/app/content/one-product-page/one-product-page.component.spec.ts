@@ -1,17 +1,13 @@
 import { RouterTestingModule } from '@angular/router/testing';
-import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ProductPageComponent } from './one-product-page.component';
-import { ActivatedRoute, RouterModule } from '@angular/router';
 import { ProductsService } from '../../services/products.service';
 import { ProductPageRoutingModule } from './one-product-page-routing.module';
 import { InformationComponent } from './information/information.component';
 import { DescriptionComponent } from './description/description.component';
 import { FeedbacksComponent } from './description/feedbacks/feedbacks.component';
-import { ReviewPipe } from '../../shared/pipes/review.pipe';
-import { StarRatingComponent } from '../../shared/components/star-rating/star-rating.component';
-import { RatePipe } from '../../shared/pipes/rate.pipe';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { SharedModule } from '../../shared/shared.module';
 
 describe('[Moдуль 6 - Компонент страницы одного товара]', () => {
   let fixture: ComponentFixture<ProductPageComponent>;
@@ -23,13 +19,11 @@ describe('[Moдуль 6 - Компонент страницы одного то�
         InformationComponent,
         DescriptionComponent,
         FeedbacksComponent,
-        ReviewPipe,
-        StarRatingComponent,
-        RatePipe,
       ],
       imports: [
         HttpClientTestingModule,
         RouterTestingModule,
+        SharedModule,
         ProductPageRoutingModule,
       ],
       providers: [ProductsService],
