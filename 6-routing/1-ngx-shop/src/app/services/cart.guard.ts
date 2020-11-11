@@ -16,7 +16,6 @@ export class CartGuard implements CanActivate {
     return this.cartService.getCart().pipe(
       take(1),
       switchMap((products: IProduct[]) => {
-        console.log('!!', products);
         if (products?.length > 0) {
           return of(true);
         }

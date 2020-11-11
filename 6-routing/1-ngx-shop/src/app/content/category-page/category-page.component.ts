@@ -73,7 +73,7 @@ export class CategoryPageComponent implements OnInit {
       text: '',
       selectedBrands: [],
     });
-    this.router.navigate(['category/', this.selectedSubCategory]);
+    this.router.navigate(['category/', `${this.selectedSubCategory}`]);
     this.brands$ = this.brandsService.getBrands({
       prices: [0, 2000],
       id: this.selectedSubCategory,
@@ -88,7 +88,7 @@ export class CategoryPageComponent implements OnInit {
     text: string;
     brands: string[];
   }): void {
-    this.router.navigate(['category/', this.selectedSubCategory], {
+    this.router.navigate(['category/', `${this.selectedSubCategory}`], {
       queryParams: {
         brands: data?.brands || undefined,
         text: data?.text || undefined,

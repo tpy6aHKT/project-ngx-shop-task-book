@@ -70,7 +70,6 @@ describe('[Moдуль 6 - Компонент бренда товаров]', () =
     (component as any).brands = brands;
     expect(brands).toBeTruthy();
     expect((component as any).brands.length).toBeGreaterThan(0);
-
     fixture.detectChanges();
     const brandNameElList: DebugElement[] = fixture.debugElement.queryAll(
       By.css('.brand-name')
@@ -78,7 +77,6 @@ describe('[Moдуль 6 - Компонент бренда товаров]', () =
     expect(brands).toBeTruthy();
     expect(brandNameElList).toBeTruthy();
     expect(brandNameElList.length).toEqual((component as any).brands.length);
-
     (component as any).brands.forEach((brand: string, index: number) => {
       expect(brandNameElList[index].nativeElement.textContent.trim()).toEqual(
         brand
@@ -90,11 +88,9 @@ describe('[Moдуль 6 - Компонент бренда товаров]', () =
     (component as any).brands = brands;
     expect(brands).toBeTruthy();
     expect((component as any).brands.length).toBeGreaterThan(0);
-
     expect((component as any).isShow).toBeDefined(false);
     spyOn(component as any, 'show').and.callThrough();
     fixture.detectChanges();
-
     const showButton = fixture.debugElement.query(By.css('.more'));
     showButton.triggerEventHandler('click', null);
     expect((component as any)?.show).toHaveBeenCalledTimes(1);

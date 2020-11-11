@@ -37,33 +37,30 @@ describe('[Moдуль 6 - Компонент страницы категорий
     fixture.detectChanges();
   });
 
-  // it('компонент должен иметь свойство selectedSubCategory c значением null', () => {
-  //   expect((component as any).selectedSubCategory).toBeDefined(null);
-  // });
-  // it('компонент должен иметь метод getQueryParams ', () => {
-  //   expect((component as any).getQueryParams).toBeTruthy();
-  // });
-  // it('компонент должен иметь метод filterByParams ', () => {
-  //   expect((component as any).filterByParams).toBeTruthy();
-  // });
-  // it('компонент должен иметь метод subCategorySelect ', () => {
-  //   expect((component as any).subCategorySelect).toBeTruthy();
-  // });
+  it('компонент должен иметь метод getQueryParams ', () => {
+    expect((component as any).getQueryParams).toBeTruthy();
+  });
+  it('компонент должен иметь метод filterByParams ', () => {
+    expect((component as any).filterByParams).toBeTruthy();
+  });
+  it('компонент должен иметь метод subCategorySelect ', () => {
+    expect((component as any).subCategorySelect).toBeTruthy();
+  });
 
-  /*it('поле name в форме должно быть валидным', () => {
+  it('поле name в форме должно быть валидным', () => {
     const brands = component.form.controls.brands;
     expect(brands).toBeTruthy();
     brands.setValue(['101010', '121212']);
     expect(brands).toBeTruthy();
-  });*/
+  });
 
-  // it('поле telephone в форме должно быть валидным', () => {
-  //   const text = component.form.controls.text;
-  //   expect(text).toBeTruthy();
-  // });
+  it('поле telephone в форме должно быть валидным', () => {
+    const text = component.form.controls.text;
+    expect(text).toBeTruthy();
+  });
 
-  // it('поле prices в форме должно быть валидным', () => {
-  //   const prices = component.form.controls.prices;
-  //   expect(prices).toBeTruthy();
-  // });
+  it('поле prices в форме должно быть валидным', () => {
+    const prices = component.form.controls.prices;
+    expect(prices).toBeTruthy();
+  });
 });
