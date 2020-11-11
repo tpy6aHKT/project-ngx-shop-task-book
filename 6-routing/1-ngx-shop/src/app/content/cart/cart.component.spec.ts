@@ -5,6 +5,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { CartComponent } from './cart.component';
 import { SharedModule } from '../../shared/shared.module';
 import { OrderFormComponent } from './order-form/order-form.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 describe('[Moдуль 6 - Компонент страницы корзины]', () => {
   let fixture: ComponentFixture<CartComponent>;
@@ -13,8 +14,8 @@ describe('[Moдуль 6 - Компонент страницы корзины]', 
     TestBed.configureTestingModule({
       declarations: [OrderFormComponent, CartProductComponent],
       imports: [HttpClientTestingModule, RouterTestingModule, SharedModule],
-    });
-    fixture = TestBed.createComponent(CartComponent);
+    }),
+      (fixture = TestBed.createComponent(CartComponent));
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

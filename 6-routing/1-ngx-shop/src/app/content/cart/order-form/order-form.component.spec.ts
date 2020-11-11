@@ -12,7 +12,7 @@ describe('[Moдуль 6 - Компонент формы заказа]', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [OrderFormComponent],
-      imports:[SharedModule],
+      imports: [SharedModule],
       providers: [{ provide: FormBuilder, useValue: formBuilder }],
     });
     fixture = TestBed.createComponent(OrderFormComponent);

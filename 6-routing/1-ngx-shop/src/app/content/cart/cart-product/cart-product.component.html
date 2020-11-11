@@ -5,7 +5,7 @@
         loading="auto"
         class="img"
         [src]="product?.images | imgUrl"
-        alt="product?.name"
+        alt="{{ product?.name }}"
         *ngIf="product?.images"
       />
     </div>
@@ -35,7 +35,7 @@
       <button
         *ngIf="!disabled"
         type="button"
-        class="pointer"
+        class="pointer decrement"
         tooltip="Уменьшить количество товара"
         (click)="decrementProductInCart(product)"
       >
@@ -46,11 +46,11 @@
         />
       </button>
 
-      <span class="counter__value">{{ product?.count }}</span>
+      <span class="counter-value">{{ product?.count }}</span>
       <button
         *ngIf="!disabled"
         type="button"
-        class="pointer"
+        class="pointer increment"
         tooltip="Увеличить количество товара"
         (click)="incrementProductInCart(product)"
       >

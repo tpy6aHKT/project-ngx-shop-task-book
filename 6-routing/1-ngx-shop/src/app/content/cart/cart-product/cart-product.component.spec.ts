@@ -95,7 +95,7 @@ describe('[Moдуль 6 -  Компонент товара в корзинe]', (
     );
     expect(prodNameEL).toBeTruthy();
     expect(prodNameEL.nativeElement.textContent.trim()).toEqual(
-      `${(component as any)?.product.feedbacksCount} отзывa`
+      `${(component as any)?.product.feedbacksCount} отзыва`
     );
   });
 
@@ -107,7 +107,7 @@ describe('[Moдуль 6 -  Компонент товара в корзинe]', (
     );
     expect(prodNameEL).toBeTruthy();
     expect(prodNameEL.nativeElement.textContent.trim()).toEqual(
-      `${(component as any)?.product.feedbacksCount} отзывов`
+      `${(component as any)?.product.feedbacksCount} отзыва`
     );
   });
 
@@ -122,11 +122,11 @@ describe('[Moдуль 6 -  Компонент товара в корзинe]', (
     const priceValue = priceEl.nativeElement.textContent.trim();
     expect(priceValue).toEqual(`€${price.toString()}.00`);
   });
-  it('тег с селектором .counter__value должен правильно интерполировать свойство count продукта', () => {
+  it('тег с селектором .counter-value должен правильно интерполировать свойство count продукта', () => {
     (component as any).product = oneProduct;
     fixture.detectChanges();
     const { count } = (component as any)?.product;
-    const counterEl = fixture.debugElement.query(By.css('.counter__value'));
+    const counterEl = fixture.debugElement.query(By.css('.counter-value'));
     expect(count).toBeTruthy();
     const countValue = counterEl.nativeElement.textContent.trim();
     expect(countValue.toString()).toEqual(count.toString());
@@ -140,6 +140,6 @@ describe('[Moдуль 6 -  Компонент товара в корзинe]', (
     expect(price).toBeTruthy();
     expect(count).toBeTruthy();
     const totalValue = totalEl.nativeElement.textContent.trim();
-    expect(totalValue.toString()).toEqual(`€${price * count}`);
+    expect(totalValue.toString()).toEqual(`€${price * count}.00`);
   });
 });
