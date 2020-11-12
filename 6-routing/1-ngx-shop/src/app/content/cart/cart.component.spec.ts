@@ -5,7 +5,6 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { CartComponent } from './cart.component';
 import { SharedModule } from '../../shared/shared.module';
 import { OrderFormComponent } from './order-form/order-form.component';
-import { BrowserModule } from '@angular/platform-browser';
 
 describe('[Moдуль 6 - Компонент страницы корзины]', () => {
   let fixture: ComponentFixture<CartComponent>;

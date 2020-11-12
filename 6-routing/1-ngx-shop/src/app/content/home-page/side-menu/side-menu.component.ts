@@ -1,4 +1,4 @@
-import { ICategory } from '../../../../../../../shared/interfaces/categories.interface';
+import { ICategory } from '../../../../../../../shared/mocks/6-routing/categories';
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 

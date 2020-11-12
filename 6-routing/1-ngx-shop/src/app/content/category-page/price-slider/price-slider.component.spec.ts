@@ -4,8 +4,8 @@ import { By } from '@angular/platform-browser';
 import { Ng5SliderModule } from 'ng5-slider';
 import { SharedModule } from '../../../shared/shared.module';
 import { PriceInputsComponent } from './price-inputs/price-inputs.component';
-
 import { PriceSliderComponent } from './price-slider.component';
+
 describe('[Moдуль 6 - Компонент слайдера цены]', () => {
   let fixture: ComponentFixture<PriceSliderComponent>;
   let component: PriceSliderComponent;

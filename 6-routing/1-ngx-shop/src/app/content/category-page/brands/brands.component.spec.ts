@@ -5,6 +5,7 @@ import { By } from '@angular/platform-browser';
 import { brands } from '../../../../../../../shared/mocks/6-routing/brands.mock';
 import { SharedModule } from '../../../shared/shared.module';
 import { BrandsComponent } from './brands.component';
+
 describe('[Moдуль 6 - Компонент бренда товаров]', () => {
   let fixture: ComponentFixture<BrandsComponent>;
   let component: BrandsComponent;
@@ -68,12 +69,11 @@ describe('[Moдуль 6 - Компонент бренда товаров]', () =
 
   xit('тег с селектором .brand-name  должен правильно интерполировать свойство brandName', () => {
     (component as any).brands = brands;
-    expect(brands).toBeTruthy();
-    expect((component as any).brands.length).toBeGreaterThan(0);
     fixture.detectChanges();
     const brandNameElList: DebugElement[] = fixture.debugElement.queryAll(
       By.css('.brand-name')
     );
+    console.log('!!!!!', brandNameElList.length);
     expect(brands).toBeTruthy();
     expect(brandNameElList).toBeTruthy();
     expect(brandNameElList.length).toEqual((component as any).brands.length);
@@ -86,13 +86,13 @@ describe('[Moдуль 6 - Компонент бренда товаров]', () =
 
   xit('при нажатии на кнопку с селектором .more должен вызываться метод  show и значение свойства isShow должно быть true', () => {
     (component as any).brands = brands;
-    expect(brands).toBeTruthy();
-    expect((component as any).brands.length).toBeGreaterThan(0);
+    fixture.detectChanges();
     expect((component as any).isShow).toBeDefined(false);
     spyOn(component as any, 'show').and.callThrough();
-    fixture.detectChanges();
     const showButton = fixture.debugElement.query(By.css('.more'));
+    console.log('###', showButton);
     showButton.triggerEventHandler('click', null);
+    fixture.detectChanges();
     expect((component as any)?.show).toHaveBeenCalledTimes(1);
     expect((component as any).isShow).toEqual(true);
   });
