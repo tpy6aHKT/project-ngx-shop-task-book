@@ -73,7 +73,6 @@ describe('[Moдуль 6 - Компонент бренда товаров]', () =
     const brandNameElList: DebugElement[] = fixture.debugElement.queryAll(
       By.css('.brand-name')
     );
-    console.log('!!!!!', brandNameElList.length);
     expect(brands).toBeTruthy();
     expect(brandNameElList).toBeTruthy();
     expect(brandNameElList.length).toEqual((component as any).brands.length);
@@ -90,7 +89,6 @@ describe('[Moдуль 6 - Компонент бренда товаров]', () =
     expect((component as any).isShow).toBeDefined(false);
     spyOn(component as any, 'show').and.callThrough();
     const showButton = fixture.debugElement.query(By.css('.more'));
-    console.log('###', showButton);
     showButton.triggerEventHandler('click', null);
     fixture.detectChanges();
     expect((component as any)?.show).toHaveBeenCalledTimes(1);
