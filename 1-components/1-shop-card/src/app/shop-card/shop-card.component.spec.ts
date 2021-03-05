@@ -84,7 +84,7 @@ describe('[Moдуль 1 -  Компонент товара в корзин]', ()
     );
   });
 
-  it('тег с селектором .product-desc p.rate-amount  должен правильно интерполировать свойство name продукта', () => {
+  it('тег с селектором .product-desc p.rate-amount  должен правильно интерполировать свойство feedbacksCount продукта', () => {
     (component as any).product = cartProduct;
     fixture.detectChanges();
     const prodNameEL = fixture.debugElement.query(
