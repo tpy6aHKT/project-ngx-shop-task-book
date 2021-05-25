@@ -12,6 +12,7 @@ import {
 export class AppComponent {
   public title = '1. Интерполяция и связывание (Карточка товара в корзине)';
   public terminalMessage: string;
+
   public product: ICartProduct = cartProduct;
 
   public increment() {
