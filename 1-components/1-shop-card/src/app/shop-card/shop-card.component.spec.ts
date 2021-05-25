@@ -16,21 +16,21 @@ describe('[Moдуль 1 -  Компонент товара в корзин]', ()
     fixture.detectChanges();
   });
 
-  it('компонент "shop-card.component.ts" должен иметь метод decrementProductInCart ', () => {
+  it('компонент "shop-card" должен иметь метод decrementProductInCart ', () => {
     expect((component as any).decrementProductInCart).toBeTruthy();
   });
-  it('компонент "shop-card.component.ts" должен иметь метод incrementProductInCart', () => {
+  it('компонент "shop-card" должен иметь метод incrementProductInCart', () => {
     expect((component as any).incrementProductInCart).toBeTruthy();
   });
-  it('компонент "shop-card.component.ts" должен иметь свойство product c значением {}', () => {
+  it('компонент "shop-card" должен иметь свойство product c значением {}', () => {
     expect((component as any).product).toBeDefined();
   });
 
-  it('компонент "shop-card.component.ts" должен иметь cобственное событие increment ', () => {
+  it('компонент "shop-card" должен иметь cобственное событие increment ', () => {
     expect((component as any).increment).toBeTruthy();
     expect((component as any).increment).toBeInstanceOf(EventEmitter);
   });
-  it('компонент "shop-card.component.ts" должен иметь cобственное событие decrement ', () => {
+  it('компонент "shop-card" должен иметь cобственное событие decrement ', () => {
     expect((component as any).decrement).toBeTruthy();
     expect((component as any).decrement).toBeInstanceOf(EventEmitter);
   });

@@ -14,16 +14,16 @@ describe('[Moдуль 1 - Header компонент]', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
-  it('компонент "header.component.ts" должен иметь cвойство counter со значение 5', () => {
+  it('компонент "header" должен иметь cвойство counter со значение 5', () => {
     expect((component as any).counter).toBeTruthy();
     expect((component as any).counter).toEqual(5);
   });
 
-  it('компонент "header.component.ts" должен иметь метод redirectTo', () => {
+  it('компонент "header" должен иметь метод redirectTo', () => {
     expect((component as any).redirectTo).toBeTruthy();
   });
 
-  it('компонент "header.component.ts" должен иметь cобственное событие goToBasket ', () => {
+  it('компонент "header" должен иметь cобственное событие goToBasket ', () => {
     expect((component as any).goToBasket).toBeTruthy();
     expect((component as any).goToBasket).toBeInstanceOf(EventEmitter);
   });

@@ -15,23 +15,23 @@ describe('[Moдуль 1 - Компонент товара]', () => {
     component = fixture.componentInstance;
   });
 
-  it('компонент "product-card.component.ts" должен иметь метод addToBasket ', () => {
+  it('компонент "product-card" должен иметь метод addToBasket ', () => {
     expect((component as any).addToBasket).toBeTruthy();
   });
 
-  it('компонент "product-card.component.ts" должен иметь метод redirectTo ', () => {
+  it('компонент "product-card" должен иметь метод redirectTo ', () => {
     expect((component as any).redirectTo).toBeTruthy();
   });
 
-  it('компонент "product-card.component.ts" должен иметь свойство product c значением {}', () => {
+  it('компонент "product-card" должен иметь свойство product c значением {}', () => {
     expect((component as any).product).toBeDefined();
   });
 
-  it('компонент "product-card.component.ts" должен иметь cобственное событие addToCart ', () => {
+  it('компонент "product-card" должен иметь cобственное событие addToCart ', () => {
     expect((component as any).addToCart).toBeTruthy();
     expect((component as any).addToCart).toBeInstanceOf(EventEmitter);
   });
-  it('компонент "product-card.component.ts" должен иметь cобственное событие goToProduct ', () => {
+  it('компонент "product-card" должен иметь cобственное событие goToProduct ', () => {
     expect((component as any).goToProduct).toBeTruthy();
     expect((component as any).goToProduct).toBeInstanceOf(EventEmitter);
   });

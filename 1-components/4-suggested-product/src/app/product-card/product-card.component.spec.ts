@@ -16,16 +16,16 @@ describe('[Moдуль 1 - Компонент рекомендуемого тов
     fixture.detectChanges();
   });
 
-  it('компонент "product-card.component.ts" должен иметь метод redirectTo ', () => {
+  it('компонент "product-card" должен иметь метод redirectTo ', () => {
     expect((component as any).redirectTo).toBeTruthy();
   });
 
-  it('компонент "product-card.component.ts" должен иметь собственное событие goToProduct ', () => {
+  it('компонент "product-card" должен иметь собственное событие goToProduct ', () => {
     expect((component as any).goToProduct).toBeTruthy();
     expect((component as any).goToProduct).toBeInstanceOf(EventEmitter);
   });
 
-  it('компонент "product-card.component.ts" должен иметь свойство product c значением {}', () => {
+  it('компонент "product-card" должен иметь свойство product c значением {}', () => {
     expect((component as any).product).toBeDefined();
   });
 

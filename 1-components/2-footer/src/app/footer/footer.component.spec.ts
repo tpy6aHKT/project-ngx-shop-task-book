@@ -13,10 +13,10 @@ describe('[Moдуль 1 - Футтер компонент]', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
-  it('Компонент "footer.component.ts" должне иметь свойство author cо значенимем Angular Course', () => {
+  it('Компонент "footer" должне иметь свойство author cо значенимем Angular Course', () => {
     expect((component as any)?.author).toEqual('Angular Course');
   });
-  it('Компонент "footer.component.ts" должне иметь свойство currentYear cо значенимем текущего года', () => {
+  it('Компонент "footer" должне иметь свойство currentYear cо значенимем текущего года', () => {
     expect((component as any)?.currentYear).toEqual(new Date().getFullYear());
   });
   it('тег с селектором [.footer-title] должне интерполировать свойства author и currentYear', () => {
