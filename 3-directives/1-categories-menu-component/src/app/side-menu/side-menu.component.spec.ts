@@ -19,33 +19,33 @@ describe('[Moдуль 3 - Компонент cписок кактегорий и
     component = fixture.componentInstance;
   });
 
-  it('компонент должен иметь метод redirectTo ', () => {
+  it('компонент "side-menu" должен иметь метод redirectTo ', () => {
     expect((component as any).redirectTo).toBeTruthy();
   });
 
-  it('компонент должен иметь собственное событие categoryChange ', () => {
+  it('компонент "side-menu" должен иметь собственное событие categoryChange ', () => {
     expect((component as any).categoryChange).toBeDefined();
     expect((component as any).categoryChange).toBeInstanceOf(EventEmitter);
   });
 
-  it('компонент должен иметь свойство categories c значением []', () => {
+  it('компонент "side-menu" должен иметь свойство categories c значением []', () => {
     expect((component as any).categories).toBeDefined();
     expect((component as any).categories).toEqual([]);
   });
-  it('компонент должен иметь свойство currentName c значением null', () => {
+  it('компонент "side-menu" должен иметь свойство currentName c значением null', () => {
     expect((component as any).currentName).toBeDefined();
     expect((component as any).currentName).toEqual(null);
   });
 
   // tslint:disable-next-line: max-line-length
-  it('компонент должен иметь метод hover которе принимает аргументом имя подкатегории и устанавливает это значение свойству currentName', () => {
+  it('компонент "side-menu" должен иметь метод hover которе принимает аргументом имя подкатегории и устанавливает это значение свойству currentName', () => {
     expect((component as any).hover).toBeDefined();
     const testName = 'testName';
     (component as any).hover(testName);
     fixture.detectChanges();
     expect((component as any).currentName).toEqual(testName);
   });
-  it('компонент должен иметь метод mouseLeave устанавливает  currentName в null', () => {
+  it('компонент "side-menu" должен иметь метод mouseLeave устанавливает  currentName в null', () => {
     expect((component as any).mouseLeave).toBeDefined();
     (component as any).currentName = 'testName';
     (component as any).mouseLeave();
@@ -53,7 +53,7 @@ describe('[Moдуль 3 - Компонент cписок кактегорий и
     expect((component as any).currentName).toEqual(null);
   });
 
-  it('Должен правильно формироваться список для категорий', () => {
+  it('Должен правильно формироваться список для категорий ', () => {
     (component as any).categories = categories;
     fixture.detectChanges();
     const listElements = fixture.debugElement.queryAll(
@@ -77,7 +77,7 @@ describe('[Moдуль 3 - Компонент cписок кактегорий и
   });
 
   // tslint:disable-next-line: max-line-length
-  it('при нажатии на блок с селектором .dropdown-item должен вызываться метод  redirectTo и срабатывать собственное событие categoryChange', () => {
+  it('при нажатии на блок с селектором [.dropdown-item] должен вызываться метод  redirectTo и срабатывать собственное событие categoryChange', () => {
     spyOn(component as any, 'redirectTo').and.callThrough();
     spyOn((component as any)?.categoryChange, 'emit').and.callThrough();
     (component as any).categories = categories;
@@ -91,7 +91,7 @@ describe('[Moдуль 3 - Компонент cписок кактегорий и
     expect((component as any)?.categoryChange.emit).toHaveBeenCalledTimes(1);
   });
 
-  it('тег с селектором .dropdown-toggle  должен правильно интерполировать свойство name категории', () => {
+  it('тег с селектором [.dropdown-toggle] должен правильно интерполировать свойство name категории', () => {
     (component as any).categories = categories;
     fixture.detectChanges();
     const categoryList: DebugElement[] = fixture.debugElement.queryAll(
@@ -107,7 +107,7 @@ describe('[Moдуль 3 - Компонент cписок кактегорий и
     );
   });
 
-  it('тег с селектором .sub-category должен правильно интерполировать свойство name подкатегории', () => {
+  it('тег с селектором [.sub-category] должен правильно интерполировать свойство name подкатегории', () => {
     (component as any).categories = categories;
     fixture.detectChanges();
     const subCategoriesElem: DebugElement[] = fixture.debugElement.queryAll(

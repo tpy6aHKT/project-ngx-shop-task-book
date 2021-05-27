@@ -23,28 +23,29 @@ describe('[Moдуль 3 - Компонент информации о товар�
     component = fixture.componentInstance;
   });
 
-  it('компонент должен иметь метод addToBasket ', () => {
+  it('компонент "information" должен иметь метод addToBasket ', () => {
     expect((component as any).addToBasket).toBeTruthy();
   });
 
-  it('компонент должен иметь метод show ', () => {
+  it('компонент "information" должен иметь метод show ', () => {
     expect((component as any).show).toBeTruthy();
   });
 
-  it('компонент должен иметь свойство product c значением null', () => {
+  it('компонент "information" должен иметь свойство product c значением null', () => {
     expect((component as any).product).toBeDefined();
     expect((component as any).product).toEqual(null);
   });
-  it('компонент должен иметь свойство isShow c значением false', () => {
+  it('компонент "information" должен иметь свойство isShow c значением false', () => {
     expect((component as any).isShow).toBeDefined();
     expect((component as any).isShow).toEqual(false);
   });
-  it('компонент должен иметь cобственное событие addToCart ', () => {
+  it('компонент "information" должен иметь cобственное событие addToCart ', () => {
     expect((component as any).addToCart).toBeTruthy();
     expect((component as any).addToCart).toBeInstanceOf(EventEmitter);
   });
 
-  it('при нажатии на кнопку с селектором .submit должен вызываться метод  addToBasket и срабатывать собственное событие addToCart', () => {
+  // tslint:disable-next-line: max-line-length
+  it('при нажатии на кнопку с селектором [.submit] должен вызываться метод  addToBasket и срабатывать собственное событие addToCart', () => {
     (component as any).product = oneProduct;
     spyOn(component as any, 'addToBasket').and.callThrough();
     spyOn((component as any)?.addToCart, 'emit').and.callThrough();
@@ -56,7 +57,7 @@ describe('[Moдуль 3 - Компонент информации о товар�
   });
 
   // tslint:disable-next-line: max-line-length
-  it('при нажатии на кнопку с селектором .show-characters должен вызываться метод  show и значение свойства isShow должно быть true', () => {
+  it('при нажатии на кнопку с селектором [.show-characters] должен вызываться метод  show и значение свойства isShow должно быть true', () => {
     expect((component as any).isShow).toBeDefined();
     spyOn(component as any, 'show').and.callThrough();
     fixture.detectChanges();
@@ -67,7 +68,7 @@ describe('[Moдуль 3 - Компонент информации о товар�
   });
 
   // tslint:disable-next-line: max-line-length
-  it('при нажатии на кнопку с селектором .show-characters должна появится кнопка с селектором .hide-characters, при нажатии на нее должен вызываться метод show и значение свойства isShow должно быть false', () => {
+  it('при нажатии на кнопку с селектором [.show-characters] должна появится кнопка с селектором .hide-characters, при нажатии на нее должен вызываться метод show и значение свойства isShow должно быть false', () => {
     spyOn(component as any, 'show').and.callThrough();
     fixture.detectChanges();
     const showButton = fixture.debugElement.query(By.css('.show-characters'));
@@ -81,7 +82,7 @@ describe('[Moдуль 3 - Компонент информации о товар�
     expect((component as any).isShow).toEqual(false);
   });
 
-  it('тег с селектором .product-info .product-name  должен правильно интерполировать свойство name продукта', () => {
+  it('тег с селектором [.product-info .product-name]  должен правильно интерполировать свойство name продукта', () => {
     (component as any).product = oneProduct;
     fixture.detectChanges();
     const prodNameEL = fixture.debugElement.query(
@@ -93,7 +94,7 @@ describe('[Moдуль 3 - Компонент информации о товар�
     );
   });
 
-  it('тег с селектором .rate-amount  должен правильно интерполировать свойство feedbacksCount продукта', () => {
+  it('тег с селектором [.rate-amount]  должен правильно интерполировать свойство feedbacksCount продукта', () => {
     (component as any).product = oneProduct;
     fixture.detectChanges();
     const prodNameEL = fixture.debugElement.query(By.css('.rate-amount'));
@@ -103,7 +104,7 @@ describe('[Moдуль 3 - Компонент информации о товар�
     );
   });
 
-  it('тег с селектором .price-text  должен правильно интерполировать свойство price продукта', () => {
+  it('тег с селектором [.price-text]  должен правильно интерполировать свойство price продукта', () => {
     (component as any).product = oneProduct;
     fixture.detectChanges();
     const prodNameEL = fixture.debugElement.query(By.css('.price-text'));

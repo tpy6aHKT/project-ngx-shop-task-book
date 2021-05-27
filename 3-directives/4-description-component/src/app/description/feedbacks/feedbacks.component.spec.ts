@@ -17,24 +17,23 @@ describe('[Moдуль 3 - Компонент отзывов товара]', () =
     });
     fixture = TestBed.createComponent(FeedbacksComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
-  it('компонент должен иметь метод addNewFeedback ', () => {
+  it('компонент "feedbacks" должен иметь метод addNewFeedback ', () => {
     expect((component as any).addNewFeedback).toBeTruthy();
   });
 
-  it('компонент должен иметь свойство feedbacks c значением []', () => {
+  it('компонент "feedbacks" должен иметь свойство feedbacks c значением []', () => {
     expect((component as any).feedbacks).toBeDefined();
     expect((component as any).feedbacks).toEqual([]);
   });
-  it('компонент должен иметь cобственное событие addFeedbackEvent ', () => {
+  it('компонент "feedbacks" должен иметь cобственное событие addFeedbackEvent ', () => {
     expect((component as any).addFeedbackEvent).toBeTruthy();
     expect((component as any).addFeedbackEvent).toBeInstanceOf(EventEmitter);
   });
 
   // tslint:disable-next-line: max-line-length
-  it('при нажатии на кнопку с селектором .submit должен вызываться метод  addNewFeedback и срабатывать собственное событие addFeedbackEvent', () => {
+  it('при нажатии на кнопку с селектором [.submit] должен вызываться метод  addNewFeedback и срабатывать собственное событие addFeedbackEvent', () => {
     (component as any).product = oneProduct;
     spyOn(component as any, 'addNewFeedback').and.callThrough();
     spyOn((component as any)?.addFeedbackEvent, 'emit').and.callThrough();
@@ -55,7 +54,7 @@ describe('[Moдуль 3 - Компонент отзывов товара]', () =
     expect(listElements.length).toEqual((component as any).feedbacks.length);
   });
 
-  it('тег с селектором .no-reviews должен отобразится при отсутствии отзывов', () => {
+  it('тег с селектором [.no-reviews] должен отобразится при отсутствии отзывов', () => {
     (component as any).product = oneProduct;
     fixture.detectChanges();
     const noReviewElement = fixture.debugElement.query(By.css('.no-reviews'));
@@ -63,7 +62,7 @@ describe('[Moдуль 3 - Компонент отзывов товара]', () =
     expect(noReviewElement).toBeTruthy();
   });
 
-  it('тег с селектором .advantages  должен правильно интерполировать свойство advantages отзыва', () => {
+  it('тег с селектором [.advantages]  должен правильно интерполировать свойство advantages отзыва', () => {
     (component as any).feedbacks = oneProduct.feedbacks;
     fixture.detectChanges();
     expect((component as any).feedbacks.length === 0).toEqual(false);
