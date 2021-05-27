@@ -15,21 +15,21 @@ describe('[Moдуль 3 -  Компонент рейтинга товара]', (
     component = fixture.componentInstance;
   });
 
-  it('компонент должен иметь метод highlight ', () => {
+  it('компонент "star-rating" должен иметь метод highlight ', () => {
     expect((component as any).highlight).toBeTruthy();
   });
 
-  it('компонент должен иметь собстевенное свойство feedbackRate c значением  0', () => {
+  it('компонент "star-rating" должен иметь собстевенное свойство feedbackRate c значением  0', () => {
     expect((component as any).feedbackRate).toBeDefined();
     expect((component as any).feedbackRate).toEqual(0);
   });
 
-  it('компонент должен иметь свойство stars c значением [0, 1, 2, 3, 4]', () => {
+  it('компонент "star-rating" должен иметь свойство stars c значением [0, 1, 2, 3, 4]', () => {
     expect((component as any).stars).toBeDefined();
     expect((component as any).stars).toEqual([0, 1, 2, 3, 4]);
   });
 
-  it('Количество звезд должно соответсвовать свойству stars компонента', () => {
+  it('Количество звезд должно соответсвовать свойству "stars" компонента', () => {
     fixture.detectChanges();
     const stars: DebugElement[] = fixture.debugElement.queryAll(
       By.css('span.fa.fa-star')
@@ -38,7 +38,7 @@ describe('[Moдуль 3 -  Компонент рейтинга товара]', (
     expect(stars.length).toEqual(5);
   });
 
-  it('метод highlight должен вызываться для каждого элемента span.fa.fa-star', () => {
+  it('метод highlight должен вызываться для каждого элемента [span.fa.fa-star]', () => {
     spyOn(component as any, 'highlight').and.callThrough();
     (component as any).feedbackRate = oneProduct.rating;
     fixture.detectChanges();

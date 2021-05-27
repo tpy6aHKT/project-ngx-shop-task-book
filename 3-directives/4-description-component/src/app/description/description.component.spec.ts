@@ -14,32 +14,31 @@ describe('[Moдуль 3 - Компонент описания товара]', ()
     });
     fixture = TestBed.createComponent(DescriptionComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
-  it('компонент должен иметь метод addFeedback ', () => {
+  it('компонент "description" должен иметь метод addFeedback ', () => {
     expect((component as any).addFeedback).toBeTruthy();
   });
 
-  it('компонент должен иметь метод toggleTab ', () => {
+  it('компонент "description" должен иметь метод toggleTab ', () => {
     expect((component as any).toggleTab).toBeTruthy();
   });
 
-  it('компонент должен иметь свойство product c значением null', () => {
+  it('компонент "description" должен иметь свойство product c значением null', () => {
     expect((component as any).product).toBeDefined();
     expect((component as any).product).toEqual(null);
   });
-  it('компонент должен иметь свойство isShowDescription c значением true', () => {
+  it('компонент "description" должен иметь свойство isShowDescription c значением true', () => {
     expect((component as any).isShowDescription).toBeDefined();
     expect((component as any).isShowDescription).toEqual(true);
   });
-  it('компонент должен иметь cобственное событие addFeedbackEvent ', () => {
+  it('компонент "description" должен иметь cобственное событие addFeedbackEvent ', () => {
     expect((component as any).addFeedbackEvent).toBeTruthy();
     expect((component as any).addFeedbackEvent).toBeInstanceOf(EventEmitter);
   });
 
   // tslint:disable-next-line: max-line-length
-  it('при нажатии на кнопку с селектором .description должен вызываться метод toggleTab и значение свойства isShowDescription должно быть false', () => {
+  it('при нажатии на кнопку с селектором [.description] должен вызываться метод toggleTab и значение свойства isShowDescription должно быть false', () => {
     expect((component as any).isShowDescription).toBeDefined();
     spyOn(component as any, 'toggleTab').and.callThrough();
     fixture.detectChanges();
@@ -50,7 +49,7 @@ describe('[Moдуль 3 - Компонент описания товара]', ()
   });
 
   // tslint:disable-next-line: max-line-length
-  it('при нажатии на кнопку с селектором .feedbacks должен вызываться метод toggleTab, значение свойства isShowDescription должно быть true и должен отобразится компонент FeedbacksComponent', () => {
+  it('при нажатии на кнопку с селектором [.feedbacks] должен вызываться метод toggleTab, значение свойства isShowDescription должно быть true и должен отобразится компонент FeedbacksComponent', () => {
     spyOn(component as any, 'toggleTab').and.callThrough();
     const showButton = fixture.debugElement.query(By.css('.feedbacks'));
     showButton.triggerEventHandler('click', null);
@@ -63,7 +62,7 @@ describe('[Moдуль 3 - Компонент описания товара]', ()
     expect(addFeedbackComponent).toBeDefined();
   });
 
-  it('тег с селектором .product-description  должен правильно интерполировать свойство description продукта', () => {
+  it('тег с селектором [.product-description]  должен правильно интерполировать свойство description продукта', () => {
     (component as any).product = oneProduct;
     fixture.detectChanges();
     const prodNameEL = fixture.debugElement.query(
@@ -75,7 +74,7 @@ describe('[Moдуль 3 - Компонент описания товара]', ()
     );
   });
 
-  it('тег с селектором .feedbacks  должен правильно интерполировать свойство feedbacksCount продукта', () => {
+  it('тег с селектором [.feedbacks]  должен правильно интерполировать свойство feedbacksCount продукта', () => {
     (component as any).product = oneProduct;
     fixture.detectChanges();
     const prodNameEL = fixture.debugElement.query(By.css('.feedbacks'));

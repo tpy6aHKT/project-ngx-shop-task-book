@@ -25,21 +25,21 @@ describe('[Moдуль 3 - Компонент рекомендуемого тов
     component = fixture.componentInstance;
   });
 
-  it('компонент должен иметь метод redirectTo ', () => {
+  it('компонент "product-card" должен иметь метод redirectTo ', () => {
     expect((component as any).redirectTo).toBeTruthy();
   });
 
-  it('компонент должен иметь собственное событие goToProduct ', () => {
+  it('компонент "product-card" должен иметь собственное событие goToProduct ', () => {
     expect((component as any).goToProduct).toBeTruthy();
     expect((component as any).goToProduct).toBeInstanceOf(EventEmitter);
   });
 
-  it('компонент должен иметь свойство product c значением {}', () => {
+  it('компонент "product-card" должен иметь свойство product c значением {}', () => {
     expect((component as any).product).toBeDefined();
   });
 
   // tslint:disable-next-line: max-line-length
-  it('при нажатии на блок с селектором .go-to-product должен вызываться метод  redirectTo и срабатывать собстевнное событие goToProduct', () => {
+  it('при нажатии на блок с селектором [.go-to-product] должен вызываться метод  redirectTo и срабатывать собстевнное событие goToProduct', () => {
     spyOn(component as any, 'redirectTo').and.callThrough();
     spyOn((component as any)?.goToProduct, 'emit').and.callThrough();
     const incrementButton = fixture.debugElement.query(
@@ -63,7 +63,7 @@ describe('[Moдуль 3 - Компонент рекомендуемого тов
     expect(imgEl.attributes.alt).toEqual(name);
   });
 
-  it('тег с селектором .card-title  должен правильно интерполировать свойство name продукта', () => {
+  it('тег с селектором [.card-title]  должен правильно интерполировать свойство name продукта', () => {
     (component as any).product = oneProduct;
     fixture.detectChanges();
     const prodNameEL = fixture.debugElement.query(By.css('.card-title'));
@@ -73,7 +73,7 @@ describe('[Moдуль 3 - Компонент рекомендуемого тов
     );
   });
 
-  it('тег с селектором .rate .rate-amount  должен правильно интерполировать свойство feedbacksCount продукта', () => {
+  it('тег с селектором [.rate .rate-amount]  должен правильно интерполировать свойство feedbacksCount продукта', () => {
     (component as any).product = oneProduct;
     fixture.detectChanges();
     const prodNameEL = fixture.debugElement.query(By.css('.rate .rate-amount'));
@@ -83,7 +83,7 @@ describe('[Moдуль 3 - Компонент рекомендуемого тов
     );
   });
 
-  it('тег с селектором .product-price strong  должен правильно интерполировать свойство price продукта', () => {
+  it('тег с селектором [.product-price strong]  должен правильно интерполировать свойство price продукта', () => {
     (component as any).product = oneProduct;
     fixture.detectChanges();
     const prodNameEL = fixture.debugElement.query(

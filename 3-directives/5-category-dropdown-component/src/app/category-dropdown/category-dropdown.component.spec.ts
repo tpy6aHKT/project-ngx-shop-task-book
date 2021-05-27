@@ -17,33 +17,32 @@ describe('[Moдуль 3 - Компонент выбора категории т
     });
     fixture = TestBed.createComponent(CategoryDropdownComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
-  it('компонент должен иметь собственное событие subCategorySelect ', () => {
+  it('компонент "category-dropdown" должен иметь собственное событие subCategorySelect ', () => {
     expect((component as any).subCategorySelect).toBeDefined();
   });
 
-  it('компонент должен иметь свойство categories c значением []', () => {
+  it('компонент "category-dropdown" должен иметь свойство categories c значением []', () => {
     expect((component as any).categories).toBeDefined();
     expect((component as any).categories).toEqual([]);
   });
-  it('компонент должен иметь свойство currentIndex c значением null', () => {
+  it('компонент "category-dropdown" должен иметь свойство currentIndex c значением null', () => {
     expect((component as any).currentIndex).toBeDefined();
     expect((component as any).currentIndex).toEqual(null);
   });
-  it('компонент должен иметь свойство currentCategory c значением "" ', () => {
+  it('компонент "category-dropdown" должен иметь свойство currentCategory c значением "" ', () => {
     expect((component as any).currentCategory).toBeDefined();
     expect((component as any).currentCategory).toEqual('');
   });
-  it('компонент должен иметь cобственное событие subCategorySelectEvent ', () => {
+  it('компонент "category-dropdown" должен иметь cобственное событие subCategorySelectEvent ', () => {
     expect((component as any).subCategorySelectEvent).toBeTruthy();
     expect((component as any).subCategorySelectEvent).toBeInstanceOf(
       EventEmitter
     );
   });
   // tslint:disable-next-line: max-line-length
-  it('компонент должен иметь метод showSubCategories которе принимает аргументом индекс подкатегории и устанавливает это значение свойству currentIndex', () => {
+  it('компонент "category-dropdown" должен иметь метод showSubCategories которе принимает аргументом индекс подкатегории и устанавливает это значение свойству currentIndex', () => {
     expect((component as any).showSubCategories).toBeDefined();
     const currentIndex = 1;
     (component as any).showSubCategories(currentIndex);
@@ -77,7 +76,7 @@ describe('[Moдуль 3 - Компонент выбора категории т
     expect(listElements.length).toEqual(subCatCount);
   });
 
-  it('при нажатии на блок с селектором .sub-category должен вызываться метод  subCategorySelect и срабатывать собственное событие subCategorySelectEvent', () => {
+  it('при нажатии на блок с селектором [.sub-category] должен вызываться метод  subCategorySelect и срабатывать собственное событие subCategorySelectEvent', () => {
     (component as any).categories = categories;
     fixture.detectChanges();
     expect((component as any).showSubCategories).toBeDefined();
@@ -95,7 +94,7 @@ describe('[Moдуль 3 - Компонент выбора категории т
     ).toHaveBeenCalledTimes(1);
   });
 
-  it('тег с селектором .category-name  должен правильно интерполировать свойство name категории', () => {
+  it('тег с селектором [.category-name]  должен правильно интерполировать свойство name категории', () => {
     (component as any).categories = categories;
     fixture.detectChanges();
     const categoryList: DebugElement[] = fixture.debugElement.queryAll(
@@ -111,7 +110,7 @@ describe('[Moдуль 3 - Компонент выбора категории т
     );
   });
 
-  it('тег с селектором .sub-category-name должен правильно интерполировать свойство name подкатегории', () => {
+  it('тег с селектором [.sub-category-name] должен правильно интерполировать свойство name подкатегории', () => {
     (component as any).categories = categories;
     fixture.detectChanges();
     const subCategoriesElem: DebugElement[] = fixture.debugElement.queryAll(
