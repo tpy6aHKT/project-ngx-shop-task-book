@@ -23,7 +23,6 @@ describe('[Moдуль 3 - Компонент рекомендуемого тов
     });
     fixture = TestBed.createComponent(ProductCardComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('компонент должен иметь метод redirectTo ', () => {
@@ -39,6 +38,7 @@ describe('[Moдуль 3 - Компонент рекомендуемого тов
     expect((component as any).product).toBeDefined();
   });
 
+  // tslint:disable-next-line: max-line-length
   it('при нажатии на блок с селектором .go-to-product должен вызываться метод  redirectTo и срабатывать собстевнное событие goToProduct', () => {
     spyOn(component as any, 'redirectTo').and.callThrough();
     spyOn((component as any)?.goToProduct, 'emit').and.callThrough();

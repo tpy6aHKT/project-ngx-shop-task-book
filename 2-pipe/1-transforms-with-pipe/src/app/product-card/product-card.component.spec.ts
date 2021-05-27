@@ -16,7 +16,6 @@ describe('[Moдуль 2 - Компонент продукта]', () => {
     });
     fixture = TestBed.createComponent(ProductCardComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('компонент "product-card" должен иметь метод redirectTo ', () => {
@@ -48,6 +47,7 @@ describe('[Moдуль 2 - Компонент продукта]', () => {
     (component as any).product = oneProduct;
     fixture.detectChanges();
     const imgEl = fixture.debugElement.query(By.css('.card-img-wrap img'));
+    fixture.detectChanges();
     expect(imgEl).toBeTruthy();
     const {
       images: [{ url }],
@@ -61,6 +61,7 @@ describe('[Moдуль 2 - Компонент продукта]', () => {
     (component as any).product = oneProduct;
     fixture.detectChanges();
     const prodNameEL = fixture.debugElement.query(By.css('.card-title'));
+    fixture.detectChanges();
     expect(prodNameEL).toBeTruthy();
     expect(prodNameEL.nativeElement.textContent.trim()).toEqual(
       (component as any)?.product.name
@@ -71,6 +72,7 @@ describe('[Moдуль 2 - Компонент продукта]', () => {
     (component as any).product = oneProduct;
     fixture.detectChanges();
     const prodNameEL = fixture.debugElement.query(By.css('.rate-amount'));
+    fixture.detectChanges();
     expect(prodNameEL).toBeTruthy();
     expect(prodNameEL.nativeElement.textContent.trim()).toEqual(
       `${(component as any)?.product.feedbacksCount} отзыва`
@@ -83,6 +85,7 @@ describe('[Moдуль 2 - Компонент продукта]', () => {
     const prodNameEL = fixture.debugElement.query(
       By.css('.product-price strong')
     );
+    fixture.detectChanges();
     expect(prodNameEL).toBeTruthy();
     expect(prodNameEL.nativeElement.textContent.trim()).toEqual(
       `${(component as any)?.product.price}€`

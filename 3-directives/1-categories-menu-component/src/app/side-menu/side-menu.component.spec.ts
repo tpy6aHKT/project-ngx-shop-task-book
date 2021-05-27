@@ -17,7 +17,6 @@ describe('[Moдуль 3 - Компонент cписок кактегорий и
     });
     fixture = TestBed.createComponent(SideMenuComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('компонент должен иметь метод redirectTo ', () => {
@@ -38,6 +37,7 @@ describe('[Moдуль 3 - Компонент cписок кактегорий и
     expect((component as any).currentName).toEqual(null);
   });
 
+  // tslint:disable-next-line: max-line-length
   it('компонент должен иметь метод hover которе принимает аргументом имя подкатегории и устанавливает это значение свойству currentName', () => {
     expect((component as any).hover).toBeDefined();
     const testName = 'testName';
@@ -76,7 +76,8 @@ describe('[Moдуль 3 - Компонент cписок кактегорий и
     expect(listElements.length).toEqual(subCatCount);
   });
 
-  it('при нажатии на блок с селектором .dropdown-item должен вызываться метод  redirectTo и срабатывать собственное событие goToProduct', () => {
+  // tslint:disable-next-line: max-line-length
+  it('при нажатии на блок с селектором .dropdown-item должен вызываться метод  redirectTo и срабатывать собственное событие categoryChange', () => {
     spyOn(component as any, 'redirectTo').and.callThrough();
     spyOn((component as any)?.categoryChange, 'emit').and.callThrough();
     (component as any).categories = categories;
@@ -84,6 +85,7 @@ describe('[Moдуль 3 - Компонент cписок кактегорий и
     const [subCategoryItem] = fixture.debugElement.queryAll(
       By.css('.dropdown-item a')
     );
+    fixture.detectChanges();
     subCategoryItem.triggerEventHandler('click', null);
     expect((component as any)?.redirectTo).toHaveBeenCalledTimes(1);
     expect((component as any)?.categoryChange.emit).toHaveBeenCalledTimes(1);
