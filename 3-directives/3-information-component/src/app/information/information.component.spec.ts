@@ -21,7 +21,6 @@ describe('[Moдуль 3 - Компонент информации о товар�
     });
     fixture = TestBed.createComponent(InformationComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('компонент должен иметь метод addToBasket ', () => {
@@ -70,6 +69,7 @@ describe('[Moдуль 3 - Компонент информации о товар�
   // tslint:disable-next-line: max-line-length
   it('при нажатии на кнопку с селектором .show-characters должна появится кнопка с селектором .hide-characters, при нажатии на нее должен вызываться метод show и значение свойства isShow должно быть false', () => {
     spyOn(component as any, 'show').and.callThrough();
+    fixture.detectChanges();
     const showButton = fixture.debugElement.query(By.css('.show-characters'));
     showButton.triggerEventHandler('click', null);
     fixture.detectChanges();

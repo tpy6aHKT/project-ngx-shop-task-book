@@ -13,7 +13,6 @@ describe('[Moдуль 1 - Компонент рекомендуемого тов
     });
     fixture = TestBed.createComponent(ProductCardComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('компонент "product-card" должен иметь метод redirectTo ', () => {

@@ -13,7 +13,6 @@ describe('[Moдуль 1 -  Компонент товара в корзин]', ()
     });
     fixture = TestBed.createComponent(ShopCardComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('компонент "shop-card" должен иметь метод decrementProductInCart ', () => {
@@ -35,23 +34,25 @@ describe('[Moдуль 1 -  Компонент товара в корзин]', ()
     expect((component as any).decrement).toBeInstanceOf(EventEmitter);
   });
 
-  it('при нажатии на кнопку с селектором [.increment] должен вызываться метод  incrementProductInCart и срабатывать собстевнное событие increment', () => {
+  it('при нажатии на кнопку с селектором [.increment] должен вызываться метод  incrementProductInCart', () => {
     spyOn(component as any, 'incrementProductInCart').and.callThrough();
     spyOn((component as any)?.increment, 'emit').and.callThrough();
     const incrementButton = fixture.debugElement.query(
       By.css('button.increment')
     );
+    fixture.detectChanges();
     incrementButton.triggerEventHandler('click', null);
     expect((component as any)?.incrementProductInCart).toHaveBeenCalledTimes(1);
     expect((component as any)?.increment.emit).toHaveBeenCalledTimes(1);
   });
 
-  it('при нажатии на кнопку с селектором [.decrement] должен вызываться метод  decrementProductInCart и срабатывать собстевнное событие decrement', () => {
+  it('при нажатии на кнопку с селектором [.decrement] должен вызываться метод  decrementProductInCart', () => {
     spyOn(component as any, 'decrementProductInCart').and.callThrough();
     spyOn((component as any)?.decrement, 'emit').and.callThrough();
     const incrementButton = fixture.debugElement.query(
       By.css('button.decrement')
     );
+    fixture.detectChanges();
     incrementButton.triggerEventHandler('click', null);
     expect((component as any)?.decrementProductInCart).toHaveBeenCalledTimes(1);
     expect((component as any)?.decrement.emit).toHaveBeenCalledTimes(1);
@@ -61,6 +62,7 @@ describe('[Moдуль 1 -  Компонент товара в корзин]', ()
     (component as any).product = cartProduct;
     fixture.detectChanges();
     const imgEl = fixture.debugElement.query(By.css('.product-img img'));
+    fixture.detectChanges();
     expect(imgEl).toBeTruthy();
     const { image, name } = (component as any)?.product;
     expect(imgEl.attributes.src).toEqual(image);
@@ -73,6 +75,7 @@ describe('[Moдуль 1 -  Компонент товара в корзин]', ()
     const prodNameEL = fixture.debugElement.query(
       By.css('.product-desc h4.col-title')
     );
+    fixture.detectChanges();
     expect(prodNameEL).toBeTruthy();
     expect(prodNameEL.nativeElement.textContent.trim()).toEqual(
       (component as any)?.product.name
@@ -85,6 +88,7 @@ describe('[Moдуль 1 -  Компонент товара в корзин]', ()
     const prodNameEL = fixture.debugElement.query(
       By.css('.product-desc p.rate-amount')
     );
+    fixture.detectChanges();
     expect(prodNameEL).toBeTruthy();
     expect(prodNameEL.nativeElement.textContent.trim()).toEqual(
       `${(component as any)?.product.feedbacksCount} отзывов`
@@ -97,6 +101,7 @@ describe('[Moдуль 1 -  Компонент товара в корзин]', ()
     const prodNameEL = fixture.debugElement.query(
       By.css('.product-desc span.rate-amount')
     );
+    fixture.detectChanges();
     expect(prodNameEL).toBeTruthy();
     expect(prodNameEL.nativeElement.textContent.trim()).toEqual(
       `${(component as any)?.product.feedbacksCount} отзывов`
@@ -110,6 +115,7 @@ describe('[Moдуль 1 -  Компонент товара в корзин]', ()
     const priceEl = fixture.debugElement.query(
       By.css('.product-desc .price-text strong')
     );
+    fixture.detectChanges();
     expect(price).toBeTruthy();
     const priceValue = priceEl.nativeElement.textContent.trim();
     expect(priceValue).toEqual(`€${price.toString()}`);
@@ -119,6 +125,7 @@ describe('[Moдуль 1 -  Компонент товара в корзин]', ()
     fixture.detectChanges();
     const { count } = (component as any)?.product;
     const counterEl = fixture.debugElement.query(By.css('.counter__value'));
+    fixture.detectChanges();
     expect(count).toBeTruthy();
     const countValue = counterEl.nativeElement.textContent.trim();
     expect(countValue.toString()).toEqual(count.toString());
@@ -129,6 +136,7 @@ describe('[Moдуль 1 -  Компонент товара в корзин]', ()
     fixture.detectChanges();
     const { price, count } = (component as any)?.product;
     const totalEl = fixture.debugElement.query(By.css('.price'));
+    fixture.detectChanges();
     expect(price).toBeTruthy();
     expect(count).toBeTruthy();
     const totalValue = totalEl.nativeElement.textContent.trim();
