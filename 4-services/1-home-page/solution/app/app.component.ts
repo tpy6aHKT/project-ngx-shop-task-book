@@ -6,22 +6,22 @@ import { CategoriesService } from './services/categories/category.service';
 import { ProductsService } from './services/products/products.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+	selector: 'ngx-shop-root',
+	templateUrl: './app.component.html',
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 // @ts-ignore
 export class AppComponent implements OnInit {
-  public title = 'Компонент домашней страницы';
-  public products$: Observable<IProduct[]> = null;
-  public categories$: Observable<ICategory[]> = null;
-  constructor(
-    private productsService: ProductsService,
-    private categoriesService: CategoriesService
-  ) {}
+	public title = 'Компонент домашней страницы';
+	public products$: Observable<IProduct[]> = null;
+	public categories$: Observable<ICategory[]> = null;
+	constructor(
+		private productsService: ProductsService,
+		private categoriesService: CategoriesService,
+	) {}
 
-  ngOnInit() {
-    this.products$ = this.productsService.getProducts();
-    this.categories$ = this.categoriesService.getCategories();
-  }
+	ngOnInit() {
+		this.products$ = this.productsService.getProducts();
+		this.categories$ = this.categoriesService.getCategories();
+	}
 }

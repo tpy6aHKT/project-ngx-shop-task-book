@@ -1,28 +1,29 @@
-import { ICategory } from '../../../../../../../shared/mocks/6-routing/categories';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { ICategory } from '../../../../../../../shared/mocks/6-routing/categories';
 
 @Component({
-  selector: 'ngx-shop-side-menu',
-  templateUrl: './side-menu.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+	selector: 'ngx-shop-side-menu',
+	templateUrl: './side-menu.component.html',
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SideMenuComponent {
-  @Input()
-  public categories: ICategory[] = [];
+	@Input()
+	public categories: ICategory[] = [];
 
-  constructor(private router: Router) {}
-  public currentName: string | null = null;
+	public constructor(private router: Router) {}
 
-  public hover(name: string): void {
-    this.currentName = name;
-  }
+	public currentName: string | null = null;
 
-  public mouseLeave(): void {
-    this.currentName = null;
-  }
+	public hover(name: string): void {
+		this.currentName = name;
+	}
 
-  public redirectTo(subCategoryId: string): void {
-    this.router.navigate(['/category', subCategoryId]);
-  }
+	public mouseLeave(): void {
+		this.currentName = null;
+	}
+
+	public redirectTo(subCategoryId: string): void {
+		this.router.navigate(['/category', subCategoryId]);
+	}
 }

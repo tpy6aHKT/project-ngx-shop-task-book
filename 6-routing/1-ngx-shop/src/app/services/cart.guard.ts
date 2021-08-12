@@ -7,23 +7,20 @@ import { CartService } from './cart.service';
 
 @Injectable()
 export class CartGuard implements CanActivate {
-  constructor(
-    private readonly cartService: CartService,
-    private readonly router: Router
-  ) {}
+	public constructor(private readonly cartService: CartService, private readonly router: Router) {}
 
-  public canActivate(): Observable<boolean> {
-    return this.cartService.getCart().pipe(
-      take(1),
-      switchMap((products: IProduct[]) => {
-        if (products?.length > 0) {
-          return of(true);
-        }
-        if (!this.router.navigated) {
-          this.router.navigate(['']);
-        }
-        return of(false);
-      })
-    );
-  }
+	public canActivate(): Observable<boolean> {
+		return this.cartService.getCart().pipe(
+			take(1),
+			switchMap((products: IProduct[]) => {
+				if (products?.length > 0) {
+					return of(true);
+				}
+				if (!this.router.navigated) {
+					this.router.navigate(['']);
+				}
+				return of(false);
+			}),
+		);
+	}
 }

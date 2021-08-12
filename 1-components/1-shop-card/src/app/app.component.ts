@@ -1,30 +1,28 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import {
-  cartProduct,
-  ICartProduct,
-} from '../../../../shared/mocks/1-components/cart-product';
+import { cartProduct, ICartProduct } from '../../../../shared/mocks/1-components/cart-product';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+	selector: 'ngx-shop-root',
+	templateUrl: './app.component.html',
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  public title = '1. Интерполяция и связывание (Карточка товара в корзине)';
-  public terminalMessage: string;
+	public title = '1. Интерполяция и связывание (Карточка товара в корзине)';
 
-  public product: ICartProduct = cartProduct;
+	public terminalMessage!: string;
 
-  public increment() {
-    this.terminalMessage = 'Увеличение количества товара';
-    this.product.count++;
-  }
+	public product: ICartProduct = cartProduct;
 
-  public decrement() {
-    this.terminalMessage = 'Уменьшение количества товара';
-    if (this.product.count === 1) {
-      return;
-    }
-    this.product.count--;
-  }
+	public increment() {
+		this.terminalMessage = 'Увеличение количества товара';
+		this.product.count++;
+	}
+
+	public decrement() {
+		this.terminalMessage = 'Уменьшение количества товара';
+		if (this.product.count === 1) {
+			return;
+		}
+		this.product.count--;
+	}
 }

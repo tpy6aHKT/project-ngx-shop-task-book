@@ -1,27 +1,22 @@
-import {
-  Component,
-  Input,
-  Output,
-  EventEmitter,
-  ChangeDetectionStrategy,
-} from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { IProduct } from '../../../../../shared/mocks/3-directives/interfaces';
 
 @Component({
-  selector: 'ngx-shop-product-card',
-  templateUrl: './product-card.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+	selector: 'ngx-shop-product-card',
+	templateUrl: './product-card.component.html',
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 // @ts-ignore
 export class ProductCardComponent {
-  @Input()
-  // @ts-ignore
-  public product!: IProduct = {} as IProduct;
-  @Output()
-  // @ts-ignore
-  public goToProduct: EventEmitter<void> = new EventEmitter<void>();
+	@Input()
+	// @ts-ignore
+	public product!: IProduct = {} as IProduct;
 
-  public redirectTo(): void {
-    this.goToProduct.emit();
-  }
+	@Output()
+	// @ts-ignore
+	public goToProduct: EventEmitter<void> = new EventEmitter<void>();
+
+	public redirectTo(): void {
+		this.goToProduct.emit();
+	}
 }

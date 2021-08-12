@@ -3,16 +3,16 @@ import { Router } from '@angular/router';
 import { CartService } from '../services/cart.service';
 
 @Component({
-  selector: 'ngx-shop-header',
-  templateUrl: './header.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+	selector: 'ngx-shop-header',
+	templateUrl: './header.component.html',
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
-  public count$ = this.cartService.getCountOfProducts();
+	public count$ = this.cartService.getCountOfProducts();
 
-  constructor(private router: Router, private cartService: CartService) {}
+	public constructor(private router: Router, private cartService: CartService) {}
 
-  public redirectTo() {
-    this.router.navigate(['/cart']);
-  }
+	public redirectTo() {
+		this.router.navigate(['/cart']);
+	}
 }

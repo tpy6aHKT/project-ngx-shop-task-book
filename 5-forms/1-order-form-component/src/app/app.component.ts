@@ -1,16 +1,17 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+	selector: 'ngx-shop-root',
+	templateUrl: './app.component.html',
+	styleUrls: ['./app.component.sass'],
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  public title = 'Компонент формы заказа';
-  public terminalMessage: FormData = null;
+	public title = 'Компонент формы заказа';
 
-  public confirm(event: FormData) {
-    this.terminalMessage = event;
-  }
+	public terminalMessage: FormData = null;
+
+	public confirm(event: FormData) {
+		this.terminalMessage = event;
+	}
 }

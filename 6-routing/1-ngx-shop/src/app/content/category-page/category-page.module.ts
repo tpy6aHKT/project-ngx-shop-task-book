@@ -8,16 +8,17 @@ import { PriceInputsComponent } from './price-slider/price-inputs/price-inputs.c
 import { CategoryDropdownComponent } from './category-dropdown/category-dropdown.component';
 import { CategoryProductComponent } from './product-card/product-card.component';
 import { SharedModule } from '../../shared/shared.module';
+
 @NgModule({
-  declarations: [
-    CategoryPageComponent,
-    PriceInputsComponent,
-    PriceSliderComponent,
-    BrandsComponent,
-    CategoryDropdownComponent,
-    CategoryProductComponent,
-  ],
-  imports: [CategoryPageRoutingModule, SharedModule, Ng5SliderModule],
-  providers: [],
+	declarations: [
+		CategoryPageComponent,
+		PriceInputsComponent,
+		PriceSliderComponent,
+		BrandsComponent,
+		CategoryDropdownComponent,
+		CategoryProductComponent,
+	],
+	imports: [CategoryPageRoutingModule, SharedModule, Ng5SliderModule],
+	providers: [],
 })
 export class CategoryPageModule {}

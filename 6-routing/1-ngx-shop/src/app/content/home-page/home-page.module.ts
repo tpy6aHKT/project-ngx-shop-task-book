@@ -6,7 +6,7 @@ import { ProductCardComponent } from './product-card/product-card.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 
 @NgModule({
-  declarations: [HomePageComponent, ProductCardComponent, SideMenuComponent],
-  imports: [HomePageRoutingModule, SharedModule],
+	declarations: [HomePageComponent, ProductCardComponent, SideMenuComponent],
+	imports: [HomePageRoutingModule, SharedModule],
 })
 export class HomePageModule {}

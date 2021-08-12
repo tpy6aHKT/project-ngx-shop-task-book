@@ -22,13 +22,19 @@
             "main": "1-components/1-shop-card/src/main.ts",
             "polyfills": "shared/polyfills.ts",
             "tsConfig": "1-components/1-shop-card/src/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "1-components/1-shop-card/src/favicon.ico",
               "1-components/1-shop-card/src/assets"
             ],
-            "styles": ["shared/styles.sass"]
-          }
+            "styles": ["shared/styles.sass"],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -51,13 +57,12 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "1-components/1-shop-card/src/tsconfig.app.json",
-              "1-components/1-shop-card/src/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
+            "lintFilePatterns": [
+              "1-components/1-shop-card/src/**/*.ts",
+              "1-components/1-shop-card/src/**/*.html"
+            ]
           }
         }
       }
@@ -81,13 +86,19 @@
             "main": "1-components/2-footer/src/main.ts",
             "polyfills": "shared/polyfills.ts",
             "tsConfig": "1-components/2-footer/src/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "1-components/2-footer/src/favicon.ico",
               "1-components/2-footer/src/assets"
             ],
-            "styles": ["shared/styles.sass"]
-          }
+            "styles": ["shared/styles.sass"],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -110,13 +121,12 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "1-components/2-footer/src/tsconfig.app.json",
-              "1-components/2-footer/src/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
+            "lintFilePatterns": [
+              "1-components/2-footer/src/**/*.ts",
+              "1-components/2-footer/src/**/*.html"
+            ]
           }
         }
       }
@@ -140,13 +150,19 @@
             "main": "1-components/3-category-product-card/src/main.ts",
             "polyfills": "shared/polyfills.ts",
             "tsConfig": "1-components/3-category-product-card/src/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "1-components/3-category-product-card/src/favicon.ico",
               "1-components/3-category-product-card/src/assets"
             ],
-            "styles": ["shared/styles.sass"]
-          }
+            "styles": ["shared/styles.sass"],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -169,13 +185,12 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "1-components/3-category-product-card/src/tsconfig.app.json",
-              "1-components/3-category-product-card/src/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
+            "lintFilePatterns": [
+              "1-components/3-category-product-card/src/**/*.ts",
+              "1-components/3-category-product-card/src/**/*.html"
+            ]
           }
         }
       }
@@ -199,13 +214,19 @@
             "main": "1-components/4-suggested-product/src/main.ts",
             "polyfills": "shared/polyfills.ts",
             "tsConfig": "1-components/4-suggested-product/src/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "1-components/4-suggested-product/src/favicon.ico",
               "1-components/4-suggested-product/src/assets"
             ],
-            "styles": ["shared/styles.sass"]
-          }
+            "styles": ["shared/styles.sass"],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -228,13 +249,12 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "1-components/4-suggested-product/src/tsconfig.app.json",
-              "1-components/4-suggested-product/src/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
+            "lintFilePatterns": [
+              "1-components/4-suggested-product/src/**/*.ts",
+              "1-components/4-suggested-product/src/**/*.html"
+            ]
           }
         }
       }
@@ -258,13 +278,19 @@
             "main": "1-components/5-header/src/main.ts",
             "polyfills": "shared/polyfills.ts",
             "tsConfig": "1-components/5-header/src/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "1-components/5-header/src/favicon.ico",
               "1-components/5-header/src/assets"
             ],
-            "styles": ["shared/styles.sass"]
-          }
+            "styles": ["shared/styles.sass"],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -287,13 +313,12 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "1-components/5-header/src/tsconfig.app.json",
-              "1-components/5-header/src/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
+            "lintFilePatterns": [
+              "1-components/4-suggested-product/src/**/*.ts",
+              "1-components/4-suggested-product/src/**/*.html"
+            ]
           }
         }
       }
@@ -317,13 +342,19 @@
             "main": "2-pipe/1-transforms-with-pipe/src/main.ts",
             "polyfills": "shared/polyfills.ts",
             "tsConfig": "2-pipe/1-transforms-with-pipe/src/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "2-pipe/1-transforms-with-pipe/src/favicon.ico",
               "2-pipe/1-transforms-with-pipe/src/assets"
             ],
-            "styles": ["shared/styles.sass"]
-          }
+            "styles": ["shared/styles.sass"],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -346,13 +377,12 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "2-pipe/1-transforms-with-pipe/src/tsconfig.app.json",
-              "2-pipe/1-transforms-with-pipe/src/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
+            "lintFilePatterns": [
+              "2-pipe/1-transforms-with-pipe/src/**/*.ts",
+              "2-pipe/1-transforms-with-pipe/src/**/*.html"
+            ]
           }
         }
       }
@@ -376,13 +406,19 @@
             "main": "3-directives/1-categories-menu-component/src/main.ts",
             "polyfills": "shared/polyfills.ts",
             "tsConfig": "3-directives/1-categories-menu-component/src/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "3-directives/1-categories-menu-component/src/favicon.ico",
               "3-directives/1-categories-menu-component/src/assets"
             ],
-            "styles": ["shared/styles.sass"]
-          }
+            "styles": ["shared/styles.sass"],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -405,13 +441,12 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "3-directives/1-categories-menu-component/src/tsconfig.app.json",
-              "3-directives/1-categories-menu-component/src/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
+            "lintFilePatterns": [
+              "3-directives/1-categories-menu-component/src/**/*.ts",
+              "3-directives/1-categories-menu-component/src/**/*.html"
+            ]
           }
         }
       }
@@ -435,13 +470,19 @@
             "main": "3-directives/2-start-rating-component/src/main.ts",
             "polyfills": "shared/polyfills.ts",
             "tsConfig": "3-directives/2-start-rating-component/src/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "3-directives/2-start-rating-component/src/favicon.ico",
               "3-directives/2-start-rating-component/src/assets"
             ],
-            "styles": ["shared/styles.sass"]
-          }
+            "styles": ["shared/styles.sass"],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -464,13 +505,12 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "3-directives/2-start-rating-component/src/tsconfig.app.json",
-              "3-directives/2-start-rating-component/src/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
+            "lintFilePatterns": [
+              "3-directives/2-start-rating-component/src/**/*.ts",
+              "3-directives/2-start-rating-component/src/**/*.html"
+            ]
           }
         }
       }
@@ -494,13 +534,19 @@
             "main": "3-directives/3-information-component/src/main.ts",
             "polyfills": "shared/polyfills.ts",
             "tsConfig": "3-directives/3-information-component/src/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "3-directives/3-information-component/src/favicon.ico",
               "3-directives/3-information-component/src/assets"
             ],
-            "styles": ["shared/styles.sass"]
-          }
+            "styles": ["shared/styles.sass"],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -523,13 +569,12 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "3-directives/3-information-component/src/tsconfig.app.json",
-              "3-directives/3-information-component/src/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
+            "lintFilePatterns": [
+              "3-directives/3-information-component/src/**/*.ts",
+              "3-directives/3-information-component/src/**/*.html"
+            ]
           }
         }
       }
@@ -553,13 +598,19 @@
             "main": "3-directives/4-description-component/src/main.ts",
             "polyfills": "shared/polyfills.ts",
             "tsConfig": "3-directives/4-description-component/src/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "3-directives/4-description-component/src/favicon.ico",
               "3-directives/4-description-component/src/assets"
             ],
-            "styles": ["shared/styles.sass"]
-          }
+            "styles": ["shared/styles.sass"],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -582,13 +633,12 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "3-directives/4-description-component/src/tsconfig.app.json",
-              "3-directives/4-description-component/src/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
+            "lintFilePatterns": [
+              "3-directives/4-description-component/src/**/*.ts",
+              "3-directives/4-description-component/src/**/*.html"
+            ]
           }
         }
       }
@@ -612,13 +662,19 @@
             "main": "3-directives/5-category-dropdown-component/src/main.ts",
             "polyfills": "shared/polyfills.ts",
             "tsConfig": "3-directives/5-category-dropdown-component/src/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "3-directives/5-category-dropdown-component/src/favicon.ico",
               "3-directives/5-category-dropdown-component/src/assets"
             ],
-            "styles": ["shared/styles.sass"]
-          }
+            "styles": ["shared/styles.sass"],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -641,13 +697,12 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "3-directives/5-category-dropdown-component/src/tsconfig.app.json",
-              "3-directives/5-category-dropdown-component/src/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
+            "lintFilePatterns": [
+              "3-directives/5-category-dropdown-component/src/**/*.ts",
+              "3-directives/5-category-dropdown-component/src/**/*.html"
+            ]
           }
         }
       }
@@ -671,13 +726,19 @@
             "main": "4-services/1-home-page/src/main.ts",
             "polyfills": "shared/polyfills.ts",
             "tsConfig": "4-services/1-home-page/src/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "4-services/1-home-page/src/favicon.ico",
               "4-services/1-home-page/src/assets"
             ],
-            "styles": ["shared/styles.sass"]
-          }
+            "styles": ["shared/styles.sass"],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -700,13 +761,12 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "4-services/1-home-page/src/tsconfig.app.json",
-              "4-services/1-home-page/src/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
+            "lintFilePatterns": [
+              "4-services/1-home-page/src/**/*.ts",
+              "4-services/1-home-page/src/**/*.html"
+            ]
           }
         }
       }
@@ -730,13 +790,19 @@
             "main": "4-services/2-one-product-page/src/main.ts",
             "polyfills": "shared/polyfills.ts",
             "tsConfig": "4-services/2-one-product-page/src/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "4-services/2-one-product-page/src/favicon.ico",
               "4-services/2-one-product-page/src/assets"
             ],
-            "styles": ["shared/styles.sass"]
-          }
+            "styles": ["shared/styles.sass"],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -759,13 +825,12 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "4-services/2-one-product-page/src/tsconfig.app.json",
-              "4-services/2-one-product-page/src/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
+            "lintFilePatterns": [
+              "4-services/2-one-product-page/src/**/*.ts",
+              "4-services/2-one-product-page/src/**/*.html"
+            ]
           }
         }
       }
@@ -789,13 +854,19 @@
             "main": "5-forms/1-order-form-component/src/main.ts",
             "polyfills": "shared/polyfills.ts",
             "tsConfig": "5-forms/1-order-form-component/src/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "5-forms/1-order-form-component/src/favicon.ico",
               "5-forms/1-order-form-component/src/assets"
             ],
-            "styles": ["shared/styles.sass"]
-          }
+            "styles": ["shared/styles.sass"],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -818,13 +889,12 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "5-forms/1-order-form-component/src/tsconfig.app.json",
-              "5-forms/1-order-form-component/src/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
+            "lintFilePatterns": [
+              "5-forms/1-order-form-component/src/**/*.ts",
+              "5-forms/1-order-form-component/src/**/*.html"
+            ]
           }
         }
       }
@@ -848,13 +918,19 @@
             "main": "5-forms/2-product-filter-component/src/main.ts",
             "polyfills": "shared/polyfills.ts",
             "tsConfig": "5-forms/2-product-filter-component/src/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "5-forms/2-product-filter-component/src/favicon.ico",
               "5-forms/2-product-filter-component/src/assets"
             ],
-            "styles": ["shared/styles.sass"]
-          }
+            "styles": ["shared/styles.sass"],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -877,13 +953,12 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "5-forms/2-product-filter-component/src/tsconfig.app.json",
-              "5-forms/2-product-filter-component/src/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
+            "lintFilePatterns": [
+              "5-forms/2-product-filter-component/src/**/*.ts",
+              "5-forms/2-product-filter-component/src/**/*.html"
+            ]
           }
         }
       }
@@ -907,13 +982,19 @@
             "main": "6-routing/1-ngx-shop/src/main.ts",
             "polyfills": "shared/polyfills.ts",
             "tsConfig": "6-routing/1-ngx-shop/src/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "6-routing/1-ngx-shop/src/favicon.ico",
               "6-routing/1-ngx-shop/src/assets"
             ],
-            "styles": ["shared/styles.sass"]
-          }
+            "styles": ["shared/styles.sass"],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -936,13 +1017,12 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "6-routing/1-ngx-shop/src/tsconfig.app.json",
-              "6-routing/1-ngx-shop/src/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
+            "lintFilePatterns": [
+              "6-routing/1-ngx-shop/src/**/*.ts",
+              "6-routing/1-ngx-shop/src/**/*.html"
+            ]
           }
         }
       }

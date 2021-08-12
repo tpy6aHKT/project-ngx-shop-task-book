@@ -1,11 +1,11 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'rate',
+	name: 'rate',
 })
 // @ts-ignore
 export class RatePipe implements PipeTransform {
-  public transform(value: number): number | undefined {
-    return 0;
-  }
+	public transform(_value: number): number | undefined {
+		return 0;
+	}
 }
