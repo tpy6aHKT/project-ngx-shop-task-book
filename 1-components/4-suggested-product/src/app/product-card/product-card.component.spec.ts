@@ -43,8 +43,8 @@ describe('[Moдуль 1 - Компонент рекомендуемого тов
 		const imgEl = fixture.debugElement.query(By.css('.card-img-wrap img'));
 		expect(imgEl).toBeTruthy();
 		const { image, name } = (component as any)?.product;
-		expect(imgEl.attributes.src).toEqual(image);
-		expect(imgEl.attributes.alt).toEqual(name);
+		expect(imgEl.attributes['src']).toEqual(image);
+		expect(imgEl.attributes['alt']).toEqual(name);
 	});
 
 	it('тег с селектором [.card-title]  должен правильно интерполировать свойство name продукта', () => {

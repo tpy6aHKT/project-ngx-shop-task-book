@@ -60,8 +60,8 @@ describe('[Moдуль 1 - Компонент товара]', () => {
 		const imgEl = fixture.debugElement.query(By.css('.product-img img'));
 		expect(imgEl).toBeTruthy();
 		const { image, name } = (component as any)?.product;
-		expect(imgEl.attributes.src).toEqual(image);
-		expect(imgEl.attributes.alt).toEqual(name);
+		expect(imgEl.attributes['src']).toEqual(image);
+		expect(imgEl.attributes['alt']).toEqual(name);
 	});
 
 	it('тег с селектором [.product-desc .product-name]  должен правильно интерполировать свойство name продукта', () => {

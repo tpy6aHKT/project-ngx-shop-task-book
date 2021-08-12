@@ -79,7 +79,7 @@ describe('[Moдуль 6 - Компонент cписок кактегорий и
 		const categoryList: DebugElement[] = fixture.debugElement.queryAll(By.css('.dropdown-toggle'));
 		expect(categoryList).toBeTruthy();
 		(component as any).categories.forEach((category: ICategory, index: number) => {
-			expect(categoryList[index].nativeElement.textContent.trim()).toEqual(category.name);
+			expect(categoryList[index]!.nativeElement.textContent.trim()).toEqual(category.name);
 		});
 	});
 

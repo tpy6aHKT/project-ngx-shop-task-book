@@ -61,8 +61,8 @@ describe('[Moдуль 1 -  Компонент товара в корзин]', ()
 		fixture.detectChanges();
 		expect(imgEl).toBeTruthy();
 		const { image, name } = (component as any)?.product;
-		expect(imgEl.attributes.src).toEqual(image);
-		expect(imgEl.attributes.alt).toEqual(name);
+		expect(imgEl.attributes['src']).toEqual(image);
+		expect(imgEl.attributes['alt']).toEqual(name);
 	});
 
 	it('тег с селектором [.product-desc h4.col-title] должен правильно интерполировать свойство name продукта', () => {

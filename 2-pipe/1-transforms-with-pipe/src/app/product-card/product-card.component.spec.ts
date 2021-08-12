@@ -51,8 +51,8 @@ describe('[Moдуль 2 - Компонент продукта]', () => {
 			images: [{ url }],
 			name,
 		} = (component as any)?.product;
-		expect(imgEl.attributes.src).toEqual(url);
-		expect(imgEl.attributes.alt).toEqual(name);
+		expect(imgEl.attributes['src']).toEqual(url);
+		expect(imgEl.attributes['alt']).toEqual(name);
 	});
 
 	it('тег с селектором [.card-title]  должен правильно интерполировать свойство name продукта', () => {

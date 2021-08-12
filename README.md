@@ -13,13 +13,10 @@ This will install all of the node_modules and not mess with the package-lock.jso
 **DO NOT EVER RUN `npm install` ON THIS PROJECT**
 
 ## Local Development
-Run:
 
-`npm start`
+Please look at Readme inside tasks
 
-To start the app and begin development work. The app will launch at http://localhost:4200
-
-## Linting project
+## Linting project all tasks
 
 Run:
 

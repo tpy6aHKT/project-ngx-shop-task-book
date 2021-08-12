@@ -66,8 +66,8 @@ describe('[Moдуль 3 - Компонент cписок кактегорий и
 		fixture.detectChanges();
 		const listElements = fixture.debugElement.queryAll(By.css('li.dropdown-item '));
 		expect(listElements).toBeTruthy();
-		const subCatCount = (component as any).categories.reduce((acc, catgory) => {
-			const newCategory = acc + catgory.subCategories.length;
+		const subCatCount = (component as any).categories.reduce((acc: number, category: ICategory) => {
+			const newCategory = acc + category.subCategories.length;
 			return newCategory;
 		}, 0);
 		expect(listElements.length).toEqual(subCatCount);
@@ -81,7 +81,7 @@ describe('[Moдуль 3 - Компонент cписок кактегорий и
 		fixture.detectChanges();
 		const [subCategoryItem] = fixture.debugElement.queryAll(By.css('.dropdown-item a'));
 		fixture.detectChanges();
-		subCategoryItem.triggerEventHandler('click', null);
+		subCategoryItem!.triggerEventHandler('click', null);
 		expect((component as any)?.redirectTo).toHaveBeenCalledTimes(1);
 		expect((component as any)?.categoryChange.emit).toHaveBeenCalledTimes(1);
 	});
@@ -92,7 +92,7 @@ describe('[Moдуль 3 - Компонент cписок кактегорий и
 		const categoryList: DebugElement[] = fixture.debugElement.queryAll(By.css('.dropdown-toggle'));
 		expect(categoryList).toBeTruthy();
 		(component as any).categories.forEach((category: ICategory, index: number) => {
-			expect(categoryList[index].nativeElement.textContent.trim()).toEqual(category.name);
+			expect(categoryList[index]!.nativeElement.textContent.trim()).toEqual(category.name);
 		});
 	});
 
