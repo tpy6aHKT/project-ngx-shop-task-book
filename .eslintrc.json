@@ -11,7 +11,7 @@
       "extends": [
         "plugin:@angular-eslint/recommended",
         "airbnb-typescript/base",
-        "plugin:prettier/recommended"
+		"plugin:prettier/recommended"
       ],
       "rules": {
         "@angular-eslint/component-selector": [
@@ -62,8 +62,20 @@
         "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
         "@typescript-eslint/unbound-method": "off",
         "import/no-cycle": "off",
-        "import/extensions": "off"
-      }
+        "import/extensions": "off",
+		"@typescript-eslint/indent": [
+			"error",
+			"tab"
+		],
+		"no-tabs": ["error", {"allowIndentationTabs": true}],
+		"linebreak-style": ["error", "windows"],
+		"prettier/prettier": [
+			"error",
+			{
+				"endOfLine": "auto"
+			}
+		]
+}
     },
     {
       "files": ["*.html"],
