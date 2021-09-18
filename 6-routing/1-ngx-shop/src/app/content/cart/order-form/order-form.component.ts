@@ -35,6 +35,7 @@ export class OrderFormComponent {
 
 	public phoneValidator(control: FormControl): ValidationErrors | null {
 		const phone = control.value;
+		/* eslint-disable */
 		return phone && phone.substring(0, 1) === '+' && phone.length >= 13
 			? null
 			: {

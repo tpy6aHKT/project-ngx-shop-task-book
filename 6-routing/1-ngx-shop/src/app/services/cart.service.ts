@@ -12,6 +12,7 @@ interface ICart {
 export class CartService {
 	private static cart$ = new BehaviorSubject<ICart>({} as ICart);
 
+	/* eslint-disable */
 	// private static cartStream$ = CartService.cart$.pipe(
 	// 	scan((acc, { product, action = 'increment' }: ICart) => {
 	// 		if (!product) {
@@ -37,11 +38,13 @@ export class CartService {
 	// 	}, []),
 	// 	shareReplay(1),
 	// );
+	/* eslint-enable */
 
 	public updateCart(product: IProduct, action: 'increment' | 'decrement'): void {
 		CartService.cart$.next({ product, action });
 	}
 
+	/* eslint-disable */
 	// public getCart(): Observable<any> {
 	// 	return CartService.cartStream$;
 	// }
